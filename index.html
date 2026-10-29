@@ -56,7 +56,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
 
 @media(min-width:560px){main{padding:23px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}header{padding:25px 24px 22px}.logo{width:88px;height:88px;flex-basis:88px}}
 
-.resource-dots{display:flex;flex-direction:row;gap:6px;align-items:center;justify-content:center;flex:0 0 auto;flex-shrink:0;min-width:0;min-height:0;height:14px;line-height:0}.resource-dot{display:block!important;box-sizing:border-box!important;width:10px!important;height:10px!important;min-width:10px!important;max-width:10px!important;min-height:10px!important;max-height:10px!important;flex:0 0 10px!important;aspect-ratio:1/1;border-radius:50%!important;overflow:hidden;border:0;transform:none!important;align-self:center}.resource-dot.lyrics{background:#f1dfc0!important;background-color:#f1dfc0!important;border:1px solid #cbb78f!important}.resource-dot.pdf{background:#38a169;border-color:#2f855a}.resource-dot.audio{background:#3182ce;border-color:#2b6cb0}.resource-dot[aria-label]{cursor:help}
+.resource-dots{display:flex;flex-direction:row;gap:6px;align-items:center;justify-content:center;flex:0 0 auto;flex-shrink:0;min-width:0;min-height:0;height:14px;line-height:0}.resource-dot{display:block!important;box-sizing:border-box!important;width:10px!important;height:10px!important;min-width:10px!important;max-width:10px!important;min-height:10px!important;max-height:10px!important;flex:0 0 10px!important;aspect-ratio:1/1;border-radius:50%!important;overflow:hidden;border:0!important;padding:0!important;margin:0!important;font-size:0!important;line-height:0!important;min-height:10px!important;max-height:10px!important;transform:none!important;align-self:center;white-space:nowrap!important;box-shadow:none!important}.resource-dot.lyrics{background:#f1dfc0!important;background-color:#f1dfc0!important;border:1px solid #cbb78f!important}.resource-dot.pdf{background:#38a169;border-color:#2f855a}.resource-dot.audio{background:#3182ce;border-color:#2b6cb0}.resource-dot[aria-label]{cursor:help}
 .song-title{text-transform:uppercase}
 </style>
 </head>
@@ -246,7 +246,40 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     if(ra!==rb) return ra-rb;
     return safe(a.title).localeCompare(safe(b.title),undefined,{sensitivity:"base"});
   }
-  function showView(id) { viewIds.forEach(v => $(v).classList.toggle("hidden",v!==id)); window.scrollTo(0,0); }
+  // Keep every in-app screen in browser history so Android/system Back returns
+  // to the previous songbook screen instead of leaving the PWA.
+  function showView(id, options = {}) {
+    const visible = viewIds.find(v => !$(v).classList.contains("hidden")) || "homeView";
+    if (!options.fromPop && id !== visible) {
+      const state = history.state;
+      const depth = state && state.musikaupod === true ? (state.depth || 0) + 1 : 1;
+      history.pushState({ musikaupod: true, view: id, depth }, "", location.href);
+    }
+    viewIds.forEach(v => $(v).classList.toggle("hidden", v !== id));
+    if (!options.fromPop) window.scrollTo(0, 0);
+  }
+  function goBack(fallbackView) {
+    const state = history.state;
+    if (state && state.musikaupod === true && (state.depth || 0) > 0) {
+      history.back();
+    } else if (fallbackView) {
+      showView(fallbackView);
+    } else {
+      showView("homeView");
+    }
+  }
+  history.replaceState({ musikaupod: true, view: "homeView", depth: 0 }, "", location.href);
+  window.addEventListener("popstate", event => {
+    const state = event.state;
+    if (state && state.musikaupod === true && viewIds.includes(state.view)) {
+      showView(state.view, { fromPop: true });
+    } else {
+      // At the home screen, keep Back from accidentally navigating away from
+      // the songbook page. Internal screens still step back through history.
+      history.pushState({ musikaupod: true, view: "homeView", depth: 0 }, "", location.href);
+      showView("homeView", { fromPop: true });
+    }
+  });
   function makeTile(title, subtitle, icon, action) {
     const b=document.createElement("button");b.className="tile";b.type="button";
     const i=document.createElement("span");i.className="tile-icon";i.textContent=icon;
@@ -346,9 +379,9 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     if(b.dataset.open==="sietePalabrasView") renderSpecialCollection("siete-palabras","sietePalabrasList","sietePalabrasEmpty","sietePalabrasView");
     showView(b.dataset.open);
   }));
-  document.querySelectorAll("[data-back]").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.back)));
-  $("listBackButton").addEventListener("click",()=>showView(currentBackView));
-  $("readerBackButton").addEventListener("click",()=>showView(readerBackView));
+  document.querySelectorAll("[data-back]").forEach(b=>b.addEventListener("click",()=>goBack(b.dataset.back)));
+  $("listBackButton").addEventListener("click",()=>goBack(currentBackView));
+  $("readerBackButton").addEventListener("click",()=>goBack(readerBackView));
   $("searchInput").addEventListener("input",renderSongs);
   function renderHomeSearch() {
     const q = $("homeSearchInput").value.trim().toLocaleLowerCase();
