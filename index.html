@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#392052">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>MusiKaupod Digital Songbook</title>
+<style>
+:root{--violet:#392052;--violet2:#51306d;--gold:#d6af55;--paper:#fbf8f2;--ink:#28232e;--muted:#716b78;--line:#e7e0e9;--card:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input{font:inherit}.app{max-width:760px;margin:0 auto;min-height:100dvh;padding-bottom:26px}
+header{color:white;background:linear-gradient(140deg,var(--violet),var(--violet2));padding:22px 18px 21px;border-bottom:4px solid var(--gold)}
+.brand{display:flex;align-items:center;gap:13px}.logo{width:74px;height:74px;flex:0 0 74px;object-fit:cover;border-radius:50%;border:2px solid var(--gold);background:#fff}
+.eyebrow{text-transform:uppercase;letter-spacing:.09em;font-size:.66rem;opacity:.88;line-height:1.4}.brand h1{font-size:clamp(1.35rem,5vw,1.85rem);line-height:1.12;margin:6px 0}.tagline{margin:14px 0 0;color:#fff5db;font-size:.92rem;line-height:1.45}
+main{padding:17px 15px}.view-title{font-size:1.4rem;margin:4px 0 6px}.subtitle{color:var(--muted);margin:0 0 17px;font-size:.91rem}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.tile{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:9px;min-height:112px;padding:16px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:15px;color:var(--ink);cursor:pointer;box-shadow:0 2px 8px #39205208}
+.tile:active,.song:active{transform:scale(.99)}
+.tile-disabled,.tile:disabled{background:#e5e5e5!important;border-color:#d0d0d0!important;color:#858585!important;cursor:not-allowed;box-shadow:none;opacity:1}
+.tile-disabled .tile-icon,.tile:disabled .tile-icon{background:#d6d6d6!important;color:#858585!important}
+.tile-disabled .tile-title,.tile:disabled .tile-title{color:#777!important}
+.tile-disabled .tile-sub,.tile:disabled .tile-sub{color:#888!important}
+.tile-icon{width:41px;height:41px;border-radius:12px;background:#f0e8f5;color:var(--violet);display:grid;place-items:center;font-size:1.35rem}.tile-icon svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tile-title{font-weight:700;line-height:1.25}.tile-sub{color:var(--muted);font-size:.8rem;line-height:1.35}
+.topline{display:flex;align-items:center;gap:10px;margin-bottom:17px}.back-btn,.small-btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;color:var(--ink)}
+.topline .view-title{margin:0}.search-wrap{margin:0 0 13px}.home-search{margin:17px 0 18px}.home-search h3{font-size:1rem;margin:0 0 8px}.home-search .search-wrap{margin-bottom:10px}.home-search-results{display:grid;gap:8px}.home-search-results:empty{display:none}.search-wrap input{width:100%;padding:13px 14px;border:1px solid #d9cfdf;border-radius:12px;background:#fff;outline:none}
+.search-wrap input:focus{border-color:var(--violet2);box-shadow:0 0 0 3px #51306d1c}.count{color:var(--muted);font-size:.84rem;margin-bottom:12px}
+.song-list{display:grid;gap:9px}.song{width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:14px;border:1px solid var(--line);border-radius:13px;background:#fff;color:var(--ink);cursor:pointer}
+.song-icon{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border-radius:11px;background:#f0e8f5;color:var(--violet);font-size:1.15rem}.song-info{flex:1;min-width:0}.song-title{font-weight:650;line-height:1.3}.song-category{font-size:.82rem;color:var(--muted);margin-top:4px}.chevron{color:#8a8390;font-size:1.3rem}
+.empty{padding:26px 10px;text-align:center;color:var(--muted)}.hidden{display:none!important}
+.reader-category{display:inline-block;border-radius:999px;padding:6px 10px;background:#f0e8f5;color:var(--violet);font-size:.8rem;font-weight:650}.reader-title{font-size:clamp(1.55rem,6vw,2rem);line-height:1.2;margin:13px 0 5px}.reader-meta{font-size:.88rem;color:var(--muted)}
+.reader-tools{display:flex;align-items:center;gap:8px;margin:19px 0 12px}.reader-tools span{margin-right:auto;color:var(--muted);font-size:.86rem}.lyrics{white-space:pre-wrap;overflow-wrap:anywhere;font-size:1.18rem;line-height:1.85;background:#fff;border:1px solid var(--line);border-radius:14px;padding:19px;min-height:180px}
+.score-section{margin-top:22px}.score-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:10px}.score-link{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);text-decoration:none;font-weight:650}.score-link span{display:block}.score-link small{display:block;color:var(--muted);font-weight:400;font-size:.76rem;margin-top:2px}.about-card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:18px;line-height:1.65}.about-logo{width:100px;height:100px;object-fit:cover;border-radius:50%;border:2px solid var(--gold)}.about-mark{display:flex;justify-content:center;margin-bottom:15px}
+footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;padding:17px 15px 0}
+
+.theme-row{display:flex;justify-content:flex-end;margin-top:12px}
+.theme-toggle{border:1px solid #d6af55;border-radius:999px;background:#fff5db;color:#392052;padding:8px 13px;font-size:.86rem;font-weight:700;cursor:pointer}
+:root[data-theme="dark"]{color-scheme:dark;--paper:#17131d;--ink:#f5f0fa;--muted:#c5b9d0;--line:#51445d;--card:#26202e}
+:root[data-theme="dark"] body{background:var(--paper);color:var(--ink)}
+:root[data-theme="dark"] .subtitle,:root[data-theme="dark"] .count,:root[data-theme="dark"] .reader-meta,:root[data-theme="dark"] .reader-tools span,:root[data-theme="dark"] footer{color:var(--muted)}
+:root[data-theme="dark"] .tile,:root[data-theme="dark"] .song,:root[data-theme="dark"] .back-btn,:root[data-theme="dark"] .small-btn,:root[data-theme="dark"] .search-wrap input,:root[data-theme="dark"] .lyrics,:root[data-theme="dark"] .about-card,:root[data-theme="dark"] .score-link{background:#26202e;color:#f5f0fa;border-color:#51445d}
+:root[data-theme="dark"] .tile-icon,:root[data-theme="dark"] .song-icon,:root[data-theme="dark"] .reader-category{background:#443052;color:#f3d98d}
+:root[data-theme="dark"] .tile-sub,:root[data-theme="dark"] .song-category,:root[data-theme="dark"] .empty{color:#c5b9d0}
+:root[data-theme="dark"] .tile-disabled,:root[data-theme="dark"] .tile:disabled{background:#302b35!important;border-color:#514b57!important;color:#aaa3b1!important}
+:root[data-theme="dark"] .tile-disabled .tile-icon,:root[data-theme="dark"] .tile:disabled .tile-icon{background:#3a3540!important;color:#aaa3b1!important}
+:root[data-theme="dark"] .tile-disabled .tile-title,:root[data-theme="dark"] .tile:disabled .tile-title{color:#c0bac7!important}
+:root[data-theme="dark"] .tile-disabled .tile-sub,:root[data-theme="dark"] .tile:disabled .tile-sub{color:#aaa3b1!important}
+:root[data-theme="dark"] .search-wrap input::placeholder{color:#b9afc4}
+:root[data-theme="dark"] .search-wrap input:focus{border-color:#c5a4e6;box-shadow:0 0 0 3px #c5a4e626}
+:root[data-theme="dark"] .chevron{color:#c5b9d0}
+:root[data-theme="dark"] .theme-toggle{background:#30263b;color:#f8e7b5;border-color:#d6af55}
+:root[data-theme="dark"] .logo,:root[data-theme="dark"] .about-logo{background:#fff}
+@media (prefers-reduced-motion:no-preference){.theme-toggle,.tile,.song{transition:background-color .15s ease,color .15s ease,border-color .15s ease}}
+
+@media(min-width:560px){main{padding:23px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}header{padding:25px 24px 22px}.logo{width:88px;height:88px;flex-basis:88px}}
+
+.resource-dots{display:flex;flex-direction:row;gap:6px;align-items:center;justify-content:center;flex:0 0 auto;flex-shrink:0;min-width:0;min-height:0;height:14px;line-height:0}.resource-dot{display:block!important;box-sizing:border-box!important;width:10px!important;height:10px!important;min-width:10px!important;max-width:10px!important;min-height:10px!important;max-height:10px!important;flex:0 0 10px!important;aspect-ratio:1/1;border-radius:50%!important;overflow:hidden;border:0;transform:none!important;align-self:center}.resource-dot.lyrics{background:#f1dfc0;border-color:#cbb78f}.resource-dot.pdf{background:#38a169;border-color:#2f855a}.resource-dot.audio{background:#3182ce;border-color:#2b6cb0}.resource-dot[aria-label]{cursor:help}
+.song-title{text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="brand">
+    <img class="logo" src="assets/hijp-mmc-logo.png" alt="Holy Infant Jesus Parish Music Ministry Community logo">
+    <div>
+      <div class="eyebrow">Holy Infant Jesus Parish<br>Music Ministry Community</div>
+      <h1>MusiKaupod<br>Digital Songbook</h1>
+    </div>
+  </div>
+  <div class="theme-row"><button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">☾ Dark mode</button></div>
+</header>
+<main>
+  <section id="homeView">
+    <h2 class="view-title">Dagos kamo sa aton Digital Songbook!</h2>
+    <p class="subtitle">Musika Para sa Parokya</p>
+    <div class="home-search">
+      <h3>Search the songbook</h3>
+      <div class="search-wrap"><input id="homeSearchInput" type="search" placeholder="Search song title, lyrics, category, or season…" autocomplete="off" aria-label="Search all songs"></div>
+      <div id="homeSearchResults" class="home-search-results" aria-live="polite"></div>
+    </div>
+    <div class="grid">
+      <button class="tile" data-open="liturgyCategories">
+        <span class="tile-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5v19M5.5 8h13"/></svg></span>
+        <span class="tile-title">Liturgy Songs</span><span class="tile-sub">Mga kanta sa liturhiya</span>
+      </button>
+      <button class="tile" data-open="seasonList"><span class="tile-icon">♫</span><span class="tile-title">Service Songs</span><span class="tile-sub">Mga kanta sa mga parte san misa</span></button>
+      <button class="tile" data-open="chantListView"><span class="tile-icon">♬</span><span class="tile-title">Gregorian Chant</span><span class="tile-sub">An pinaka sagrado na Cantos Gregorianos</span></button>
+      <button class="tile" data-open="misaPastorellaView"><span class="tile-icon">♫</span><span class="tile-title">Misa Pastorella</span><span class="tile-sub">Set 1 and Set 2</span></button>
+      <button class="tile" data-open="sietePalabrasView"><span class="tile-icon">✝</span><span class="tile-title">Siete Palabras</span><span class="tile-sub">Mga kanta san Siete Palabras</span></button>
+      <button class="tile tile-disabled" data-open="prayersView" disabled aria-disabled="true" title="Not included in Version 1"><span class="tile-icon">✧</span><span class="tile-title">Mga Pangadeyon</span><span class="tile-sub">Pilion an lengwahe san pangadyeon</span></button>
+      <button class="tile" data-open="aboutView"><span class="tile-icon">ⓘ</span><span class="tile-title">About</span><span class="tile-sub">Nano an HIJP MMC?</span></button>
+    </div>
+  </section>
+
+  <section id="liturgyCategories" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="homeView">← Home</button><h2 class="view-title">Liturgy Songs</h2></div>
+    <p class="subtitle">Pilion an parte san Misa</p><div id="liturgyGrid" class="grid"></div>
+  </section>
+
+  <section id="seasonList" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="homeView">← Home</button><h2 class="view-title">Service Songs</h2></div>
+    <p class="subtitle">Pilion an panahon san liturhiya</p><div id="seasonGrid" class="grid"></div>
+  </section>
+
+  <section id="seasonCategories" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="seasonList">← Seasons</button><h2 id="seasonHeading" class="view-title"></h2></div>
+    <p class="subtitle">Pilion an parte san serbisyo</p><div id="seasonCategoryGrid" class="grid"></div>
+  </section>
+
+  <section id="songListView" class="hidden">
+    <div class="topline"><button id="listBackButton" class="back-btn">← Back</button><h2 id="listHeading" class="view-title">Songs</h2></div>
+    <div class="search-wrap"><input id="searchInput" type="search" placeholder="Search song title or lyrics…" autocomplete="off" aria-label="Search songs"></div>
+    <div id="songCount" class="count"></div><div id="songList" class="song-list"></div>
+    <div id="emptyState" class="empty hidden">Waray pa nadudugang nga kanta hini nga kategoriya.</div>
+  </section>
+
+  <section id="chantListView" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="homeView">← Home</button><h2 class="view-title">Gregorian Chant</h2></div>
+    <div id="chantList" class="song-list"></div><div id="chantEmpty" class="empty hidden">Waray pa nadudugang nga kanta.</div>
+  </section>
+
+  <section id="holyHourListView" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="homeView">← Home</button><h2 class="view-title">Songs for Holy Hour</h2></div>
+    <div id="holyHourList" class="song-list"></div><div id="holyHourEmpty" class="empty hidden">Waray pa nadudugang nga kanta.</div>
+  </section>
+
+  <section id="fiestaListView" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="homeView">← Home</button><h2 class="view-title">Fiesta Line-up</h2></div>
+    <div id="fiestaList" class="song-list"></div><div id="fiestaEmpty" class="empty hidden">Waray pa nadudugang nga kanta.</div>
+  </section>
+
+  <section id="misaPastorellaView" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="homeView">← Home</button><h2 class="view-title">MISA PASTORELLA</h2></div>
+    <div class="grid">
+      <button class="tile" data-open="misaSet1View"><span class="tile-icon">♫</span><span class="tile-title">SET 1</span><span class="tile-sub">Simplified and Restored</span></button>
+      <button class="tile" data-open="misaSet2View"><span class="tile-icon">♫</span><span class="tile-title">SET 2</span><span class="tile-sub">Misa Pastorella</span></button>
+    </div>
+  </section>
+  <section id="misaSet1View" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="misaPastorellaView">← Misa Pastorella</button><h2 class="view-title">SET 1</h2></div>
+    <div class="grid">
+      <button class="tile" data-open="misaSimplifiedView"><span class="tile-icon">♫</span><span class="tile-title">SIMPLIFIED</span><span class="tile-sub">Tonal guides and music sheets</span></button>
+      <button class="tile" data-open="misaRestoredView"><span class="tile-icon">♫</span><span class="tile-title">RESTORED</span><span class="tile-sub">Restored setting</span></button>
+    </div>
+  </section>
+  <section id="misaSet2View" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="misaPastorellaView">← Misa Pastorella</button><h2 class="view-title">SET 2</h2></div>
+    <div class="empty">No songs added yet.</div>
+  </section>
+  <section id="misaSimplifiedView" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="misaSet1View">← Set 1</button><h2 class="view-title">SIMPLIFIED</h2></div>
+    <div id="misaSimplifiedList" class="song-list"></div>
+  </section>
+  <section id="misaRestoredView" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="misaSet1View">← Set 1</button><h2 class="view-title">RESTORED</h2></div>
+    <div class="empty">No songs added yet.</div>
+  </section>
+  <section id="sietePalabrasView" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="homeView">← Home</button><h2 class="view-title">SIETE PALABRAS</h2></div>
+    <div id="sietePalabrasList" class="song-list"></div><div id="sietePalabrasEmpty" class="empty">No songs added yet.</div>
+  </section>
+  <section id="prayersView" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="homeView">← Home</button><h2 class="view-title">Mga Pangadeyon</h2></div>
+    <p class="subtitle">Pilion an lengwahe san pangadyeon</p>
+    <div id="prayerLanguageGrid" class="grid"></div>
+  </section>
+
+  <section id="prayerListView" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="prayersView">← Mga Pangadeyon</button><h2 id="prayerLanguageHeading" class="view-title"></h2></div>
+    <div id="prayerList" class="song-list"></div><div id="prayerEmpty" class="empty hidden">Waray pa pangadeyon nga nadugang.</div>
+  </section>
+
+  <section id="readerView" class="hidden">
+    <div class="topline"><button id="readerBackButton" class="back-btn">← Back</button></div>
+    <span id="readerCategory" class="reader-category"></span><h2 id="readerTitle" class="reader-title"></h2><div id="readerMeta" class="reader-meta"></div>
+    <div class="reader-tools"><span>Lyrics / Text</span><button id="smallerText" class="small-btn" aria-label="Decrease text size">A−</button><button id="largerText" class="small-btn" aria-label="Increase text size">A+</button></div>
+    <article id="lyricsText" class="lyrics"></article>
+    <section id="audioSection" class="score-section hidden">
+      <h3>Tonal Guide (MP3)</h3>
+      <audio id="tonalAudio" controls preload="none" style="width:100%;margin:8px 0 14px"></audio>
+    </section>
+    <section id="scoreSection" class="score-section hidden">
+      <h3>Vocal Scores (PDF)</h3>
+      <p class="subtitle">Choose the score for your voice part.</p>
+      <div id="scoreGrid" class="score-grid"></div>
+    </section>
+  </section>
+
+  <section id="aboutView" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="homeView">← Home</button><h2 class="view-title">About</h2></div>
+    <div class="about-card">
+      <div class="about-mark"><img class="about-logo" src="assets/hijp-mmc-logo.png" alt="Official HIJP-MMC logo"></div>
+      <h2>MusiKaupod Digital Songbook</h2>
+      <p><strong>Holy Infant Jesus Parish Music Ministry Community</strong></p>
+      
+      <p>An offline digital songbook for the ministry’s liturgy songs, service songs, Gregorian chants, Misa Pastorella, Siete Palabras, and basic prayers.</p>
+      <p><strong>Offline songbook · No account or internet connection required</strong></p>
+      <p>Developed by HIJP-MMC Admins</p>
+    </div>
+  </section>
+</main>
+<footer>Offline songbook · No account or internet connection required<br>Developed by HIJP-MMC Admins</footer>
+</div>
+<script src="songs.js"></script>
+<script>
+(() => {
+  const songs = Array.isArray(window.CHOIR_SONGS) ? window.CHOIR_SONGS : [];
+  const root = document.documentElement;
+  const themeToggle = document.getElementById("themeToggle");
+  function applyTheme(theme) {
+    root.dataset.theme = theme;
+    const dark = theme === "dark";
+    themeToggle.textContent = dark ? "☀ Light mode" : "☾ Dark mode";
+    themeToggle.setAttribute("aria-pressed", String(dark));
+    document.querySelector('meta[name="theme-color"]').content = dark ? "#17131d" : "#392052";
+  }
+  let savedTheme = "light";
+  try { savedTheme = localStorage.getItem("musikaupod-theme") || "light"; } catch (_) {}
+  applyTheme(savedTheme);
+  themeToggle.addEventListener("click", () => {
+    const next = root.dataset.theme === "dark" ? "light" : "dark";
+    applyTheme(next);
+    try { localStorage.setItem("musikaupod-theme", next); } catch (_) {}
+  });
+  const liturgyCategories = ["Kyrie A - Halip-ot","Kyrie B - Halaba","Gloria","Gospel Acclamation","Sanctus","Memorial Acclamation","Amen","Lord's Prayer","Doxology","Agnus Dei"];
+  const seasons = ["Ordinary Time","Lent","Easter","Advent","Christmas"];
+  const serviceCategories = ["Entrance","Offertory","Communion","Recessional"];
+  const viewIds = ["homeView","liturgyCategories","seasonList","seasonCategories","songListView","chantListView","holyHourListView","fiestaListView","prayersView","prayerListView","readerView","aboutView","misaPastorellaView","misaSet1View","misaSet2View","misaSimplifiedView","misaRestoredView","sietePalabrasView"];
+  const $ = id => document.getElementById(id);
+  let currentList = [], currentBackView = "liturgyCategories", currentFontSize = 1.18, readerBackView = "songListView";
+  const safe = v => String(v ?? "");
+  const displayCategory = value => ({Pagtuna:"Entrance",Paghalad:"Offertory",Komunyon:"Communion",Pagtapos:"Recessional",Ebanghelyo:"Gospel Acclamation",Banal:"Sanctus",Memoryal:"Memorial Acclamation", "Ama Namon":"Lord's Prayer",Doxologia:"Doxology",Kordero:"Agnus Dei",Kyrie:"Kyrie B - Halaba"}[safe(value)] || safe(value));
+  function romanRank(title) {
+    const m = safe(title).match(/(?:^|\s)(X{1,3}|IX|IV|V?I{1,3})(?=\s|$|-)/i);
+    if (!m) return 10000;
+    const roman=m[1].toUpperCase();
+    const vals={I:1,V:5,X:10}; let total=0, prev=0;
+    for(let i=roman.length-1;i>=0;i--){const v=vals[roman[i]]||0; total += v<prev ? -v : v; prev=Math.max(prev,v);}
+    return total>0?total:10000;
+  }
+  function titleOrder(a,b) {
+    const ra=romanRank(a.title), rb=romanRank(b.title);
+    if(ra!==rb) return ra-rb;
+    return safe(a.title).localeCompare(safe(b.title),undefined,{sensitivity:"base"});
+  }
+  function showView(id) { viewIds.forEach(v => $(v).classList.toggle("hidden",v!==id)); window.scrollTo(0,0); }
+  function makeTile(title, subtitle, icon, action) {
+    const b=document.createElement("button");b.className="tile";b.type="button";
+    const i=document.createElement("span");i.className="tile-icon";i.textContent=icon;
+    const t=document.createElement("span");t.className="tile-title";t.textContent=title;
+    const s=document.createElement("span");s.className="tile-sub";s.textContent=subtitle||"Browse songs";
+    b.append(i,t,s);b.addEventListener("click",action);return b;
+  }
+  function renderTiles() {
+    const lg=$("liturgyGrid");lg.replaceChildren();
+    liturgyCategories.forEach(cat=>lg.appendChild(makeTile(cat,`${songs.filter(s=>s.collection==="liturgy"&&s.category===cat).length} songs`,"✝",()=>openSongs({collection:"liturgy",category:cat},"liturgyCategories",cat))));
+    const sg=$("seasonGrid");sg.replaceChildren();
+    seasons.forEach(season=>sg.appendChild(makeTile(season,"Service songs","♫",()=>openSeasonCategories(season))));
+  }
+  function openSeasonCategories(season) {
+    $("seasonHeading").textContent=season;const grid=$("seasonCategoryGrid");grid.replaceChildren();
+    serviceCategories.forEach(cat=>grid.appendChild(makeTile(cat,`${songs.filter(s=>s.collection==="service"&&s.season===season&&s.category===cat).length} songs`,"♫",()=>openSongs({collection:"service",season,category:cat},"seasonCategories",`${season} · ${cat}`))));
+    showView("seasonCategories");
+  }
+  function openSongs(filters,backView,heading) {
+    currentBackView=backView;currentList=songs.filter(s=>Object.entries(filters).every(([k,v])=>s[k]===v));
+    $("listHeading").textContent=heading;$("searchInput").value="";renderSongs();showView("songListView");
+  }
+  function renderSongs() {
+    const q=$("searchInput").value.trim().toLocaleLowerCase();
+    const categoryOrder = currentList.some(s=>s.collection==="service") ? serviceCategories : liturgyCategories;
+    const filtered=currentList.filter(s=>!q||safe(s.title).toLocaleLowerCase().includes(q)||safe(s.lyrics).toLocaleLowerCase().includes(q))
+      .slice().sort((a,b)=>{
+        const c=(categoryOrder.indexOf(a.category)<0?999:categoryOrder.indexOf(a.category))-(categoryOrder.indexOf(b.category)<0?999:categoryOrder.indexOf(b.category));
+        if(c) return c;
+        if(a.collection==="liturgy" && b.collection==="liturgy") return titleOrder(a,b);
+        return safe(a.title).localeCompare(safe(b.title),undefined,{sensitivity:"base"});
+      });
+    $("songCount").textContent=`${filtered.length} song${filtered.length===1?"":"s"}`;
+    const list=$("songList");list.replaceChildren();
+    filtered.forEach(song=>list.appendChild(songButton(song)));
+    $("emptyState").classList.toggle("hidden",filtered.length>0);
+  }
+  function songButton(song, backView = "songListView") {
+    const b=document.createElement("button");b.className="song";b.type="button";
+    const ic=document.createElement("span");ic.className="song-icon";ic.textContent=song.collection==="prayers"?"✧":"♫";
+    const info=document.createElement("span");info.className="song-info";
+    const title=document.createElement("div");title.className="song-title";title.textContent=safe(song.title).toLocaleUpperCase();
+    const meta=document.createElement("div");meta.className="song-category";meta.textContent=song.collection==="service"?`${safe(song.season)} · ${displayCategory(song.category)}`:displayCategory(song.category);
+    info.append(title,meta);
+    const dots=document.createElement("span");dots.className="resource-dots";dots.setAttribute("aria-label","Available resources");
+    if(safe(song.lyrics).trim()){const d=document.createElement("span");d.className="resource-dot lyrics";d.title="Lyrics available";d.setAttribute("aria-label","Lyrics available");dots.append(d);}
+    if(song.scores && Object.keys(song.scores).length){const d=document.createElement("span");d.className="resource-dot pdf";d.title="PDF notation available";d.setAttribute("aria-label","PDF notation available");dots.append(d);}
+    if(song.audio){const d=document.createElement("span");d.className="resource-dot audio";d.title="MP3 tonal guide available";d.setAttribute("aria-label","MP3 tonal guide available");dots.append(d);}
+    if(!dots.childElementCount)dots.hidden=true;
+    const ar=document.createElement("span");ar.className="chevron";ar.textContent="›";
+    b.append(ic,info,dots,ar);b.addEventListener("click",()=>openSong(song,backView));return b;
+  }
+  const prayerLanguages = ["Minasbate","English","Latin","Tagalog","Bikol","Sinugboanon","Spanish"];
+  function renderPrayerLanguages() {
+    const grid = $("prayerLanguageGrid"); grid.replaceChildren();
+    prayerLanguages.forEach(language => {
+      const count = songs.filter(s => s.collection === "prayers" && s.language === language).length;
+      grid.appendChild(makeTile(language, `${count} pangadeyon`, "✧", () => openPrayersForLanguage(language)));
+    });
+  }
+  function openPrayersForLanguage(language) {
+    $("prayerLanguageHeading").textContent = language;
+    const prayers = songs.filter(s => s.collection === "prayers" && s.language === language).slice().sort((a,b)=>safe(a.category).localeCompare(safe(b.category),undefined,{sensitivity:"base"})||safe(a.title).localeCompare(safe(b.title),undefined,{sensitivity:"base"}));
+    const list = $("prayerList"); list.replaceChildren();
+    prayers.forEach(s => list.appendChild(songButton(s, "prayerListView")));
+    $("prayerEmpty").classList.toggle("hidden", prayers.length > 0);
+    showView("prayerListView");
+  }
+  function renderCollection(collection, listId, emptyId) {
+    const items = songs.filter(s => s.collection === collection).slice().sort((a,b)=>safe(a.category).localeCompare(safe(b.category),undefined,{sensitivity:"base"})||safe(a.title).localeCompare(safe(b.title),undefined,{sensitivity:"base"}));
+    const list = $(listId); list.replaceChildren();
+    items.forEach(s => list.appendChild(songButton(s, collection === "chant" ? "chantListView" : collection === "holy-hour" ? "holyHourListView" : "fiestaListView")));
+    $(emptyId).classList.toggle("hidden", items.length > 0);
+  }
+  function openSong(song,backView) {
+    readerBackView=backView;$("readerTitle").textContent=safe(song.title).toLocaleUpperCase();$("readerCategory").textContent=displayCategory(song.category);
+    $("readerMeta").textContent=song.collection==="service"?safe(song.season):song.collection==="prayers"?"Mga Pangadeyon":"Liturgy Song";
+    $("lyricsText").textContent=safe(song.lyrics);currentFontSize=1.18;$("lyricsText").style.fontSize=currentFontSize+"rem";
+    const scoreGrid=$("scoreGrid");scoreGrid.replaceChildren();
+    const scores=song.scores||{};let scoreCount=0;
+    ["Soprano","Alto","Tenor","Bass","Full Score"].forEach(part=>{if(!scores[part])return;scoreCount++;const a=document.createElement("a");a.className="score-link";a.href=scores[part];a.target="_blank";a.rel="noopener";a.innerHTML=`<span aria-hidden="true">♫</span><span>${part}<small>Open PDF score</small></span>`;scoreGrid.append(a);});
+    $("scoreSection").classList.toggle("hidden",scoreCount===0);
+    const audioSection=$("audioSection"),audio=$("tonalAudio");
+    if(song.audio){audio.src=song.audio;audioSection.classList.remove("hidden");}else{audio.pause();audio.removeAttribute("src");audio.load();audioSection.classList.add("hidden");}
+    showView("readerView");
+  }
+  function renderMisaSimplified(){
+    const list=$("misaSimplifiedList");list.replaceChildren();
+    const order=["KYRIE","GLORIA","ALLELUIA","SANCTUS","MEMORIALE","AMEN","AGNUS DEI"];const items=songs.filter(s=>s.collection==="misa-pastorella"&&s.subcategory==="Set 1 · Simplified").slice().sort((a,b)=>order.indexOf(a.title)-order.indexOf(b.title));
+    items.forEach(s=>list.appendChild(songButton(s,"misaSimplifiedView")));
+  }
+  function renderSpecialCollection(collection,listId,emptyId,backView){const items=songs.filter(s=>s.collection===collection).slice().sort((a,b)=>safe(a.title).localeCompare(safe(b.title),undefined,{sensitivity:"base"}));const list=$(listId);list.replaceChildren();items.forEach(s=>list.appendChild(songButton(s,backView)));$(emptyId).classList.toggle("hidden",items.length>0);}
+  document.querySelectorAll("[data-open]").forEach(b=>b.addEventListener("click",()=>{
+    if(b.dataset.open==="prayersView") renderPrayerLanguages();
+    if(b.dataset.open==="chantListView") renderCollection("chant","chantList","chantEmpty");
+    if(b.dataset.open==="misaSimplifiedView") renderMisaSimplified();
+    if(b.dataset.open==="sietePalabrasView") renderSpecialCollection("siete-palabras","sietePalabrasList","sietePalabrasEmpty","sietePalabrasView");
+    showView(b.dataset.open);
+  }));
+  document.querySelectorAll("[data-back]").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.back)));
+  $("listBackButton").addEventListener("click",()=>showView(currentBackView));
+  $("readerBackButton").addEventListener("click",()=>showView(readerBackView));
+  $("searchInput").addEventListener("input",renderSongs);
+  function renderHomeSearch() {
+    const q = $("homeSearchInput").value.trim().toLocaleLowerCase();
+    const box = $("homeSearchResults"); box.replaceChildren();
+    if (!q) return;
+    const categoryRank = song => {
+      if (song.collection === "liturgy") return [0, Math.max(0,liturgyCategories.indexOf(song.category)), safe(song.title)];
+      if (song.collection === "service") return [1, Math.max(0,seasons.indexOf(song.season)), Math.max(0,serviceCategories.indexOf(song.category)), safe(song.title)];
+      return [2, safe(song.category), safe(song.title)];
+    };
+    const matches = songs.filter(song => [song.title,song.lyrics,song.category,song.season,song.collection].some(v => safe(v).toLocaleLowerCase().includes(q))).sort((a,b)=>{
+      const x=categoryRank(a), y=categoryRank(b);
+      for(let i=0;i<Math.max(x.length,y.length);i++){if(x[i]===y[i])continue;return typeof x[i]==="number"&&typeof y[i]==="number"?x[i]-y[i]:String(x[i]??"").localeCompare(String(y[i]??""),undefined,{sensitivity:"base"});}
+      return 0;
+    });
+    if (!matches.length) { const empty=document.createElement("div");empty.className="empty";empty.textContent="No songs found. Try another word.";box.append(empty);return; }
+    matches.slice(0,30).forEach(song=>box.appendChild(songButton(song,"homeView")));
+    if(matches.length>30){const more=document.createElement("div");more.className="count";more.textContent=`Showing first 30 of ${matches.length} matches. Refine your search to narrow the list.`;box.append(more);}
+  }
+  $("homeSearchInput").addEventListener("input",renderHomeSearch);
+  $("smallerText").addEventListener("click",()=>{currentFontSize=Math.max(.85,currentFontSize-.1);$("lyricsText").style.fontSize=currentFontSize+"rem"});
+  $("largerText").addEventListener("click",()=>{currentFontSize=Math.min(2.1,currentFontSize+.1);$("lyricsText").style.fontSize=currentFontSize+"rem"});
+  renderTiles();
+})();
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(err => console.warn("Offline setup unavailable:", err)));
+}
+</script>
+</body>
+</html>
