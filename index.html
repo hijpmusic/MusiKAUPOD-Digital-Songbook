@@ -114,7 +114,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     <div class="topline"><button id="listBackButton" class="back-btn">← Back</button><h2 id="listHeading" class="view-title">Songs</h2></div>
     <div class="search-wrap"><input id="searchInput" type="search" placeholder="Search song title or lyrics…" autocomplete="off" aria-label="Search songs"></div>
     <div id="songCount" class="count"></div><div id="songList" class="song-list"></div>
-    <div id="emptyState" class="empty hidden">Waray pa nadudugang nga kanta hini nga kategoriya.</div>
+    <div id="emptyState" class="empty hidden">No songs have been added to this category yet.</div>
   </section>
 
   <section id="chantListView" class="hidden">
@@ -225,21 +225,22 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     applyTheme(next);
     try { localStorage.setItem("musikaupod-theme", next); } catch (_) {}
   });
-  const liturgyCategories = ["Kyrie A - Halip-ot","Kyrie B - Halaba","Gloria","Gospel Acclamation","Sanctus","Memorial Acclamation","Amen","Lord's Prayer","Doxology","Agnus Dei"];
+  const liturgyCategories = ["Kyrie - Short Form","Kyrie - Long Form","Gloria","Gospel Acclamation","Sanctus","Memorial Acclamation","Amen","Lord's Prayer","Doxology","Agnus Dei"];
   const seasons = ["Ordinary Time","Lent","Easter","Advent","Christmas"];
   const serviceCategories = ["Entrance","Offertory","Communion","Recessional"];
   const viewIds = ["homeView","liturgyCategories","seasonList","seasonCategories","songListView","chantListView","holyHourListView","fiestaListView","prayersView","prayerListView","readerView","aboutView","misaPastorellaView","misaSet1View","misaSet2View","misaSimplifiedView","misaRestoredView","sietePalabrasView"];
   const $ = id => document.getElementById(id);
   let currentList = [], currentBackView = "liturgyCategories", currentFontSize = 1.18, readerBackView = "songListView";
   const safe = v => String(v ?? "");
-  const displayCategory = value => ({Pagtuna:"Entrance",Paghalad:"Offertory",Komunyon:"Communion",Pagtapos:"Recessional",Ebanghelyo:"Gospel Acclamation",Banal:"Sanctus",Memoryal:"Memorial Acclamation", "Ama Namon":"Lord's Prayer",Doxologia:"Doxology",Kordero:"Agnus Dei",Kyrie:"Kyrie B - Halaba"}[safe(value)] || safe(value));
+  const displayCategory = value => ({Pagtuna:"Entrance",Paghalad:"Offertory",Komunyon:"Communion",Pagtapos:"Recessional",Ebanghelyo:"Gospel Acclamation",Banal:"Sanctus",Memoryal:"Memorial Acclamation", "Ama Namon":"Lord's Prayer",Doxologia:"Doxology",Kordero:"Agnus Dei",Kyrie:"Kyrie - Long Form"}[safe(value)] || safe(value));
   function romanRank(title) {
-    const m = safe(title).match(/(?:^|\s)(X{1,3}|IX|IV|V?I{1,3})(?=\s|$|-)/i);
-    if (!m) return 10000;
+    // Only a terminal Roman numeral marks a numbered liturgy song.
+    const m = safe(title).trim().match(/(?:^|\s)(X{1,3}|IX|IV|VI{0,3}|V|I{1,3})$/i);
+    if (!m) return Number.MAX_SAFE_INTEGER;
     const roman=m[1].toUpperCase();
     const vals={I:1,V:5,X:10}; let total=0, prev=0;
     for(let i=roman.length-1;i>=0;i--){const v=vals[roman[i]]||0; total += v<prev ? -v : v; prev=Math.max(prev,v);}
-    return total>0?total:10000;
+    return total>0?total:Number.MAX_SAFE_INTEGER;
   }
   function titleOrder(a,b) {
     const ra=romanRank(a.title), rb=romanRank(b.title);
@@ -395,6 +396,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     const matches = songs.filter(song => [song.title,song.lyrics,song.category,song.season,song.collection].some(v => safe(v).toLocaleLowerCase().includes(q))).sort((a,b)=>{
       const x=categoryRank(a), y=categoryRank(b);
       for(let i=0;i<Math.max(x.length,y.length);i++){if(x[i]===y[i])continue;return typeof x[i]==="number"&&typeof y[i]==="number"?x[i]-y[i]:String(x[i]??"").localeCompare(String(y[i]??""),undefined,{sensitivity:"base"});}
+      if(a.collection==="liturgy" && b.collection==="liturgy") return titleOrder(a,b);
       return 0;
     });
     if (!matches.length) { const empty=document.createElement("div");empty.className="empty";empty.textContent="No songs found. Try another word.";box.append(empty);return; }
