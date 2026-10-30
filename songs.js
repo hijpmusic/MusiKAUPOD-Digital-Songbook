@@ -1,3 +1,4 @@
+// MusiKaupod Digital Songbook — bundled offline song library.
 window.CHOIR_SONGS = [
   {
     "id": "krus-san-kaligtasan",
@@ -1673,7 +1674,7 @@ window.CHOIR_SONGS = [
     "collection": "liturgy",
     "category": "Gloria",
     "season": "",
-    "lyrics": "",
+    "lyrics": "Gloria, Gloria, Gloria in excelsis Deo!\n\nKag sa duta katoninongan \nsa mga tawo na maayo an buot\nGina-omaw Ka namon\nGina-bantog Ka namon\nGina-samba Ka namon\nGina-hatagan Ka namon sin glorya\nGina-pasalamatan Ka namon\nTungod san Imo dako na glorya\n\nGloria, Gloria, Gloria in excelsis Deo!\n\nGinoong Dios, Hadi san langit\nDios Ama na makagagahom\nsa tanan\nGinoong Hesukristo\nBugtong na Anak\nGinoong Dios, Kordero san Dios\nAnak san Ama\n\nGloria, Gloria, Gloria in excelsis Deo!\n\nIkaw na naga hali\nsan mga kasal-an\nsan kinab-an\nMaluoy Ka sa amon\n\nIkaw na naga hali\nsan mga kasal-an\nsan kinab-an\nBatuna an amon pangamuyo\n\nIkaw na naga-ingkod\nsa tuo san Ama\nMaluoy Ka sa amon\nMaluoy Ka sa amon\n\nKay Ikaw lang an banal\nIkaw lang an Ginoo\nIkaw lang an pinakahitaas\nHesukristo\nKaupod san Espiritu Santo\nSa glorya san Dios Ama\nAmen, Amen, Amen\n\nGloria, Gloria, Gloria in excelsis Deo!\n\nAmen, Amen, Amen, Amen, Ahhhhh",
     "language": "Minasbate",
     "scores": {
       "Soprano": "scores/soprano/gloria-missa-la-nina-maria-soprano.pdf",
@@ -1681,7 +1682,8 @@ window.CHOIR_SONGS = [
       "Tenor": "scores/tenor/gloria-missa-la-nina-maria-tenor.pdf",
       "Bass": "scores/bass/gloria-missa-la-nina-maria-bass.pdf"
     },
-    "source": "Composer: Alejandro Consolacion II; arranger: Robert Nicolas; HIJP Titular Fiesta 2025"
+    "source": "Composer: Alejandro Consolacion II; arranger: Robert Nicolas; HIJP Titular Fiesta 2025",
+    "hasLyrics": true
   },
   {
     "id": "kyrie-old-rite",
@@ -1716,13 +1718,14 @@ window.CHOIR_SONGS = [
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
-    "lyrics": "",
+    "lyrics": "Kyrie Eleison\nKyrie Eleison\nKyrie Eleison\nChriste Eleison\nChriste Eleison\nChriste Eleison\nKyrie Eleison\nKyrie Eleison\nKyrie Eleison",
     "language": "Minasbate",
     "scores": {
       "Full Score": "scores/combined/misa-pastorella-set1-simplified-kyrie.pdf"
     },
     "audio": "audio/misa-pastorella-set1-simplified-kyrie.mp3",
-    "subcategory": "Set 1 · Simplified"
+    "subcategory": "Set 1 · Simplified",
+    "hasLyrics": true
   },
   {
     "id": "mp-set1-simplified-gloria",
@@ -1730,13 +1733,14 @@ window.CHOIR_SONGS = [
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
-    "lyrics": "",
+    "lyrics": "Glória in excélsis Deo\net in terra pax homínibus\nbonae voluntátis.\nbonae voluntátis.\n\nLaudámus te,\nbenedícimus te,\nadorámus te,\nglorificámus te,\n\ngratias, gratias ágimus tibi, ágimus tibi \npropter magnam glóriam, glóriam tuam,\nDómine Deus, Rex cæléstis,\nDeus Pater omnípotens.\n\nDómine, Dómine Fili Unigénite, \nIesu, Iesu Christe,\nDómine Deus, Agnus Dei, Fílius Patris,\n\nqui tollis peccáta mundi, miserére nobis;\nqui tollis peccáta, peccáta mundi, \nsúscipe, súscipe deprecatiónem nostram.\nQui sedes ad déxteram, déxteram Patris, miserére nobis.\n\nQuóniam tu solus Sanctus, tu solus Dóminus, tu solus Altíssimus,\nIesu Christe, cum Sancto, cum Sancto Spíritu:\nin glória Dei Patris. Amen",
     "language": "Minasbate",
     "scores": {
       "Full Score": "scores/combined/misa-pastorella-set1-simplified-gloria.pdf"
     },
     "audio": "audio/misa-pastorella-set1-simplified-gloria.mp3",
-    "subcategory": "Set 1 · Simplified"
+    "subcategory": "Set 1 · Simplified",
+    "hasLyrics": true
   },
   {
     "id": "mp-set1-simplified-alleluia",
@@ -1744,13 +1748,14 @@ window.CHOIR_SONGS = [
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
-    "lyrics": "",
+    "lyrics": "Alleluia, Alleluia, Alleluia, Alleluia, Alleluia, Alleluia\n\nAdventum expectamus Iesu Domine\nLaudamus Te, in saecula fine\n\nAlleluia, Alleluia, Alleluia, Alleluia, Alleluia, Alleluia",
     "language": "Minasbate",
     "scores": {
       "Full Score": "scores/combined/misa-pastorella-set1-simplified-alleluia.pdf"
     },
     "audio": "audio/misa-pastorella-set1-simplified-alleluia.mp3",
-    "subcategory": "Set 1 · Simplified"
+    "subcategory": "Set 1 · Simplified",
+    "hasLyrics": true
   },
   {
     "id": "mp-set1-simplified-sanctus",
@@ -1758,13 +1763,14 @@ window.CHOIR_SONGS = [
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
-    "lyrics": "",
+    "lyrics": "Sanctus, Sanctus, Sanctus, \nDominus Deus Sabaoth. \nPleni sunt caeli et terra gloria Tua\n\nHosanna, Hosanna, Hosanna in excelsis\n\nBenedictus qui venit \nin nomine Domini,\nin nomine Domini.\n\nHosanna, Hosanna, Hosanna in excelsis",
     "language": "Minasbate",
     "scores": {
       "Full Score": "scores/combined/misa-pastorella-set1-simplified-sanctus.pdf"
     },
     "audio": "audio/misa-pastorella-set1-simplified-sanctus.mp3",
-    "subcategory": "Set 1 · Simplified"
+    "subcategory": "Set 1 · Simplified",
+    "hasLyrics": true
   },
   {
     "id": "mp-set1-simplified-memoriale",
@@ -1772,13 +1778,14 @@ window.CHOIR_SONGS = [
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
-    "lyrics": "",
+    "lyrics": "Salvator mundi, salva nos\nQui per crucem Tuam et resurrectionem\nLiberasti nos, liberasti nos\nLiberasti nos",
     "language": "Minasbate",
     "scores": {
       "Full Score": "scores/combined/misa-pastorella-set1-simplified-memoriale.pdf"
     },
     "audio": "audio/misa-pastorella-set1-simplified-memoriale.mp3",
-    "subcategory": "Set 1 · Simplified"
+    "subcategory": "Set 1 · Simplified",
+    "hasLyrics": true
   },
   {
     "id": "mp-set1-simplified-amen",
@@ -1786,13 +1793,14 @@ window.CHOIR_SONGS = [
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
-    "lyrics": "",
+    "lyrics": "Amen, Amen, Amen, Amen",
     "language": "Minasbate",
     "scores": {
       "Full Score": "scores/combined/misa-pastorella-set1-simplified-amen.pdf"
     },
     "audio": "audio/misa-pastorella-set1-simplified-amen.mp3",
-    "subcategory": "Set 1 · Simplified"
+    "subcategory": "Set 1 · Simplified",
+    "hasLyrics": true
   },
   {
     "id": "mp-set1-simplified-agnus-dei",
@@ -1800,13 +1808,14 @@ window.CHOIR_SONGS = [
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
-    "lyrics": "",
+    "lyrics": "Agnus Dei, qui tollis peccáta mundi: miserére nobis\nAgnus Dei, qui tollis peccáta mundi: miserére nobis\nAgnus Dei, qui tollis peccáta mundi: dona nobis pacem\ndona nobis pacem, dona nobis pacem\ndona nobis pacem",
     "language": "Minasbate",
     "scores": {
       "Full Score": "scores/combined/misa-pastorella-set1-simplified-agnus-dei.pdf"
     },
     "audio": "audio/misa-pastorella-set1-simplified-agnus-dei.mp3",
-    "subcategory": "Set 1 · Simplified"
+    "subcategory": "Set 1 · Simplified",
+    "hasLyrics": true
   },
   {
     "id": "kyrie-mass-christ-savior",
@@ -1859,81 +1868,160 @@ window.CHOIR_SONGS = [
     "hasLyrics": true
   },
   {
-    "id": "immaculate-mother",
-    "title": "IMMACULATE MOTHER",
+    "id": "alay-sa-diyos",
+    "title": "ALAY SA DIYOS",
     "collection": "service",
-    "category": "Marian Hymn",
-    "season": "Marian Hymns",
-    "lyrics": "Immaculate Mother, to you do we plead,\nTo ask God, our Father, for help in our need.\n\nRef:\nAve, Ave, Ave Maria! Ave, Ave, Ave Maria!\n\nWe pray for our country, the land of our birth,\nWe pray for all nations that peace be on earth.\n\nRef:\nAve, Ave, Ave Maria! Ave, Ave, Ave Maria!\n\nIn grief and temptation, in joy and in pain,\nWe'll seek thee, our Mother, nor seek thee in vain.\n\nRef:\nAve, Ave, Ave Maria! Ave, Ave, Ave Maria!\n\nWe pray for our Mother, the Church upon earth,\nAnd bless, sweetest lady, the land of our birth.\n\nRef:\nAve, Ave, Ave Maria! Ave, Ave, Ave Maria!",
-    "language": "English",
-    "hasLyrics": true,
-    "tags": [
-      "marian"
-    ]
+    "category": "Offertory",
+    "season": "Ordinary Time",
+    "lyrics": "O Diyos, awang 'di-mabilang\nTanggapin mo yaring aming alay\nGawin ito bilang tanda\nNg aming kaligtasan\n\nNarito O Ama, alak at tinapay\nBunga ng lupa at ng aming paggawa\n\nO Diyos, awang ’di-mabilang\nTanggapin mo yaring aming alay\nGawing alaala ng pagkamatay\nMuling pagkabuhay ni Hesukristo\n\nNarito O Ama, alak at tinapay\nBunga ng lupa at ng aming paggawa\n\nO Diyos, awang 'di-mabilang\nTanggapin mo yaring aming alay\nSagisag itong sakripisyo\nMapasaamin ang buhay na walang hanggan\n\nNarito O Ama, alak at tinapay\nBunga ng lupa at ng aming paggawa",
+    "language": "Tagalog",
+    "hasLyrics": true
   },
   {
-    "id": "stella-maris",
-    "title": "STELLA MARIS",
+    "id": "laudate-dominum",
+    "title": "LAUDATE DOMINUM",
     "collection": "service",
-    "category": "Marian Hymn",
-    "season": "Marian Hymns",
-    "lyrics": "Kung itong aming paglalayag\nInabot ng pagkabagabag\nNawa'y mabanaagan ka\nHinirang na tala ng umaga\n\nKahit alon man ng pangamba\n'Di alintana sapagkat naro'n ka\nNi unos ng pighati\nAt kadiliman ng gabi\n\nMaria, sa puso ninuman\nIka'y tala ng kalangitan\nNingning mo ay walang pagmamaliw\nInang sinta, Inang ginigiliw\n\nTanglawan kami aming Ina\nSa kalangitan naming pita\nNawa'y maging hantungan\nPinakamimithing kaharian\n\nMaria, sa puso ninuman\nIka'y tala ng kalangitan\nNingning mo ay walang pagmamaliw\nInang sinta, Inang ginigiliw\n\nMaria, sa puso ninuman\nIka'y tala ng kalangitan\nNingning mo ay walang pagmamaliw\nInang sinta, Inang ginigiliw",
+    "category": "Offertory",
+    "season": "Ordinary Time",
+    "lyrics": "Laudate Dominum, purihin ang Diyos\nO sangkatauhan, santinakpan, laudate Dominum\nLaudate Dominum, purihin ang Diyos\nO sangkatauhan, santinakpan, laudate Dominum\n\nSa bayang sinalanta, bubong ang 'Yong kalinga\nSa binagyo ng dahas, kaloob Mo ang lakas\n\nLaudate Dominum, purihin ang Diyos\nO sangkatauhan, santinakpan, laudate Dominum\nLaudate Dominum, purihin ang Diyos\nO sangkatauhan, santinakpan, laudate Dominum\n\nSa'ming mga may sakit, lunas ang Iyong pag-ibig\nSa'ming dahop sa buhay, yaman ang may kaagapay\n\nLaudate Dominum, purihin ang Diyos\nO sangkatauhan, santinakpan, laudate Dominum\nLaudate Dominum, purihin ang Diyos\nO sangkatauhan, santinakpan, laudate Dominum\n\nSa'ming nangungulila, bukload ang pagsasama\nSa nilimot ng lipunan, tinawag Mo sa handaan\n\nLaudate Dominum, purihin ang Diyos\nO sangkatauhan, santinakpan, laudate Dominum\nLaudate Dominum, purihin ang Diyos\nO sangkatauhan, santinakpan, laudate Dominum",
     "language": "Tagalog",
-    "hasLyrics": true,
-    "tags": [
-      "marian"
-    ]
+    "hasLyrics": true
   },
   {
-    "id": "awit-sa-ina-ng-santo-rosaryo",
-    "title": "AWIT SA INA NG SANTO ROSARYO",
+    "id": "handog-namin",
+    "title": "HANDOG NAMIN",
     "collection": "service",
-    "category": "Marian Hymn",
-    "season": "Marian Hymns",
-    "lyrics": "Minsan ang buhay ay isang awit ng galak\nAt mayroong liwanag na tatanglaw sa 'ting pagyapak\nMinsan ang buhay ay isang awit ng luha\nAt siyang papawi nito ay ang pag-asa ng umaga\n\nAt kahit anong tindi ng unos at kahit anong tindi ng dilim\nMay isang inang nagmamatyag nagmamahal sa 'tin\nAwit niya'y pag-ibig ng Diyos tawag niya'y magbalik-loob\nTuro nya'y buhay na ang Diyos lamang sa ati'y nagkaloob\n\nO Inang mahal narito kami awit awit ang Ave Maria\nAt dalangin ng bawat pamilya'y kapayapaa't pagkakaisa\nAng rosaryo mong hawak namin at awit awit ang Ave Maria\nPuspos ka ng diwang banal dinggin ang aming payak na dasal\nIhatid mo kami sa langit ng Amang mapagmahal\n\nO Inang mahal narito kami't awit awit ang Ave maria\nSa anak mong si Jesus puso namin ay ihahandog\nAng rosario mong hawak namin at awit awit ang Ave Maria\nPuspos ka ng diwang banal dinggin ang aming payak na dasal\nIhatid mo kami sa langit ng Amang mapagmahal",
+    "category": "Offertory",
+    "season": "Ordinary Time",
+    "lyrics": "Handog namin sa iyo Ama\nAng tinapay at alak na ito\nHandog ng bayang umaasa\nSumasamba’t nagmamahal sa'yo\n\nNawa’y dalhin ng ‘yong anghel\nAng aming panalangin sa ‘yong dambana\nKatulad ng halimuyak ng insensong\nUmaakyat sa kalangitan\n\nHandog namin sa iyo Ama\nAng tinapay at alak na ito\nHandog ng bayang umaasa\nSumasamba’t nagmamahal sa ‘yo\n\nNawa’y ang aming kaloob\nMaging si Hesukristong aming Panginoon\nAng sinumang tumanggap at makisalo\nAy mabubuhay kailan pa man\n\nHandog namin sa Iyo, Ama\nAng tinapay at alak na ito\nHandog ng bayang umaasa\nSumasamba’t nagmamahal sa 'Yo",
     "language": "Tagalog",
-    "hasLyrics": true,
-    "tags": [
-      "marian"
-    ]
+    "hasLyrics": true
   },
   {
-    "id": "aba-ginoong-maria",
-    "title": "ABA GINOONG MARIA",
+    "id": "unang-alay",
+    "title": "UNANG ALAY",
     "collection": "service",
-    "category": "Marian Hymn",
-    "season": "Marian Hymns",
-    "lyrics": "Aba, Ginoong Maria\nNapupuno ka ng grasya\nAng Panginoon ay sumasaiyo\nBukod kang pinagpala sa babaeng lahat\nAt pinagpala naman\nAng 'yong anak na si Hesus\n\nSanta Maria, Ina ng Diyos\nIpanalangin mo kaming makasalanan\nNgayon at kung kami'y mamamatay\nAmen\n\nSanta Maria, Ina ng Diyos\nIpanalangin mo kaming makasalanan\nNgayon at kung kami'y mamamatay\nAmen",
+    "category": "Offertory",
+    "season": "Ordinary Time",
+    "lyrics": "Kunin at tanggapin ang alay na ito\nMga biyayang nagmula sa pagpapala Mo\nTanda ng bawat pusong 'pagkat inibig Mo\nNgayo'y nananalig, nagmamahal sa 'Yo\n\nTinapay na nagmula sa butil ng trigo\nPagkaing nagbibigay ng buhay Mo\nAt alak na nagmula sa isang tangkay ng ubas\nInuming nagbibigay lakas\n\nKunin at tanggapin ang alay na ito\nMga biyayang nagmula sa pagpapala Mo\nTanda ng bawat pusong 'pagkat inibig Mo\nNgayo'y nananalig, nagmamahal sa 'Yo\n\nLahat ng mga lungkot, ligaya't pagsubok\nLahat ng lakas at kahinaan ko\nInalay ko'ng lahat, buong pagkatao\nIto ay isusunod sa 'yo\n\nKunin at tanggapin ang alay na ito\nMga biyayang nagmula sa pagpapala Mo\nTanda ng bawat pusong 'pagkat inibig Mo\nNgayo'y nananalig, nagmamahal sa 'Yo\n\nAng bayang inibig mo, ngayo'y umaawit\nSa 'Yo ay sumasamba't nananalig\nUmaasang diringgin ang bawat dalangin\nSa alay na ito'y nakalakip\n\nKunin at tanggapin ang alay na ito\nMga biyayang nagmula sa pagpapala Mo\nTanda ng bawat pusong 'pagkat inibig Mo\nNgayo'y nananalig, nagmamahal sa 'Yo",
     "language": "Tagalog",
-    "hasLyrics": true,
-    "tags": [
-      "marian"
-    ]
+    "hasLyrics": true
   },
   {
-    "id": "abang-maria",
-    "title": "ABANG MARIA",
+    "id": "paghahandog",
+    "title": "PAGHAHANDOG",
     "collection": "service",
-    "category": "Marian Hymn",
-    "season": "Marian Hymns",
-    "lyrics": "Sinong mas malumanay sa kogong kumakaway?\nSinong mas dalisay sa hamog sa himaymay?\nSinong mas malambing sa mapaglarong hangin?\nSinong mas maningning sa buwan at bituin?\n\nAbang Maria, Mahal naming ina\nAng landas tungo kay Hesukristo\nBuong tiwala kanyang winika\n\"Maganap nawa ang 'Yong salita\"\n\nSinong magpapayapa sa bagyong nananakot?\nSinong magpapasigla sa damong sumukot?\nSinong takbuhan ng mga dukha?\nSinong tanggulan ng mahihina?\n\nAbang Maria, Mahal naming ina\nAng landas tungo kay Hesukristo\nBuong tiwala kanyang winika\n\"Maganap nawa ang 'Yong salita\"\n\nSinong dakilang lingkod ng Amang Utos?\nSanta Maria, ina ng Diyos",
+    "category": "Offertory",
+    "season": "Ordinary Time",
+    "lyrics": "Ang himig Mo, ang awit ko\nLahat ng ito'y nagmula sa Iyo\nMuling ihahandog sa Iyo\nBuong puso kong inaalay sa 'Yo\n\nO Diyos, oh Panginoon\nLahat ay biyayang aming inampon\nAming buhay at kakayahan\nIto'y para lamang sa 'Yong kaluwalhatian\n\nAng tanging ninanais ko\nAy matamo lamang ang pag-ibig Mo\nLahat ay iiwanan ko\nWala nang kailangan, sapat na ito\n\nO Diyos, oh Panginoon\nLahat ay biyayang aming inampon\nAming buhay at kakayahan\nIto'y para lamang sa 'Yong kaluwalhatian",
     "language": "Tagalog",
-    "hasLyrics": true,
-    "tags": [
-      "marian"
-    ]
+    "hasLyrics": true
   },
   {
-    "id": "ave-maria-tag",
-    "title": "AVE MARIA",
+    "id": "pag-ibig-ko",
+    "title": "PAG-IBIG KO",
     "collection": "service",
-    "category": "Marian Hymn",
-    "season": "Marian Hymns",
-    "lyrics": "Ave Maria, gratia plena\nDominus tecum, Benedicta tu\nBenedicta tu in mulieribus\nEt benedictus fructus ventris tui, Iesu\n\nSancta Maria, Mater Dei\nOra pro nobis, peccatoribus\nNunc et in hora mortis nostrae\n\nAve Maria, gratia plena\nDominus tecum. Benedicta tu\nBenedicta tu in mulieribus\nEt benedictus fructus ventris tui, Iesu\n\nAmen",
+    "category": "Communion",
+    "season": "Ordinary Time",
+    "lyrics": "Hindi ka kailangang magbago\nKahit ito'y mas ibig ko\nHindi ka kailangang magsikap nang husto\nUpang ika'y ibigin ko\n\nIniibig kita manalig ka sana\nAko'y kapiling mo\nKahit ikaw pa ma'y mapalayo\n\nKailan magwawakas ang 'yong pagtatago\nAko'y naghihintay sa 'yo\nLumapit ka lamang ang puso ko'y hagkan\nPag-ibig ko'y walang hanggan\n\nIniibig kita manalig ka sana\nAko'y kapiling mo\nKahit ikaw pa ma'y mapalayo\n\nIniibig kita manalig ka sana\nAko'y kapiling mo\nKahit ikaw pa ma'y mapalayo",
     "language": "Tagalog",
-    "hasLyrics": true,
-    "tags": [
-      "marian"
-    ]
+    "hasLyrics": true
+  },
+  {
+    "id": "ang-tanging-alay-ko",
+    "title": "ANG TANGING ALAY KO",
+    "collection": "service",
+    "category": "Offertory",
+    "season": "Ordinary Time",
+    "lyrics": "Salamat sa Iyo\nAking Panginoong Hesus\nAko'y inibig Mo\nAt inangking lubos\n\nAng tanging alay ko sa 'Yo, aking Ama\nAy buong buhay ko, puso at kalul'wa\nHindi makayanang maipagkaloob\nMamahaling hiyas, ni gintong nilukob\n\nAng aking dalangin, o, Diyos, ay tanggapin\nAng tanging alay ko, nawa ay gamitin\nIto lamang, Ama, wala nang iba pa akong hinihiling\n\n'Di ko akalain\nAko ay binigyang pansin\nAng taong tulad ko'y\n'Di dapat mahalin\n\nAng tanging alay ko sa 'Yo, aking Ama\nAy buong buhay ko, puso at kalul'wa\nHindi makayanang maipagkaloob\nMamahaling hiyas, ni gintong nilukob\n\nAng aking dalangin, o, Diyos, ay tanggapin\nAng tanging alay ko, nawa ay gamitin\nIto lamang, Ama, wala nang iba pa akong hinihiling",
+    "language": "Tagalog",
+    "hasLyrics": true
+  },
+  {
+    "id": "umawit-kang-masaya",
+    "title": "UMAWIT KANG MASAYA",
+    "collection": "service",
+    "category": "Recessional",
+    "season": "Easter",
+    "lyrics": "Umawit kang masaya\nUmawit kang masaya\nsa Panginoon, umawit kang masaya\nUmawit kang masaya\nsa Panginoon\n\nO 'sangkalupaan, umawit ka\nUmawit ka ng may kagalakan\n\nUmawit kang masaya\nUmawit kang masaya\nsa Panginoon, umawit kang masaya\nUmawit kang masaya\nsa Panginoon",
+    "language": "Tagalog",
+    "hasLyrics": true
+  },
+  {
+    "id": "mp-set1-restored-kyrie",
+    "title": "KYRIE",
+    "collection": "misa-pastorella",
+    "category": "Misa Pastorella",
+    "season": "",
+    "lyrics": "Kyrie Eleison\nKyrie Eleison\nKyrie Eleison\nChriste Eleison\nChriste Eleison\nChriste Eleison\nKyrie Eleison\nKyrie Eleison\nKyrie Eleison",
+    "language": "Minasbate",
+    "subcategory": "Set 1 · Restored",
+    "hasLyrics": true
+  },
+  {
+    "id": "mp-set1-restored-gloria",
+    "title": "GLORIA",
+    "collection": "misa-pastorella",
+    "category": "Misa Pastorella",
+    "season": "",
+    "lyrics": "Glória in excélsis Deo\net in terra pax homínibus\nbonae voluntátis.\nbonae voluntátis.\n\nLaudámus te,\nbenedícimus te,\nadorámus te,\nglorificámus te,\n\ngratias, gratias ágimus tibi, ágimus tibi \npropter magnam glóriam, glóriam tuam,\nDómine Deus, Rex cæléstis,\nDeus Pater omnípotens.\n\nDómine, Dómine Fili Unigénite, \nIesu, Iesu Christe,\nDómine Deus, Agnus Dei, Fílius Patris,\n\nqui tollis peccáta mundi, miserére nobis;\nqui tollis peccáta, peccáta mundi, \nsúscipe, súscipe deprecatiónem nostram.\nQui sedes ad déxteram, déxteram Patris, miserére nobis.\n\nQuóniam tu solus Sanctus, tu solus Dóminus, tu solus Altíssimus,\nIesu Christe, cum Sancto, cum Sancto Spíritu:\nin glória Dei Patris. Amen",
+    "language": "Minasbate",
+    "subcategory": "Set 1 · Restored",
+    "hasLyrics": true
+  },
+  {
+    "id": "mp-set1-restored-alleluia",
+    "title": "ALLELUIA",
+    "collection": "misa-pastorella",
+    "category": "Misa Pastorella",
+    "season": "",
+    "lyrics": "Alleluia, Alleluia, Alleluia, Alleluia, Alleluia, Alleluia\n\nAdventum expectamus Iesu Domine\nLaudamus Te, in saecula fine\n\nAlleluia, Alleluia, Alleluia, Alleluia, Alleluia, Alleluia",
+    "language": "Minasbate",
+    "subcategory": "Set 1 · Restored",
+    "hasLyrics": true
+  },
+  {
+    "id": "mp-set1-restored-sanctus",
+    "title": "SANCTUS",
+    "collection": "misa-pastorella",
+    "category": "Misa Pastorella",
+    "season": "",
+    "lyrics": "Sanctus, Sanctus, Sanctus, \nDominus Deus Sabaoth. \nPleni sunt caeli et terra gloria Tua\n\nHosanna, Hosanna, Hosanna in excelsis\n\nBenedictus qui venit \nin nomine Domini,\nin nomine Domini.\n\nHosanna, Hosanna, Hosanna in excelsis",
+    "language": "Minasbate",
+    "subcategory": "Set 1 · Restored",
+    "hasLyrics": true
+  },
+  {
+    "id": "mp-set1-restored-memoriale",
+    "title": "MEMORIALE",
+    "collection": "misa-pastorella",
+    "category": "Misa Pastorella",
+    "season": "",
+    "lyrics": "Salvator mundi, salva nos\nQui per crucem Tuam et resurrectionem\nLiberasti nos, liberasti nos\nLiberasti nos",
+    "language": "Minasbate",
+    "subcategory": "Set 1 · Restored",
+    "hasLyrics": true
+  },
+  {
+    "id": "mp-set1-restored-amen",
+    "title": "AMEN",
+    "collection": "misa-pastorella",
+    "category": "Misa Pastorella",
+    "season": "",
+    "lyrics": "Amen, Amen, Amen, Amen",
+    "language": "Minasbate",
+    "subcategory": "Set 1 · Restored",
+    "hasLyrics": true
+  },
+  {
+    "id": "mp-set1-restored-agnus-dei",
+    "title": "AGNUS DEI",
+    "collection": "misa-pastorella",
+    "category": "Misa Pastorella",
+    "season": "",
+    "lyrics": "Agnus Dei, qui tollis peccáta mundi: miserére nobis\nAgnus Dei, qui tollis peccáta mundi: miserére nobis\nAgnus Dei, qui tollis peccáta mundi: dona nobis pacem\ndona nobis pacem, dona nobis pacem\ndona nobis pacem",
+    "language": "Minasbate",
+    "subcategory": "Set 1 · Restored",
+    "hasLyrics": true
   }
 ];

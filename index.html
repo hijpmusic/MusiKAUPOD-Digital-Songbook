@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#392052">
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>MusiKaupod Digital Songbook</title>
@@ -95,25 +97,6 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
 :root[data-theme="dark"] .feature-tile,:root[data-theme="dark"] .feature-card,:root[data-theme="dark"] .feature-input,:root[data-theme="dark"] .feature-select{background:#26202e;color:#f5f0fa;border-color:#51445d}
 :root[data-theme="dark"] .feature-tile .feature-icon{background:#443052;color:#f3d98d}:root[data-theme="dark"] .feature-tile small,:root[data-theme="dark"] .resource-item small,:root[data-theme="dark"] .status-pill{color:#c5b9d0}
 
-
-/* Floating song selector for the Mass Lineup Builder */
-.lineup-picker-overlay{position:fixed;inset:0;z-index:1200;background:#17121dcc;display:flex;align-items:center;justify-content:center;padding:18px;overflow-y:auto}
-.lineup-picker-panel{width:min(620px,100%);max-height:min(82dvh,760px);display:flex;flex-direction:column;overflow:hidden;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:19px;padding:17px;box-shadow:0 22px 70px #0006}
-.lineup-picker-head{display:flex;align-items:flex-start;gap:12px;justify-content:space-between;margin-bottom:8px}.lineup-picker-head h3{margin:0 0 4px;font-size:1.12rem}.lineup-picker-head .subtitle{font-size:.8rem;margin:0}
-.lineup-picker-list{overflow-y:auto;overscroll-behavior:contain;display:grid;gap:7px;min-height:0;padding:1px 3px 2px 1px}
-.lineup-picker-song{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);cursor:pointer}.lineup-picker-song:disabled{opacity:.55;cursor:default}.lineup-picker-song-text{min-width:0;display:grid;gap:3px}.lineup-picker-song-text span{font-weight:700;overflow-wrap:anywhere}.lineup-picker-song-text small{font-size:.76rem;color:var(--muted)}.lineup-picker-meta{flex:0 0 auto;color:var(--violet);font-size:.8rem;font-weight:700}
-:root[data-theme="dark"] .lineup-picker-song{background:#26202e;color:#f5f0fa;border-color:#51445d}:root[data-theme="dark"] .lineup-picker-meta{color:#f3d98d}
-@media(max-width:600px){.lineup-picker-overlay{align-items:flex-end;padding:0}.lineup-picker-panel{width:100%;max-height:88dvh;border-radius:20px 20px 0 0;padding:16px 14px calc(16px + env(safe-area-inset-bottom));border-bottom:0}.lineup-picker-song{padding:13px 11px}}
-
-
-/* Compact share dialog: display a descriptive clickable link instead of exposing the long URL. */
-.share-link-overlay{position:fixed;inset:0;z-index:1300;background:#17121dcc;display:flex;align-items:center;justify-content:center;padding:18px;overflow-y:auto}
-.share-link-panel{width:min(540px,100%);padding:18px;box-shadow:0 22px 70px #0006}
-.share-link-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.share-link-head h3{margin:0;font-size:1.12rem}
-.share-link-preview{border:1px solid var(--line);border-radius:13px;padding:14px;background:var(--card);overflow-wrap:anywhere}.share-link-preview .subtitle{margin:0 0 8px}.share-link-label{font-weight:750;color:var(--violet);text-decoration:underline;text-underline-offset:3px}.share-link-hint{font-size:.8rem;margin:12px 0}.share-link-actions{display:flex;gap:8px;flex-wrap:wrap}.share-link-actions .feature-btn{flex:1;min-width:130px}
-:root[data-theme="dark"] .share-link-preview{background:#26202e;border-color:#51445d}:root[data-theme="dark"] .share-link-label{color:#f3d98d}
-@media(max-width:600px){.share-link-overlay{align-items:flex-end;padding:0}.share-link-panel{width:100%;border-radius:20px 20px 0 0;padding:17px 14px calc(17px + env(safe-area-inset-bottom))}}
-
 </style>
 </head>
 <body>
@@ -154,7 +137,6 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
       <button class="tile" data-open="chantListView"><span class="tile-icon">♬</span><span class="tile-title">Gregorian Chant</span><span class="tile-sub">An pinaka sagrado na Cantos Gregorianos</span></button>
       <button class="tile" data-open="misaPastorellaView"><span class="tile-icon">♫</span><span class="tile-title">Misa Pastorella</span><span class="tile-sub">Set 1 and Set 2</span></button>
       <button class="tile" data-open="sietePalabrasView"><span class="tile-icon">✝</span><span class="tile-title">Siete Palabras</span><span class="tile-sub">Mga kanta san Siete Palabras</span></button>
-      <button class="tile tile-disabled" data-open="prayersView" disabled aria-disabled="true" title="Not included in Version 1"><span class="tile-icon">✧</span><span class="tile-title">Mga Pangadeyon</span><span class="tile-sub">Pilion an lengwahe san pangadyeon</span></button>
       <button class="tile" data-open="aboutView"><span class="tile-icon">ⓘ</span><span class="tile-title">About</span><span class="tile-sub">Nano an HIJP MMC?</span></button>
     </div>
     <div class="feature-actions" aria-label="Songbook tools">
@@ -171,7 +153,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
 
   <section id="seasonList" class="hidden">
     <div class="topline"><button class="back-btn" data-back="homeView">← Home</button><h2 class="view-title">Service Songs</h2></div>
-    <p class="subtitle">Pilion an panahon san liturhiya o Marian Hymns</p><div id="seasonGrid" class="grid"></div>
+    <p class="subtitle">Pilion an panahon san liturhiya</p><div id="seasonGrid" class="grid"></div>
   </section>
 
   <section id="seasonCategories" class="hidden">
@@ -420,53 +402,15 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   function renderLineupSlots(){const box=$("lineupSlots");box.replaceChildren();const lineup=lineups[activeLineup];const validation=$("lineupValidation");if(!lineup){validation.textContent="Create or select a lineup";return;}const errors=lineupErrors(lineup);validation.textContent=errors.length?`${errors.length} requirement(s) remaining`:"Lineup complete — ready to share";validation.className="status-pill";validation.style.borderColor=errors.length?"var(--gold)":"#38a169";
     MASS_SLOTS.forEach(slot=>{const section=document.createElement("div");section.className="lineup-slot";section.style.gridTemplateColumns="minmax(130px, .8fr) minmax(0,2fr) auto";const label=document.createElement("strong");label.textContent=slot.label;const area=document.createElement("div");area.className="slot-song";const ids=lineup.slots[slot.key]||[];if(!ids.length)area.textContent=slot.min?"Required — no song selected":"Optional — none selected";ids.forEach((id,index)=>{const song=songs.find(x=>x.id===id);const line=document.createElement("div");line.style.display="flex";line.style.gap="6px";line.style.alignItems="center";line.style.margin="3px 0";const name=document.createElement("span");name.textContent=song?song.title:`Missing song (${id})`;name.style.flex="1";const remove=document.createElement("button");remove.className="small-btn";remove.type="button";remove.textContent="Remove";remove.addEventListener("click",()=>{lineup.slots[slot.key].splice(index,1);persistLineups();renderLineupSlots();renderLineups();});line.append(name,remove);area.append(line);});const add=document.createElement("button");add.className="feature-btn secondary";add.type="button";add.textContent="＋ Choose";add.disabled=ids.length>=slot.max;add.addEventListener("click",()=>chooseSongForSlot(slot));section.append(label,area,add);box.append(section);});
   }
-  let activeSongPicker=null;
-  function closeSongPicker(){if(activeSongPicker){activeSongPicker.remove();activeSongPicker=null;}document.removeEventListener("keydown",songPickerKeydown);}
-  function songPickerKeydown(event){if(event.key==="Escape")closeSongPicker();}
-  function chooseSongForSlot(slot){const lineup=lineups[activeLineup];if(!lineup)return;closeSongPicker();const candidates=candidatesFor(slot);if(!candidates.length){alert(slot.key==="Marian Song"?"No songs are currently tagged as Marian. Marian songs must be tagged in the catalogue before they can be selected here.":`No songs are currently available for ${slot.label}.`);return;}
-    const overlay=document.createElement("div");overlay.className="lineup-picker-overlay";overlay.setAttribute("role","presentation");const panel=document.createElement("section");panel.className="lineup-picker-panel";panel.setAttribute("role","dialog");panel.setAttribute("aria-modal","true");panel.setAttribute("aria-label",`Choose ${slot.label}`);
-    const head=document.createElement("div");head.className="lineup-picker-head";const heading=document.createElement("div");const title=document.createElement("h3");title.textContent=`Choose ${slot.label}`;const hint=document.createElement("p");hint.className="subtitle";hint.textContent=slot.max>1?`Select songs one at a time · ${lineup.slots[slot.key].length}/${slot.max} selected`:`Choose one song from the permitted category`;heading.append(title,hint);const close=document.createElement("button");close.className="search-close";close.type="button";close.textContent="✕";close.setAttribute("aria-label","Close song selector");close.addEventListener("click",closeSongPicker);head.append(heading,close);
-    const search=document.createElement("input");search.className="feature-input";search.type="search";search.placeholder="Search song titles…";search.setAttribute("aria-label","Search song titles");search.style.width="100%";search.style.margin="4px 0 12px";
-    const list=document.createElement("div");list.className="lineup-picker-list";
-    function draw(){list.replaceChildren();const q=search.value.trim().toLocaleLowerCase();const filtered=candidates.filter(song=>!q||song.title.toLocaleLowerCase().includes(q));if(!filtered.length){const empty=document.createElement("p");empty.className="empty";empty.textContent="No matching song titles.";list.append(empty);return;}filtered.forEach(song=>{const chosen=lineup.slots[slot.key].includes(song.id);const row=document.createElement("button");row.type="button";row.className="lineup-picker-song";row.disabled=chosen||lineup.slots[slot.key].length>=slot.max;const name=document.createElement("span");name.textContent=song.title;const category=document.createElement("small");category.textContent=song.category;const meta=document.createElement("span");meta.className="lineup-picker-meta";meta.textContent=chosen?"Added ✓":row.disabled?"Limit reached":"＋ Add";const text=document.createElement("span");text.className="lineup-picker-song-text";text.append(name,category);row.append(text,meta);row.addEventListener("click",()=>{const allowed=slot.category==="__ANY__"||(Array.isArray(slot.category)?slot.category.includes(song.category):slot.category==="__MARIAN_TAG__"?((song.tags||[]).includes("marian")||song.category==="Marian Song"):song.category===slot.category);if(!allowed){alert("That song does not belong in this lineup category.");return;}if(lineup.slots[slot.key].length>=slot.max)return;lineup.slots[slot.key].push(song.id);persistLineups();renderLineupSlots();renderLineups();if(slot.max===1)closeSongPicker();else{hint.textContent=`Select songs one at a time · ${lineup.slots[slot.key].length}/${slot.max} selected`;draw();}});list.append(row);});}
-    search.addEventListener("input",draw);overlay.addEventListener("click",event=>{if(event.target===overlay)closeSongPicker();});panel.append(head,search,list);overlay.append(panel);document.body.append(overlay);activeSongPicker=overlay;document.addEventListener("keydown",songPickerKeydown);draw();search.focus();}
-
+  function chooseSongForSlot(slot){const lineup=lineups[activeLineup];if(!lineup)return;const candidates=candidatesFor(slot);if(!candidates.length){alert(slot.key==="Marian Song"?"No songs are currently tagged as Marian. Marian songs must be tagged in the catalogue before they can be selected here.":`No songs are currently available for ${slot.label}.`);return;}const picker=document.createElement("div");picker.className="feature-card";picker.style.marginTop="10px";const title=document.createElement("h3");title.textContent=`Choose ${slot.label}`;const select=document.createElement("select");select.className="feature-select";select.style.width="100%";const empty=document.createElement("option");empty.value="";empty.textContent="Select a song…";select.append(empty);candidates.forEach(song=>{const opt=document.createElement("option");opt.value=song.id;opt.textContent=song.title;select.append(opt);});const actions=document.createElement("div");actions.className="feature-row";const cancel=document.createElement("button");cancel.className="feature-btn secondary";cancel.textContent="Cancel";cancel.addEventListener("click",()=>picker.remove());const add=document.createElement("button");add.className="feature-btn";add.textContent="Add song";add.addEventListener("click",()=>{if(!select.value)return;const song=songs.find(x=>x.id===select.value);if(!song)return;if(slot.category!=="__ANY__"&&!(Array.isArray(slot.category)?slot.category.includes(song.category):slot.category==="__MARIAN_TAG__"?((song.tags||[]).includes("marian")||song.category==="Marian Song"):song.category===slot.category)){alert("That song does not belong in this lineup category.");return;}if(lineup.slots[slot.key].length>=slot.max){alert(`Maximum ${slot.max} song(s) allowed.`);return;}lineup.slots[slot.key].push(song.id);persistLineups();picker.remove();renderLineupSlots();renderLineups();});actions.append(cancel,add);picker.append(title,select,actions);$("lineupSlots").prepend(picker);select.focus();}
   function saveCurrentLineup(){const name=$("lineupName").value.trim()||`Mass Lineup ${lineups.length+1}`;lineups.push({id:`local-${Date.now()}-${Math.random().toString(36).slice(2,8)}`,name,date:$("lineupDate").value||"",occasion:$("lineupOccasion").value.trim(),notes:$("lineupNotes").value.trim(),slots:emptySlots()});activeLineup=lineups.length-1;$("lineupName").value="";$("lineupDate").value="";$("lineupOccasion").value="";$("lineupNotes").value="";persistLineups();renderLineups();}
     function b64urlEncode(text){const bytes=new TextEncoder().encode(text);let binary="";bytes.forEach(b=>binary+=String.fromCharCode(b));return btoa(binary).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/g,"");}
   function b64urlDecode(value){const raw=value.replace(/-/g,"+").replace(/_/g,"/");const binary=atob(raw+"=".repeat((4-raw.length%4)%4));const bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));return new TextDecoder().decode(bytes);}
   function makeSnapshot(lineup){return {formatVersion:2,snapshotId:`snap-${Date.now()}-${Math.random().toString(36).slice(2,9)}`,originalLineupId:lineup.id||"",createdAt:new Date().toISOString(),title:lineup.name,date:lineup.date||"",occasion:lineup.occasion||"",notes:lineup.notes||"",songs:MASS_SLOTS.flatMap(slot=>(lineup.slots[slot.key]||[]).map((songId,index)=>({songId,category:slot.key,position:index+1}))) };}
   async function encodeSnapshot(snapshot){const bytes=new TextEncoder().encode(JSON.stringify(snapshot));if("CompressionStream" in window){try{const stream=new Blob([bytes]).stream().pipeThrough(new CompressionStream("gzip"));const packed=new Uint8Array(await new Response(stream).arrayBuffer());let binary="";packed.forEach(b=>binary+=String.fromCharCode(b));return "g"+btoa(binary).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/g,"");}catch(_){}}return "j"+b64urlEncode(new TextDecoder().decode(bytes));}
   async function decodeSnapshot(value){if(value.startsWith("g")){if(!( "DecompressionStream" in window))throw new Error("This browser cannot open compressed lineup links. Please update your browser.");const raw=value.slice(1).replace(/-/g,"+").replace(/_/g,"/");const binary=atob(raw+"=".repeat((4-raw.length%4)%4));const bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));return JSON.parse(new TextDecoder().decode(await new Response(stream).arrayBuffer()));}if(value.startsWith("j"))return JSON.parse(b64urlDecode(value.slice(1)));throw new Error("Unknown lineup link format");}
-  async function shareLineup(index){
-    const lineup=lineups[index];if(!lineup)return;
-    const errors=[...lineupErrors(lineup),...lineupCategoryErrors(lineup)];
-    if(errors.length){alert("This lineup cannot be shared yet:\n\n"+errors.join("\n"));return;}
-    const snapshot=makeSnapshot(lineup);const payload=await encodeSnapshot(snapshot);
-    const link=`${location.origin}${location.pathname}#/shared/${payload}`;
-    if(link.length>7000){alert("This lineup creates a very long link. Please shorten its notes or reduce the number of songs.");return;}
-    showShareLink(snapshot,link);
-  }
-  function showShareLink(snapshot,link){
-    const overlay=document.createElement("div");overlay.className="share-link-overlay";overlay.setAttribute("role","dialog");overlay.setAttribute("aria-modal","true");overlay.setAttribute("aria-label","Share Mass Lineup");
-    const panel=document.createElement("div");panel.className="share-link-panel feature-card";
-    const head=document.createElement("div");head.className="share-link-head";
-    const title=document.createElement("h3");title.textContent="Share Mass Lineup";
-    const close=document.createElement("button");close.className="search-close";close.type="button";close.textContent="✕";close.setAttribute("aria-label","Close share dialog");close.addEventListener("click",()=>overlay.remove());head.append(title,close);
-    const date=snapshot.date?new Date(snapshot.date+"T00:00:00").toLocaleDateString(undefined,{year:"numeric",month:"long",day:"numeric"}):"";
-    const label=document.createElement("a");label.className="share-link-label";label.href=link;label.target="_blank";label.rel="noopener";label.textContent=`Open ${snapshot.title||"Mass Lineup"}`;
-    const description=document.createElement("p");description.className="subtitle";description.textContent=[snapshot.title,date].filter(Boolean).join(" · ")+" — MusiKaupod Mass Lineup";
-    const preview=document.createElement("div");preview.className="share-link-preview";preview.append(description,label);
-    const hint=document.createElement("p");hint.className="subtitle share-link-hint";hint.textContent="The link remains self-contained. Copy the formatted link for apps that support rich-text paste, or copy the URL for universal compatibility.";
-    const actions=document.createElement("div");actions.className="share-link-actions";
-    const formatted=document.createElement("button");formatted.className="feature-btn";formatted.type="button";formatted.textContent="Copy formatted link";
-    formatted.addEventListener("click",async()=>{try{if(navigator.clipboard&&window.ClipboardItem){const html=`<a href="${escapeHtml(link)}">${escapeHtml(label.textContent)}</a>`;const item=new ClipboardItem({"text/html":new Blob([html],{type:"text/html"}),"text/plain":new Blob([`${label.textContent}: ${link}`],{type:"text/plain"})});await navigator.clipboard.write([item]);formatted.textContent="Formatted link copied ✓";}else{await navigator.clipboard.writeText(`${label.textContent}: ${link}`);formatted.textContent="Link copied ✓";}}catch(_){prompt("Copy this share link:",`${label.textContent}: ${link}`);}});
-    const copyUrl=document.createElement("button");copyUrl.className="feature-btn secondary";copyUrl.type="button";copyUrl.textContent="Copy URL";copyUrl.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(link);copyUrl.textContent="URL copied ✓";}catch(_){prompt("Copy this MusiKaupod share URL:",link);}});
-    const share=document.createElement("button");share.className="feature-btn secondary";share.type="button";share.textContent="Share…";share.addEventListener("click",async()=>{if(!navigator.share){alert("Your browser does not support the share menu. Use one of the copy options instead.");return;}try{await navigator.share({title:snapshot.title||"MusiKaupod Mass Lineup",text:[snapshot.title,date].filter(Boolean).join(" · ")+" — MusiKaupod Mass Lineup",url:link});}catch(error){if(error.name!=="AbortError")alert("Unable to open the share menu. You can still copy the link.");}});
-    actions.append(formatted,copyUrl,share);panel.append(head,preview,hint,actions);overlay.append(panel);
-    overlay.addEventListener("click",event=>{if(event.target===overlay)overlay.remove();});
-    document.body.append(overlay);close.focus();
-  }
-  function escapeHtml(value){return String(value).replace(/[&<>\"]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));}
+  async function shareLineup(index){const lineup=lineups[index];if(!lineup)return;const errors=[...lineupErrors(lineup),...lineupCategoryErrors(lineup)];if(errors.length){alert("This lineup cannot be shared yet:\\n\\n"+errors.join("\\n"));return;}const snapshot=makeSnapshot(lineup);const payload=await encodeSnapshot(snapshot);const link=`${location.origin}${location.pathname}#/shared/${payload}`;if(link.length>7000){alert("This lineup creates a very long link. Please shorten its notes or reduce the number of songs.");return;}const shareText=`${snapshot.title}${snapshot.date?" · "+snapshot.date:""} — MusiKaupod Mass Lineup\\n${link}`;if(navigator.share){navigator.share({title:snapshot.title,text:shareText,url:link}).catch(()=>copyShareLink(link));}else copyShareLink(link);}
+  async function copyShareLink(link){try{await navigator.clipboard.writeText(link);alert("Share link copied. You can now send it through Messenger.");}catch(_){prompt("Copy this MusiKaupod share link:",link);}}
   function renderSharedSnapshot(snapshot){const box=$("sharedLineupContent");box.replaceChildren();const heading=document.createElement("h2");heading.textContent=snapshot.title||"Shared Mass Lineup";box.append(heading);const meta=document.createElement("p");meta.className="subtitle";meta.textContent=[snapshot.date,snapshot.occasion].filter(Boolean).join(" · ");box.append(meta);MASS_SLOTS.forEach(slot=>{const entries=(snapshot.songs||[]).filter(x=>x.category===slot.key).sort((a,b)=>a.position-b.position);const h=document.createElement("h3");h.textContent=slot.label;box.append(h);if(!entries.length){const p=document.createElement("p");p.className="subtitle";p.textContent="No song assigned.";box.append(p);}entries.forEach(entry=>{const song=songs.find(x=>x.id===entry.songId);const row=document.createElement("div");row.className="lineup-slot";const title=document.createElement("strong");title.textContent=song?song.title:"Missing song";const detail=document.createElement("span");detail.textContent=song?"Available in this songbook":"This song is not in your catalogue.";row.append(title,detail);box.append(row);});});if(snapshot.notes){const notes=document.createElement("p");notes.textContent=snapshot.notes;box.append(notes);}const actions=document.createElement("div");actions.className="feature-row";const view=document.createElement("button");view.className="feature-btn secondary";view.textContent="View Only";view.addEventListener("click",()=>{view.textContent="Viewing shared lineup";view.disabled=true;imp.focus();});const imp=document.createElement("button");imp.className="feature-btn";imp.textContent="Import Copy";imp.addEventListener("click",()=>{if(lineups.some(l=>l.importedSnapshotId===snapshot.snapshotId)){alert("This shared lineup has already been imported on this device.");return;}const slots=emptySlots();(snapshot.songs||[]).forEach(x=>{if(slots[x.category]&&songs.some(song=>song.id===x.songId))slots[x.category].push(x.songId);});const copy={id:`import-${Date.now()}`,name:snapshot.title||"Imported Mass Lineup",date:snapshot.date||"",occasion:snapshot.occasion||"",notes:snapshot.notes||"",slots,importedSnapshotId:snapshot.snapshotId};const errors=[...lineupErrors(copy),...lineupCategoryErrors(copy)];if(errors.length){alert("This shared lineup is incomplete or invalid and cannot be imported:\\n\\n"+errors.join("\\n"));return;}lineups.push(copy);persistLineups();imp.textContent="Imported ✓";imp.disabled=true;alert("An editable copy has been added to My Lineups.");});actions.append(view,imp);box.append(actions);}
     async function handleSharedLink(){const match=location.hash.match(/^#\/shared\/([A-Za-z0-9_-]+)$/);if(!match)return false;try{const snapshot=await decodeSnapshot(match[1]);if(![1,2].includes(snapshot.formatVersion)||!Array.isArray(snapshot.songs)||typeof snapshot.title!=="string"||snapshot.songs.length>200)throw new Error("Unsupported or invalid lineup format");renderSharedSnapshot(snapshot);showView("sharedLineupView");return true;}catch(error){$("sharedLineupContent").textContent=`This shared lineup link is invalid or unsupported. (${error.message})`;showView("sharedLineupView");return true;}}
 
@@ -480,7 +424,6 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     const lg=$("liturgyGrid");lg.replaceChildren();
     liturgyCategories.forEach(cat=>lg.appendChild(makeTile(cat,`${songs.filter(s=>s.collection==="liturgy"&&s.category===cat).length} songs`,"✝",()=>openSongs({collection:"liturgy",category:cat},"liturgyCategories",cat))));
     const sg=$("seasonGrid");sg.replaceChildren();
-    sg.appendChild(makeTile("Marian Hymns",`${songs.filter(s=>s.collection==="service"&&s.season==="Marian Hymns").length} songs`,"✿",()=>openSongs({collection:"service",season:"Marian Hymns"},"seasonList","Marian Hymns")));
     seasons.forEach(season=>sg.appendChild(makeTile(season,"Service songs","♫",()=>openSeasonCategories(season))));
   }
   function openSeasonCategories(season) {
@@ -510,7 +453,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     const ic=document.createElement("span");ic.className="song-icon";ic.textContent=song.collection==="prayers"?"✧":"♫";
     const info=document.createElement("span");info.className="song-info";
     const title=document.createElement("div");title.className="song-title";title.textContent=safe(song.title).toLocaleUpperCase();
-    const meta=document.createElement("div");meta.className="song-category";meta.textContent=song.collection==="service"?(song.season==="Marian Hymns"?"Marian Hymns":`${safe(song.season)} · ${displayCategory(song.category)}`):displayCategory(song.category);
+    const meta=document.createElement("div");meta.className="song-category";meta.textContent=song.collection==="service"?`${safe(song.season)} · ${displayCategory(song.category)}`:displayCategory(song.category);
     info.append(title,meta);
     const dots=document.createElement("span");dots.className="resource-dots";dots.setAttribute("aria-label","Available resources");
     if(song.hasLyrics===true || safe(song.lyrics).trim()){const d=document.createElement("span");d.className="resource-dot lyrics";d.title="Lyrics available";d.setAttribute("aria-label","Lyrics available");dots.append(d);}
@@ -560,6 +503,15 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     const order=["KYRIE","GLORIA","ALLELUIA","SANCTUS","MEMORIALE","AMEN","AGNUS DEI"];const items=songs.filter(s=>s.collection==="misa-pastorella"&&s.subcategory==="Set 1 · Simplified").slice().sort((a,b)=>order.indexOf(a.title)-order.indexOf(b.title));
     items.forEach(s=>list.appendChild(songButton(s,"misaSimplifiedView")));
   }
+  function renderMisaRestored(){
+    const section=$("misaRestoredView");
+    let list=$("misaRestoredList");
+    if(!list){list=document.createElement("div");list.id="misaRestoredList";list.className="song-list";const empty=section.querySelector(".empty");if(empty)empty.remove();section.appendChild(list);}
+    list.replaceChildren();
+    const order=["KYRIE","GLORIA","ALLELUIA","SANCTUS","MEMORIALE","AMEN","AGNUS DEI"];
+    const items=songs.filter(s=>s.collection==="misa-pastorella"&&s.subcategory==="Set 1 · Restored").slice().sort((a,b)=>order.indexOf(a.title)-order.indexOf(b.title));
+    items.forEach(s=>list.appendChild(songButton(s,"misaRestoredView")));
+  }
   function renderSpecialCollection(collection,listId,emptyId,backView){const items=songs.filter(s=>s.collection===collection).slice().sort((a,b)=>safe(a.title).localeCompare(safe(b.title),undefined,{sensitivity:"base"}));const list=$(listId);list.replaceChildren();items.forEach(s=>list.appendChild(songButton(s,backView)));$(emptyId).classList.toggle("hidden",items.length>0);}
   // Delegate navigation clicks from the document so static and dynamically
   // rendered navigation controls remain clickable on every screen/device.
@@ -570,6 +522,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
       if (target === "prayersView") renderPrayerLanguages();
       if (target === "chantListView") renderCollection("chant", "chantList", "chantEmpty");
       if (target === "misaSimplifiedView") renderMisaSimplified();
+      if (target === "misaRestoredView") renderMisaRestored();
       if (target === "sietePalabrasView") renderSpecialCollection("siete-palabras", "sietePalabrasList", "sietePalabrasEmpty", "sietePalabrasView");
       if (viewIds.includes(target)) showView(target);
       return;
@@ -582,11 +535,12 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   let searchScope = "all";
   function words(value){return (safe(value).toLocaleLowerCase().match(/[\p{L}\p{N}]+/gu)||[]);}
   function matchesWords(song, query){
-    // Search is intentionally title-only: match complete words, not lyrics,
-    // categories, seasons, or individual character fragments.
-    const wanted=words(query); if(!wanted.length) return false;
-    const available=new Set(words(song.title));
-    return wanted.every(word=>available.has(word));
+    // Search song titles only. A typed phrase may match any part of a title;
+    // lyrics, categories, and seasons are never searched.
+    const phrase=safe(query).toLocaleLowerCase().trim().replace(/\s+/g," ");
+    if(!phrase) return false;
+    const title=safe(song.title).toLocaleLowerCase().replace(/\s+/g," ");
+    return title.includes(phrase);
   }
   function openSearch(scope){
     searchScope=scope;$("searchModalTitle").textContent=scope==="category"?`Search ${$("listHeading").textContent}`:"Search the songbook";

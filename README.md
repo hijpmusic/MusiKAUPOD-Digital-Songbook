@@ -22,11 +22,3 @@ The Mass Lineup Builder now enforces the approved liturgical structure:
 Sharing is enabled only when required quantities and category validation pass. Shared snapshots use formatVersion 2 and preserve the complete category sequence. Recipients can view or import a local editable copy. Existing formatVersion 1 shared links remain readable, but their legacy four-slot content will not meet the new import requirements unless complete under the current structure.
 
 Offline cache version: v17.
-
-
-## Marian Hymns update (v21)
-- Added a **Marian Hymns** subcategory directly under Service Songs, alongside the liturgical seasons.
-- Added IMMACULATE MOTHER (English), STELLA MARIS, AWIT SA INA NG SANTO ROSARYO, ABA GINOONG MARIA, ABANG MARIA, and AVE MARIA (Tagalog).
-- Songs are tagged `marian` so they are eligible for the optional Marian Song slot in the Mass Lineup Builder.
-- Lyrics are included; no PDF notation or MP3 tonal guides were supplied for these entries.
-- Offline cache version: v21.

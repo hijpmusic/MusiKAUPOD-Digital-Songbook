@@ -1,4 +1,4 @@
-const CACHE_NAME = "musikaupod-pwa-v21";
+const CACHE_NAME = "musikaupod-pwa-v22";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -7,6 +7,8 @@ const APP_SHELL = [
   "./assets/hijp-mmc-logo.png",
   "./assets/icon-192.png",
   "./assets/icon-512.png",
+  "./assets/favicon-32.png",
+  "./assets/favicon.ico",
   "./audio/misa-pastorella-set1-simplified-kyrie.mp3",
   "./audio/misa-pastorella-set1-simplified-alleluia.mp3",
   "./audio/misa-pastorella-set1-simplified-memoriale.mp3",
