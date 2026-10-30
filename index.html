@@ -11,6 +11,11 @@
 <style>
 :root{--violet:#392052;--violet2:#51306d;--gold:#d6af55;--paper:#fbf8f2;--ink:#28232e;--muted:#716b78;--line:#e7e0e9;--card:#fff}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+/* App-wide selection/context-menu deterrent; editable controls remain usable. */
+html,body,.app,.app *{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+input,textarea,select,[contenteditable="true"],[contenteditable=""],[role="textbox"]{-webkit-user-select:text!important;user-select:text!important;-webkit-touch-callout:default}
+input::selection,textarea::selection,[contenteditable="true"]::selection{background:#d6af5570}
+img{-webkit-user-drag:none;user-drag:none}
 button,input{font:inherit}.app{max-width:1200px;margin:0 auto;min-height:100dvh;padding-bottom:22px}
 header{color:white;background:linear-gradient(140deg,var(--violet),var(--violet2));padding:16px clamp(18px,4vw,42px);border-bottom:4px solid var(--gold);display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:112px}
 .brand{display:flex;align-items:center;gap:13px;min-width:0}.logo{width:74px;height:74px;flex:0 0 74px;object-fit:cover;border-radius:50%;border:2px solid var(--gold);background:#fff}
@@ -567,6 +572,20 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(err => console.warn("Offline setup unavailable:", err)));
 }
+</script>
+<script>
+// Disable the page context menu and image dragging while preserving native editing controls and embedded document viewers.
+(() => {
+  const editable = 'input, textarea, select, [contenteditable="true"], [contenteditable=""], [role="textbox"]';
+  document.addEventListener('contextmenu', event => {
+    if (event.target.closest(editable)) return;
+    if (event.target.closest('iframe, object, embed, audio, video')) return;
+    if (event.target.closest('.app')) event.preventDefault();
+  });
+  document.addEventListener('dragstart', event => {
+    if (event.target.closest('img')) event.preventDefault();
+  });
+})();
 </script>
 </body>
 </html>
