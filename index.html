@@ -171,7 +171,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
 
   <section id="seasonList" class="hidden">
     <div class="topline"><button class="back-btn" data-back="homeView">← Home</button><h2 class="view-title">Service Songs</h2></div>
-    <p class="subtitle">Pilion an panahon san liturhiya</p><div id="seasonGrid" class="grid"></div>
+    <p class="subtitle">Pilion an panahon san liturhiya o Marian Hymns</p><div id="seasonGrid" class="grid"></div>
   </section>
 
   <section id="seasonCategories" class="hidden">
@@ -480,6 +480,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     const lg=$("liturgyGrid");lg.replaceChildren();
     liturgyCategories.forEach(cat=>lg.appendChild(makeTile(cat,`${songs.filter(s=>s.collection==="liturgy"&&s.category===cat).length} songs`,"✝",()=>openSongs({collection:"liturgy",category:cat},"liturgyCategories",cat))));
     const sg=$("seasonGrid");sg.replaceChildren();
+    sg.appendChild(makeTile("Marian Hymns",`${songs.filter(s=>s.collection==="service"&&s.season==="Marian Hymns").length} songs`,"✿",()=>openSongs({collection:"service",season:"Marian Hymns"},"seasonList","Marian Hymns")));
     seasons.forEach(season=>sg.appendChild(makeTile(season,"Service songs","♫",()=>openSeasonCategories(season))));
   }
   function openSeasonCategories(season) {
@@ -509,7 +510,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     const ic=document.createElement("span");ic.className="song-icon";ic.textContent=song.collection==="prayers"?"✧":"♫";
     const info=document.createElement("span");info.className="song-info";
     const title=document.createElement("div");title.className="song-title";title.textContent=safe(song.title).toLocaleUpperCase();
-    const meta=document.createElement("div");meta.className="song-category";meta.textContent=song.collection==="service"?`${safe(song.season)} · ${displayCategory(song.category)}`:displayCategory(song.category);
+    const meta=document.createElement("div");meta.className="song-category";meta.textContent=song.collection==="service"?(song.season==="Marian Hymns"?"Marian Hymns":`${safe(song.season)} · ${displayCategory(song.category)}`):displayCategory(song.category);
     info.append(title,meta);
     const dots=document.createElement("span");dots.className="resource-dots";dots.setAttribute("aria-label","Available resources");
     if(song.hasLyrics===true || safe(song.lyrics).trim()){const d=document.createElement("span");d.className="resource-dot lyrics";d.title="Lyrics available";d.setAttribute("aria-label","Lyrics available");dots.append(d);}

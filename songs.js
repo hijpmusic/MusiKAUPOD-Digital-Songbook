@@ -1,4 +1,3 @@
- // MusiKaupod Digital Songbook — bundled offline song library.
 window.CHOIR_SONGS = [
   {
     "id": "krus-san-kaligtasan",
@@ -1858,5 +1857,83 @@ window.CHOIR_SONGS = [
     "lyrics": "Kyrie eleison\nLord, have mercy\nGinoo, kaluy-i\nKaawaan Mo kami\n\nChriste eleison\nChrist, have mercy\nKristo, kaluy-i\nKaawaan Mo kami\n\nKyrie eleison\nLord, have mercy\nGinoo, kaluy-i\nKaawaan Mo kami",
     "language": "English / Minasbate / Tagalog",
     "hasLyrics": true
+  },
+  {
+    "id": "immaculate-mother",
+    "title": "IMMACULATE MOTHER",
+    "collection": "service",
+    "category": "Marian Hymn",
+    "season": "Marian Hymns",
+    "lyrics": "Immaculate Mother, to you do we plead,\nTo ask God, our Father, for help in our need.\n\nRef:\nAve, Ave, Ave Maria! Ave, Ave, Ave Maria!\n\nWe pray for our country, the land of our birth,\nWe pray for all nations that peace be on earth.\n\nRef:\nAve, Ave, Ave Maria! Ave, Ave, Ave Maria!\n\nIn grief and temptation, in joy and in pain,\nWe'll seek thee, our Mother, nor seek thee in vain.\n\nRef:\nAve, Ave, Ave Maria! Ave, Ave, Ave Maria!\n\nWe pray for our Mother, the Church upon earth,\nAnd bless, sweetest lady, the land of our birth.\n\nRef:\nAve, Ave, Ave Maria! Ave, Ave, Ave Maria!",
+    "language": "English",
+    "hasLyrics": true,
+    "tags": [
+      "marian"
+    ]
+  },
+  {
+    "id": "stella-maris",
+    "title": "STELLA MARIS",
+    "collection": "service",
+    "category": "Marian Hymn",
+    "season": "Marian Hymns",
+    "lyrics": "Kung itong aming paglalayag\nInabot ng pagkabagabag\nNawa'y mabanaagan ka\nHinirang na tala ng umaga\n\nKahit alon man ng pangamba\n'Di alintana sapagkat naro'n ka\nNi unos ng pighati\nAt kadiliman ng gabi\n\nMaria, sa puso ninuman\nIka'y tala ng kalangitan\nNingning mo ay walang pagmamaliw\nInang sinta, Inang ginigiliw\n\nTanglawan kami aming Ina\nSa kalangitan naming pita\nNawa'y maging hantungan\nPinakamimithing kaharian\n\nMaria, sa puso ninuman\nIka'y tala ng kalangitan\nNingning mo ay walang pagmamaliw\nInang sinta, Inang ginigiliw\n\nMaria, sa puso ninuman\nIka'y tala ng kalangitan\nNingning mo ay walang pagmamaliw\nInang sinta, Inang ginigiliw",
+    "language": "Tagalog",
+    "hasLyrics": true,
+    "tags": [
+      "marian"
+    ]
+  },
+  {
+    "id": "awit-sa-ina-ng-santo-rosaryo",
+    "title": "AWIT SA INA NG SANTO ROSARYO",
+    "collection": "service",
+    "category": "Marian Hymn",
+    "season": "Marian Hymns",
+    "lyrics": "Minsan ang buhay ay isang awit ng galak\nAt mayroong liwanag na tatanglaw sa 'ting pagyapak\nMinsan ang buhay ay isang awit ng luha\nAt siyang papawi nito ay ang pag-asa ng umaga\n\nAt kahit anong tindi ng unos at kahit anong tindi ng dilim\nMay isang inang nagmamatyag nagmamahal sa 'tin\nAwit niya'y pag-ibig ng Diyos tawag niya'y magbalik-loob\nTuro nya'y buhay na ang Diyos lamang sa ati'y nagkaloob\n\nO Inang mahal narito kami awit awit ang Ave Maria\nAt dalangin ng bawat pamilya'y kapayapaa't pagkakaisa\nAng rosaryo mong hawak namin at awit awit ang Ave Maria\nPuspos ka ng diwang banal dinggin ang aming payak na dasal\nIhatid mo kami sa langit ng Amang mapagmahal\n\nO Inang mahal narito kami't awit awit ang Ave maria\nSa anak mong si Jesus puso namin ay ihahandog\nAng rosario mong hawak namin at awit awit ang Ave Maria\nPuspos ka ng diwang banal dinggin ang aming payak na dasal\nIhatid mo kami sa langit ng Amang mapagmahal",
+    "language": "Tagalog",
+    "hasLyrics": true,
+    "tags": [
+      "marian"
+    ]
+  },
+  {
+    "id": "aba-ginoong-maria",
+    "title": "ABA GINOONG MARIA",
+    "collection": "service",
+    "category": "Marian Hymn",
+    "season": "Marian Hymns",
+    "lyrics": "Aba, Ginoong Maria\nNapupuno ka ng grasya\nAng Panginoon ay sumasaiyo\nBukod kang pinagpala sa babaeng lahat\nAt pinagpala naman\nAng 'yong anak na si Hesus\n\nSanta Maria, Ina ng Diyos\nIpanalangin mo kaming makasalanan\nNgayon at kung kami'y mamamatay\nAmen\n\nSanta Maria, Ina ng Diyos\nIpanalangin mo kaming makasalanan\nNgayon at kung kami'y mamamatay\nAmen",
+    "language": "Tagalog",
+    "hasLyrics": true,
+    "tags": [
+      "marian"
+    ]
+  },
+  {
+    "id": "abang-maria",
+    "title": "ABANG MARIA",
+    "collection": "service",
+    "category": "Marian Hymn",
+    "season": "Marian Hymns",
+    "lyrics": "Sinong mas malumanay sa kogong kumakaway?\nSinong mas dalisay sa hamog sa himaymay?\nSinong mas malambing sa mapaglarong hangin?\nSinong mas maningning sa buwan at bituin?\n\nAbang Maria, Mahal naming ina\nAng landas tungo kay Hesukristo\nBuong tiwala kanyang winika\n\"Maganap nawa ang 'Yong salita\"\n\nSinong magpapayapa sa bagyong nananakot?\nSinong magpapasigla sa damong sumukot?\nSinong takbuhan ng mga dukha?\nSinong tanggulan ng mahihina?\n\nAbang Maria, Mahal naming ina\nAng landas tungo kay Hesukristo\nBuong tiwala kanyang winika\n\"Maganap nawa ang 'Yong salita\"\n\nSinong dakilang lingkod ng Amang Utos?\nSanta Maria, ina ng Diyos",
+    "language": "Tagalog",
+    "hasLyrics": true,
+    "tags": [
+      "marian"
+    ]
+  },
+  {
+    "id": "ave-maria-tag",
+    "title": "AVE MARIA",
+    "collection": "service",
+    "category": "Marian Hymn",
+    "season": "Marian Hymns",
+    "lyrics": "Ave Maria, gratia plena\nDominus tecum, Benedicta tu\nBenedicta tu in mulieribus\nEt benedictus fructus ventris tui, Iesu\n\nSancta Maria, Mater Dei\nOra pro nobis, peccatoribus\nNunc et in hora mortis nostrae\n\nAve Maria, gratia plena\nDominus tecum. Benedicta tu\nBenedicta tu in mulieribus\nEt benedictus fructus ventris tui, Iesu\n\nAmen",
+    "language": "Tagalog",
+    "hasLyrics": true,
+    "tags": [
+      "marian"
+    ]
   }
 ];
