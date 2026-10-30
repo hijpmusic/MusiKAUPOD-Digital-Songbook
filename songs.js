@@ -1,4 +1,4 @@
-// MusiKaupod Digital Songbook — bundled offline song library.
+ // MusiKaupod Digital Songbook — bundled offline song library.
 window.CHOIR_SONGS = [
   {
     "id": "krus-san-kaligtasan",
@@ -1808,5 +1808,55 @@ window.CHOIR_SONGS = [
     },
     "audio": "audio/misa-pastorella-set1-simplified-agnus-dei.mp3",
     "subcategory": "Set 1 · Simplified"
+  },
+  {
+    "id": "kyrie-mass-christ-savior",
+    "title": "KYRIE (MASS OF CHRIST THE SAVIOR)",
+    "collection": "liturgy",
+    "category": "Kyrie - Short Form",
+    "season": "",
+    "lyrics": "Kyrie Eleison, Kyrie Eleison, Kyrie Eleison, Eleison\nChriste Eleison, Christe Eleison, Christe Eleison, Eleison\nKyrie Eleison, Kyrie Eleison, Kyrie Eleison, Eleison",
+    "language": "English",
+    "hasLyrics": true
+  },
+  {
+    "id": "kyrie-light-from-light",
+    "title": "KYRIE (LIGHT FROM LIGHT)",
+    "collection": "liturgy",
+    "category": "Kyrie - Long Form",
+    "season": "",
+    "lyrics": "You were sent to heal the contrite of heart, Kyrie, eleison.\nKyrie, eleison.\n\nYou came to call sinners all, Christe eleison.\nChriste, eleison.\n\nYou are seated at the right hand of the Father to intercede for us, to intercede for us, Kyrie, eleison.\nKyrie, eleison.",
+    "language": "English",
+    "hasLyrics": true
+  },
+  {
+    "id": "lord-have-mercy-kyrie-short",
+    "title": "LORD HAVE MERCY",
+    "collection": "liturgy",
+    "category": "Kyrie - Short Form",
+    "season": "",
+    "lyrics": "Lord have mercy, Lord have mercy, Lord have mercy\nChrist have mercy, Christ have mercy, Christ have mercy\nLord have mercy, Lord have mercy, Lord have mercy",
+    "language": "English",
+    "hasLyrics": true
+  },
+  {
+    "id": "kyrie-misa-solemne",
+    "title": "KYRIE (MISA SOLEMNE)",
+    "collection": "liturgy",
+    "category": "Kyrie - Short Form",
+    "season": "",
+    "lyrics": "Kyrie Eleison, Lord have mercy\nChriste Eleison, Christ have mercy\nKyrie Eleison, Lord have mercy\nKyrie Eleison, eleison",
+    "language": "English",
+    "hasLyrics": true
+  },
+  {
+    "id": "kyrie-mass-mercy-compassion",
+    "title": "KYRIE (MASS OF MERCY AND COMPASSION)",
+    "collection": "liturgy",
+    "category": "Kyrie - Short Form",
+    "season": "",
+    "lyrics": "Kyrie eleison\nLord, have mercy\nGinoo, kaluy-i\nKaawaan Mo kami\n\nChriste eleison\nChrist, have mercy\nKristo, kaluy-i\nKaawaan Mo kami\n\nKyrie eleison\nLord, have mercy\nGinoo, kaluy-i\nKaawaan Mo kami",
+    "language": "English / Minasbate / Tagalog",
+    "hasLyrics": true
   }
 ];

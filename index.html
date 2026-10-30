@@ -11,12 +11,15 @@
 <style>
 :root{--violet:#392052;--violet2:#51306d;--gold:#d6af55;--paper:#fbf8f2;--ink:#28232e;--muted:#716b78;--line:#e7e0e9;--card:#fff}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-button,input{font:inherit}.app{max-width:760px;margin:0 auto;min-height:100dvh;padding-bottom:26px}
-header{color:white;background:linear-gradient(140deg,var(--violet),var(--violet2));padding:22px 18px 21px;border-bottom:4px solid var(--gold)}
-.brand{display:flex;align-items:center;gap:13px}.logo{width:74px;height:74px;flex:0 0 74px;object-fit:cover;border-radius:50%;border:2px solid var(--gold);background:#fff}
+button,input{font:inherit}.app{max-width:1200px;margin:0 auto;min-height:100dvh;padding-bottom:22px}
+header{color:white;background:linear-gradient(140deg,var(--violet),var(--violet2));padding:16px clamp(18px,4vw,42px);border-bottom:4px solid var(--gold);display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:112px}
+.brand{display:flex;align-items:center;gap:13px;min-width:0}.logo{width:74px;height:74px;flex:0 0 74px;object-fit:cover;border-radius:50%;border:2px solid var(--gold);background:#fff}
 .eyebrow{text-transform:uppercase;letter-spacing:.09em;font-size:.66rem;opacity:.88;line-height:1.4}.brand h1{font-size:clamp(1.35rem,5vw,1.85rem);line-height:1.12;margin:6px 0}.tagline{margin:14px 0 0;color:#fff5db;font-size:.92rem;line-height:1.45}
-main{padding:17px 15px}.view-title{font-size:1.4rem;margin:4px 0 6px}.subtitle{color:var(--muted);margin:0 0 17px;font-size:.91rem}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.tile{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:9px;min-height:112px;padding:16px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:15px;color:var(--ink);cursor:pointer;box-shadow:0 2px 8px #39205208}
+main{padding:18px clamp(18px,3vw,36px)}.view-title{font-size:1.4rem;margin:4px 0 6px}.subtitle{color:var(--muted);margin:0 0 17px;font-size:.91rem}
+.welcome-row{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:12px}.welcome-copy{flex:1;min-width:0}.welcome-row .view-title{flex:1;min-width:0;margin:0 0 5px}.welcome-copy .subtitle{margin:0}.dot-legend{flex:0 0 auto;min-width:240px;border:1px solid #e4d7b9;border-radius:12px;background:#fffdf8;padding:10px 12px;box-shadow:0 2px 8px #3920520a}.dot-legend-title{font-size:.76rem;font-weight:750;color:var(--violet);margin-bottom:7px}.dot-legend-item{display:flex;align-items:center;gap:8px;font-size:.76rem;line-height:1.45;color:#514956}.dot-legend-item+.dot-legend-item{margin-top:4px}.dot-legend .resource-dot{width:9px!important;height:9px!important;min-width:9px!important;max-width:9px!important;min-height:9px!important;max-height:9px!important;flex-basis:9px!important}
+:root[data-theme="dark"] .dot-legend{background:#26202e;border-color:#665575}:root[data-theme="dark"] .dot-legend-title{color:#f3d98d}:root[data-theme="dark"] .dot-legend-item{color:#e4dbea}
+@media(max-width:680px){header{min-height:0;padding:14px 16px;gap:12px}.brand{gap:10px}.logo{width:62px;height:62px;flex-basis:62px}.theme-toggle{padding:7px 10px;font-size:.78rem}.welcome-row{align-items:stretch;flex-direction:column;gap:10px}.dot-legend{width:100%;min-width:0}.dot-legend-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.dot-legend-item+.dot-legend-item{margin-top:0}}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tile{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:8px;min-height:100px;padding:14px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:15px;color:var(--ink);cursor:pointer;box-shadow:0 2px 8px #39205208}
 .tile:active,.song:active{transform:scale(.99)}
 .tile-disabled,.tile:disabled{background:#e5e5e5!important;border-color:#d0d0d0!important;color:#858585!important;cursor:not-allowed;box-shadow:none;opacity:1}
 .tile-disabled .tile-icon,.tile:disabled .tile-icon{background:#d6d6d6!important;color:#858585!important}
@@ -25,7 +28,7 @@ main{padding:17px 15px}.view-title{font-size:1.4rem;margin:4px 0 6px}.subtitle{c
 .tile-icon{width:41px;height:41px;border-radius:12px;background:#f0e8f5;color:var(--violet);display:grid;place-items:center;font-size:1.35rem}.tile-icon svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .tile-title{font-weight:700;line-height:1.25}.tile-sub{color:var(--muted);font-size:.8rem;line-height:1.35}
 .topline{display:flex;align-items:center;gap:10px;margin-bottom:17px}.back-btn,.small-btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;color:var(--ink)}
-.topline .view-title{margin:0}.search-wrap{margin:0 0 13px}.home-search{margin:17px 0 18px}.home-search h3{font-size:1rem;margin:0 0 8px}.home-search .search-wrap{margin-bottom:10px}.home-search-results{display:grid;gap:8px}.home-search-results:empty{display:none}.search-wrap input{width:100%;padding:13px 14px;border:1px solid #d9cfdf;border-radius:12px;background:#fff;outline:none}
+.topline .view-title{margin:0}.search-wrap{margin:0 0 13px}.home-search{margin:12px 0 14px}.home-search h3{font-size:1rem;margin:0 0 8px}.home-search .search-wrap{margin-bottom:10px}.home-search-results{display:grid;gap:8px}.home-search-results:empty{display:none}.search-wrap input{width:100%;padding:13px 14px;border:1px solid #d9cfdf;border-radius:12px;background:#fff;outline:none}
 .search-wrap input:focus{border-color:var(--violet2);box-shadow:0 0 0 3px #51306d1c}.count{color:var(--muted);font-size:.84rem;margin-bottom:12px}
 .song-list{display:grid;gap:9px}.song{width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:14px;border:1px solid var(--line);border-radius:13px;background:#fff;color:var(--ink);cursor:pointer}
 .song-icon{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border-radius:11px;background:#f0e8f5;color:var(--violet);font-size:1.15rem}.song-info{flex:1;min-width:0}.song-title{font-weight:650;line-height:1.3}.song-category{font-size:.82rem;color:var(--muted);margin-top:4px}.chevron{color:#8a8390;font-size:1.3rem}
@@ -35,7 +38,7 @@ main{padding:17px 15px}.view-title{font-size:1.4rem;margin:4px 0 6px}.subtitle{c
 .score-section{margin-top:22px}.score-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:10px}.score-link{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);text-decoration:none;font-weight:650}.score-link span{display:block}.score-link small{display:block;color:var(--muted);font-weight:400;font-size:.76rem;margin-top:2px}.about-card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:18px;line-height:1.65}.about-logo{width:100px;height:100px;object-fit:cover;border-radius:50%;border:2px solid var(--gold)}.about-mark{display:flex;justify-content:center;margin-bottom:15px}
 footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;padding:17px 15px 0}
 
-.theme-row{display:flex;justify-content:flex-end;margin-top:12px}
+.theme-row{display:flex;justify-content:flex-end;margin:0;flex:0 0 auto}
 .theme-toggle{border:1px solid #d6af55;border-radius:999px;background:#fff5db;color:#392052;padding:8px 13px;font-size:.86rem;font-weight:700;cursor:pointer}
 :root[data-theme="dark"]{color-scheme:dark;--paper:#17131d;--ink:#f5f0fa;--muted:#c5b9d0;--line:#51445d;--card:#26202e}
 :root[data-theme="dark"] body{background:var(--paper);color:var(--ink)}
@@ -54,8 +57,18 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
 :root[data-theme="dark"] .logo,:root[data-theme="dark"] .about-logo{background:#fff}
 @media (prefers-reduced-motion:no-preference){.theme-toggle,.tile,.song{transition:background-color .15s ease,color .15s ease,border-color .15s ease}}
 
-@media(min-width:560px){main{padding:23px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}header{padding:25px 24px 22px}.logo{width:88px;height:88px;flex-basis:88px}}
+@media(min-width:900px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.logo{width:76px;height:76px;flex-basis:76px}}
+@media(min-width:681px) and (max-width:899px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:420px){.dot-legend-items{grid-template-columns:1fr}.brand h1{font-size:1.25rem}.eyebrow{font-size:.58rem}}
 
+
+.search-trigger{display:flex;align-items:center;gap:10px;width:100%;padding:11px 14px;margin:10px 0 14px;border:1px solid var(--line);border-radius:13px;background:#fff;color:var(--muted);text-align:left;cursor:pointer}
+.search-trigger .search-icon{font-size:1.15rem;color:var(--violet)}
+.search-overlay{pointer-events:auto;position:fixed;inset:0;z-index:1000;background:#17121dcc;display:flex;align-items:flex-start;justify-content:center;padding: min(12vh,90px) 14px 20px;overflow-y:auto}
+.search-overlay.hidden{display:none!important;pointer-events:none!important}.search-panel{pointer-events:auto;width:min(680px,100%);max-height:78vh;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 60px #0005;padding:16px}
+.search-panel-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}.search-panel-head h2{font-size:1.12rem;margin:0;flex:1}.search-close{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 12px;cursor:pointer}
+.search-panel .search-wrap{margin:0}.search-panel .search-wrap input{font-size:1rem}.search-results{overflow-y:auto;display:grid;gap:8px;margin-top:12px;min-height:0}.search-hint{padding:20px 8px;text-align:center;color:var(--muted);font-size:.9rem}.search-results .song{flex-shrink:0}
+:root[data-theme="dark"] .search-trigger{background:#26202e;color:#c5b9d0;border-color:#51445d}:root[data-theme="dark"] .search-icon{color:#f3d98d}
 .resource-dots{display:flex;flex-direction:row;gap:6px;align-items:center;justify-content:center;flex:0 0 auto;flex-shrink:0;min-width:0;min-height:0;height:14px;line-height:0}.resource-dot{display:block!important;box-sizing:border-box!important;width:10px!important;height:10px!important;min-width:10px!important;max-width:10px!important;min-height:10px!important;max-height:10px!important;flex:0 0 10px!important;aspect-ratio:1/1;border-radius:50%!important;overflow:hidden;border:0!important;padding:0!important;margin:0!important;font-size:0!important;line-height:0!important;min-height:10px!important;max-height:10px!important;transform:none!important;align-self:center;white-space:nowrap!important;box-shadow:none!important}.resource-dot.lyrics{background:#f1dfc0!important;background-color:#f1dfc0!important;border:1px solid #cbb78f!important}.resource-dot.pdf{background:#38a169;border-color:#2f855a}.resource-dot.audio{background:#3182ce;border-color:#2b6cb0}.resource-dot[aria-label]{cursor:help}
 .song-title{text-transform:uppercase}
 </style>
@@ -74,13 +87,21 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
 </header>
 <main>
   <section id="homeView">
-    <h2 class="view-title">Dagos kamo sa aton Digital Songbook!</h2>
-    <p class="subtitle">Musika Para sa Parokya</p>
-    <div class="home-search">
-      <h3>Search the songbook</h3>
-      <div class="search-wrap"><input id="homeSearchInput" type="search" placeholder="Search song title, lyrics, category, or season…" autocomplete="off" aria-label="Search all songs"></div>
-      <div id="homeSearchResults" class="home-search-results" aria-live="polite"></div>
+    <div class="welcome-row">
+      <div class="welcome-copy">
+        <h2 class="view-title">Dagos kamo sa aton Digital Songbook!</h2>
+        <p class="subtitle">Musika Para sa Parokya</p>
+      </div>
+      <aside class="dot-legend" aria-label="Song resource indicators">
+        <div class="dot-legend-title">Song Indicators</div>
+        <div class="dot-legend-items">
+          <div class="dot-legend-item"><span class="resource-dot lyrics" aria-hidden="true"></span><span>Song has Lyrics</span></div>
+          <div class="dot-legend-item"><span class="resource-dot pdf" aria-hidden="true"></span><span>Song has Notations</span></div>
+          <div class="dot-legend-item"><span class="resource-dot audio" aria-hidden="true"></span><span>Song has Tonal Guides</span></div>
+        </div>
+      </aside>
     </div>
+    <button class="search-trigger" id="homeSearchOpen" type="button"><span class="search-icon">⌕</span><span>Search song titles by word…</span></button>
     <div class="grid">
       <button class="tile" data-open="liturgyCategories">
         <span class="tile-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5v19M5.5 8h13"/></svg></span>
@@ -112,7 +133,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
 
   <section id="songListView" class="hidden">
     <div class="topline"><button id="listBackButton" class="back-btn">← Back</button><h2 id="listHeading" class="view-title">Songs</h2></div>
-    <div class="search-wrap"><input id="searchInput" type="search" placeholder="Search song title or lyrics…" autocomplete="off" aria-label="Search songs"></div>
+    <button class="search-trigger" id="categorySearchOpen" type="button"><span class="search-icon">⌕</span><span>Search songs in this category…</span></button>
     <div id="songCount" class="count"></div><div id="songList" class="song-list"></div>
     <div id="emptyState" class="empty hidden">No songs have been added to this category yet.</div>
   </section>
@@ -202,6 +223,13 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     </div>
   </section>
 </main>
+<div id="searchOverlay" class="search-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
+  <div class="search-panel">
+    <div class="search-panel-head"><h2 id="searchModalTitle">Search the songbook</h2><button id="searchClose" class="search-close" type="button">Close ✕</button></div>
+    <div class="search-wrap"><input id="modalSearchInput" type="search" placeholder="Type words from a song title…" autocomplete="off" aria-label="Search song titles by word"></div>
+    <div id="modalSearchResults" class="search-results" aria-live="polite"><div class="search-hint">Enter one or more words from a song title.</div></div>
+  </div>
+</div>
 <footer>Offline songbook · No account or internet connection required<br>Developed by HIJP-MMC Admins</footer>
 </div>
 <script src="songs.js"></script>
@@ -235,7 +263,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   const displayCategory = value => ({Pagtuna:"Entrance",Paghalad:"Offertory",Komunyon:"Communion",Pagtapos:"Recessional",Ebanghelyo:"Gospel Acclamation",Banal:"Sanctus",Memoryal:"Memorial Acclamation", "Ama Namon":"Lord's Prayer",Doxologia:"Doxology",Kordero:"Agnus Dei",Kyrie:"Kyrie - Long Form"}[safe(value)] || safe(value));
   function romanRank(title) {
     // Only a terminal Roman numeral marks a numbered liturgy song.
-    const m = safe(title).trim().match(/(?:^|\s)(X{1,3}|IX|IV|VI{0,3}|V|I{1,3})$/i);
+    const m = safe(title).trim().match(/(?:^|\s)(X{1,3}|IX|IV|VI{0,3}|V|I{1,3})(?:\s*-\s*[AB])?$/i);
     if (!m) return Number.MAX_SAFE_INTEGER;
     const roman=m[1].toUpperCase();
     const vals={I:1,V:5,X:10}; let total=0, prev=0;
@@ -245,6 +273,9 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   function titleOrder(a,b) {
     const ra=romanRank(a.title), rb=romanRank(b.title);
     if(ra!==rb) return ra-rb;
+    // Keep the original catalogue order for non-numbered entries; new songs
+    // are appended to the end of the category rather than alphabetized ahead.
+    if(ra===Number.MAX_SAFE_INTEGER) return 0;
     return safe(a.title).localeCompare(safe(b.title),undefined,{sensitivity:"base"});
   }
   // Keep every in-app screen in browser history so Android/system Back returns
@@ -301,18 +332,16 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   }
   function openSongs(filters,backView,heading) {
     currentBackView=backView;currentList=songs.filter(s=>Object.entries(filters).every(([k,v])=>s[k]===v));
-    $("listHeading").textContent=heading;$("searchInput").value="";renderSongs();showView("songListView");
+    $("listHeading").textContent=heading;renderSongs();showView("songListView");
   }
   function renderSongs() {
-    const q=$("searchInput").value.trim().toLocaleLowerCase();
     const categoryOrder = currentList.some(s=>s.collection==="service") ? serviceCategories : liturgyCategories;
-    const filtered=currentList.filter(s=>!q||safe(s.title).toLocaleLowerCase().includes(q)||safe(s.lyrics).toLocaleLowerCase().includes(q))
-      .slice().sort((a,b)=>{
-        const c=(categoryOrder.indexOf(a.category)<0?999:categoryOrder.indexOf(a.category))-(categoryOrder.indexOf(b.category)<0?999:categoryOrder.indexOf(b.category));
-        if(c) return c;
-        if(a.collection==="liturgy" && b.collection==="liturgy") return titleOrder(a,b);
-        return safe(a.title).localeCompare(safe(b.title),undefined,{sensitivity:"base"});
-      });
+    const filtered=currentList.slice().sort((a,b)=>{
+      const c=(categoryOrder.indexOf(a.category)<0?999:categoryOrder.indexOf(a.category))-(categoryOrder.indexOf(b.category)<0?999:categoryOrder.indexOf(b.category));
+      if(c) return c;
+      if(a.collection==="liturgy" && b.collection==="liturgy") return titleOrder(a,b);
+      return 0;
+    });
     $("songCount").textContent=`${filtered.length} song${filtered.length===1?"":"s"}`;
     const list=$("songList");list.replaceChildren();
     filtered.forEach(song=>list.appendChild(songButton(song)));
@@ -331,7 +360,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     if(song.audio){const d=document.createElement("span");d.className="resource-dot audio";d.title="MP3 tonal guide available";d.setAttribute("aria-label","MP3 tonal guide available");dots.append(d);}
     if(!dots.childElementCount)dots.hidden=true;
     const ar=document.createElement("span");ar.className="chevron";ar.textContent="›";
-    b.append(ic,info,dots,ar);b.addEventListener("click",()=>openSong(song,backView));return b;
+    b.append(ic,info,dots,ar);b.addEventListener("click",()=>{if($("searchOverlay")&&!$("searchOverlay").classList.contains("hidden"))closeSearch();openSong(song,backView);});return b;
   }
   const prayerLanguages = ["Minasbate","English","Latin","Tagalog","Bikol","Sinugboanon","Spanish"];
   function renderPrayerLanguages() {
@@ -373,37 +402,57 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     items.forEach(s=>list.appendChild(songButton(s,"misaSimplifiedView")));
   }
   function renderSpecialCollection(collection,listId,emptyId,backView){const items=songs.filter(s=>s.collection===collection).slice().sort((a,b)=>safe(a.title).localeCompare(safe(b.title),undefined,{sensitivity:"base"}));const list=$(listId);list.replaceChildren();items.forEach(s=>list.appendChild(songButton(s,backView)));$(emptyId).classList.toggle("hidden",items.length>0);}
-  document.querySelectorAll("[data-open]").forEach(b=>b.addEventListener("click",()=>{
-    if(b.dataset.open==="prayersView") renderPrayerLanguages();
-    if(b.dataset.open==="chantListView") renderCollection("chant","chantList","chantEmpty");
-    if(b.dataset.open==="misaSimplifiedView") renderMisaSimplified();
-    if(b.dataset.open==="sietePalabrasView") renderSpecialCollection("siete-palabras","sietePalabrasList","sietePalabrasEmpty","sietePalabrasView");
-    showView(b.dataset.open);
-  }));
-  document.querySelectorAll("[data-back]").forEach(b=>b.addEventListener("click",()=>goBack(b.dataset.back)));
+  // Delegate navigation clicks from the document so static and dynamically
+  // rendered navigation controls remain clickable on every screen/device.
+  document.addEventListener("click", event => {
+    const openButton = event.target.closest("[data-open]");
+    if (openButton && !openButton.disabled) {
+      const target = openButton.dataset.open;
+      if (target === "prayersView") renderPrayerLanguages();
+      if (target === "chantListView") renderCollection("chant", "chantList", "chantEmpty");
+      if (target === "misaSimplifiedView") renderMisaSimplified();
+      if (target === "sietePalabrasView") renderSpecialCollection("siete-palabras", "sietePalabrasList", "sietePalabrasEmpty", "sietePalabrasView");
+      if (viewIds.includes(target)) showView(target);
+      return;
+    }
+    const backButton = event.target.closest("[data-back]");
+    if (backButton) goBack(backButton.dataset.back);
+  });
   $("listBackButton").addEventListener("click",()=>goBack(currentBackView));
   $("readerBackButton").addEventListener("click",()=>goBack(readerBackView));
-  $("searchInput").addEventListener("input",renderSongs);
-  function renderHomeSearch() {
-    const q = $("homeSearchInput").value.trim().toLocaleLowerCase();
-    const box = $("homeSearchResults"); box.replaceChildren();
-    if (!q) return;
-    const categoryRank = song => {
-      if (song.collection === "liturgy") return [0, Math.max(0,liturgyCategories.indexOf(song.category)), safe(song.title)];
-      if (song.collection === "service") return [1, Math.max(0,seasons.indexOf(song.season)), Math.max(0,serviceCategories.indexOf(song.category)), safe(song.title)];
-      return [2, safe(song.category), safe(song.title)];
-    };
-    const matches = songs.filter(song => [song.title,song.lyrics,song.category,song.season,song.collection].some(v => safe(v).toLocaleLowerCase().includes(q))).sort((a,b)=>{
-      const x=categoryRank(a), y=categoryRank(b);
-      for(let i=0;i<Math.max(x.length,y.length);i++){if(x[i]===y[i])continue;return typeof x[i]==="number"&&typeof y[i]==="number"?x[i]-y[i]:String(x[i]??"").localeCompare(String(y[i]??""),undefined,{sensitivity:"base"});}
-      if(a.collection==="liturgy" && b.collection==="liturgy") return titleOrder(a,b);
+  let searchScope = "all";
+  function words(value){return (safe(value).toLocaleLowerCase().match(/[\p{L}\p{N}]+/gu)||[]);}
+  function matchesWords(song, query){
+    // Search is intentionally title-only: match complete words, not lyrics,
+    // categories, seasons, or individual character fragments.
+    const wanted=words(query); if(!wanted.length) return false;
+    const available=new Set(words(song.title));
+    return wanted.every(word=>available.has(word));
+  }
+  function openSearch(scope){
+    searchScope=scope;$("searchModalTitle").textContent=scope==="category"?`Search ${$("listHeading").textContent}`:"Search the songbook";
+    $("modalSearchInput").value="";$("modalSearchResults").innerHTML='<div class="search-hint">Enter one or more words from a song title.</div>';
+    $("searchOverlay").classList.remove("hidden");setTimeout(()=>$("modalSearchInput").focus(),30);
+  }
+  function closeSearch(){$("searchOverlay").classList.add("hidden");}
+  function renderModalSearch(){
+    const q=$("modalSearchInput").value.trim(),box=$("modalSearchResults");box.replaceChildren();
+    if(!words(q).length){const hint=document.createElement("div");hint.className="search-hint";hint.textContent="Enter one or more words from a song title.";box.append(hint);return;}
+    const source=searchScope==="category"?currentList:songs;
+    const matches=source.filter(song=>matchesWords(song,q)).slice().sort((a,b)=>{
+      if(a.collection==="liturgy"&&b.collection==="liturgy")return titleOrder(a,b);
       return 0;
     });
-    if (!matches.length) { const empty=document.createElement("div");empty.className="empty";empty.textContent="No songs found. Try another word.";box.append(empty);return; }
-    matches.slice(0,30).forEach(song=>box.appendChild(songButton(song,"homeView")));
-    if(matches.length>30){const more=document.createElement("div");more.className="count";more.textContent=`Showing first 30 of ${matches.length} matches. Refine your search to narrow the list.`;box.append(more);}
+    if(!matches.length){const empty=document.createElement("div");empty.className="search-hint";empty.textContent="No matching song titles. Try another word.";box.append(empty);return;}
+    matches.slice(0,50).forEach(song=>box.appendChild(songButton(song,searchScope==="category"?"songListView":"homeView")));
+    if(matches.length>50){const more=document.createElement("div");more.className="search-hint";more.textContent=`Showing first 50 of ${matches.length} matches. Add another word to narrow your search.`;box.append(more);}
   }
-  $("homeSearchInput").addEventListener("input",renderHomeSearch);
+  $("homeSearchOpen").addEventListener("click",()=>openSearch("all"));
+  $("categorySearchOpen").addEventListener("click",()=>openSearch("category"));
+  $("searchClose").addEventListener("click",closeSearch);
+  $("modalSearchInput").addEventListener("input",renderModalSearch);
+  $("searchOverlay").addEventListener("click",e=>{if(e.target===$("searchOverlay"))closeSearch();});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("searchOverlay").classList.contains("hidden"))closeSearch();});
   $("smallerText").addEventListener("click",()=>{currentFontSize=Math.max(.85,currentFontSize-.1);$("lyricsText").style.fontSize=currentFontSize+"rem"});
   $("largerText").addEventListener("click",()=>{currentFontSize=Math.min(2.1,currentFontSize+.1);$("lyricsText").style.fontSize=currentFontSize+"rem"});
   renderTiles();
