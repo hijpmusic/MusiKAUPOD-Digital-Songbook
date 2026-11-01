@@ -42,9 +42,9 @@ main{padding:18px clamp(18px,3vw,36px)}.view-title{font-size:1.4rem;margin:4px 0
 .empty{padding:26px 10px;text-align:center;color:var(--muted)}.hidden{display:none!important}
 .reader-category{display:inline-block;border-radius:999px;padding:6px 10px;background:#f0e8f5;color:var(--violet);font-size:.8rem;font-weight:650}.reader-title{font-size:clamp(1.55rem,6vw,2rem);line-height:1.2;margin:13px 0 5px}.reader-meta{font-size:.88rem;color:var(--muted)}
 .reader-tools{display:flex;align-items:center;gap:8px;margin:19px 0 12px}.reader-tools span{margin-right:auto;color:var(--muted);font-size:.86rem}.lyrics{white-space:pre-wrap;overflow-wrap:anywhere;font-size:1.18rem;line-height:1.85;background:#fff;border:1px solid var(--line);border-radius:14px;padding:19px;min-height:180px}
-.chord-pages{max-width:100%;overflow-x:auto;overflow-y:hidden;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:12px}
-.chord-pages img{display:block;width:100%;min-width:620px;max-width:900px;height:auto;margin:0 auto;background:#fff}
-@media(max-width:680px){.chord-pages{padding:6px}.chord-pages img{min-width:680px;max-width:none;margin:0}}
+.chord-pages{width:100%;max-width:100%;overflow-x:hidden;overflow-y:visible;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:12px}
+.chord-pages img{display:block;width:100%;min-width:0;max-width:100%;height:auto;margin:0 auto;background:#fff;object-fit:contain}
+@media(max-width:680px){.chord-pages{padding:4px;gap:8px}.chord-pages img{width:100%;min-width:0;max-width:100%;margin:0}}
 :root[data-theme="dark"] .chord-pages{background:#26202e;border-color:#51445d}
 .score-section{margin-top:22px}.score-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:10px}.score-link{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);text-decoration:none;font-weight:650}.score-link span{display:block}.score-link small{display:block;color:var(--muted);font-weight:400;font-size:.76rem;margin-top:2px}.about-card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:18px;line-height:1.65}.about-logo{width:100px;height:100px;object-fit:cover;border-radius:50%;border:2px solid var(--gold)}.about-mark{display:flex;justify-content:center;margin-bottom:15px}
 footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;padding:17px 15px 0}
@@ -131,6 +131,27 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
 .wizard-progress{margin:8px 0 18px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:.76rem;font-weight:800;letter-spacing:.06em;color:var(--violet)}.wizard-track{height:6px;background:var(--line);border-radius:99px;margin-top:9px;overflow:hidden}.wizard-track i{display:block;height:100%;background:var(--gold);border-radius:99px;transition:width .2s}.field-label{display:block;font-size:.82rem;font-weight:700;margin:13px 0 6px}.wizard-step .feature-card h3{margin:0 0 10px}.wizard-step .feature-input{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}.wizard-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.wizard-tools{align-items:center;justify-content:space-between}.wizard-tools .status-pill{flex:1}.lineup-review-table{display:grid;grid-template-columns:minmax(115px,.8fr) minmax(0,1.5fr);border-top:1px solid var(--line)}.review-cell{padding:11px 8px;border-bottom:1px solid var(--line);min-width:0;overflow-wrap:anywhere}.review-cell.head{font-size:.75rem;font-weight:800;color:var(--muted);letter-spacing:.04em}.review-song{border:0;background:transparent;color:var(--violet);font:inherit;font-weight:750;text-align:left;text-decoration:underline;text-underline-offset:3px;padding:0;cursor:pointer}.online-card h3{color:var(--violet);}.lineup-view-table{display:grid;grid-template-columns:minmax(115px,.8fr) minmax(0,1.5fr);border-top:1px solid var(--line);margin-top:14px}.lineup-view-cell{padding:11px 8px;border-bottom:1px solid var(--line);min-width:0;overflow-wrap:anywhere}.lineup-view-head{font-size:.75rem;font-weight:800;color:var(--muted)}:root[data-theme="dark"] .online-card h3{color:#f3d98d}:root[data-theme="dark"] .review-song,:root[data-theme="dark"] .shared-song-link{color:#e7cb82}:root[data-theme="dark"] .wizard-progress{color:#f3d98d}
 @media(max-width:480px){.wizard-actions{grid-template-columns:1fr}.lineup-review-table,.lineup-view-table{grid-template-columns:minmax(100px,.75fr) minmax(0,1.25fr)}.wizard-tools{align-items:stretch;flex-direction:column}}
 
+
+/* Responsive song reader: phone-first controls and proportional PDF page fitting. */
+.reader-tools>*{min-width:0}
+@media(max-width:480px){
+  main{padding-left:14px;padding-right:14px}
+  .reader-tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:7px;margin:15px 0 10px}
+  .reader-tools>span{grid-column:1/-1;margin:0 0 1px;font-size:.78rem;line-height:1.2}
+  .reader-tools .small-btn{width:100%;min-width:0;min-height:46px;padding:8px 5px;border-radius:10px;font-size:.82rem;line-height:1.2;white-space:normal;overflow-wrap:anywhere;display:flex;align-items:center;justify-content:center;text-align:center}
+  #smallerText{grid-column:1/2}
+  #largerText{grid-column:2/3}
+  .reader-title{overflow-wrap:anywhere}
+  .lyrics{padding:14px;font-size:1.05rem;line-height:1.7}
+  .chord-pages{padding:3px;border-radius:11px;overflow-x:hidden}
+  .chord-pages img{width:100%;max-width:100%;min-width:0;height:auto}
+}
+@media(min-width:481px) and (max-width:768px){
+  .reader-tools{display:flex;flex-wrap:wrap;gap:9px}
+  .reader-tools>span{margin-right:auto}
+  .reader-tools .small-btn{min-height:46px;padding:9px 12px}
+  .chord-pages img{width:100%;min-width:0;max-width:100%}
+}
 </style>
 </head>
 <body>
