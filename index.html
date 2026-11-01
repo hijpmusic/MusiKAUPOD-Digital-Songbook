@@ -42,6 +42,10 @@ main{padding:18px clamp(18px,3vw,36px)}.view-title{font-size:1.4rem;margin:4px 0
 .empty{padding:26px 10px;text-align:center;color:var(--muted)}.hidden{display:none!important}
 .reader-category{display:inline-block;border-radius:999px;padding:6px 10px;background:#f0e8f5;color:var(--violet);font-size:.8rem;font-weight:650}.reader-title{font-size:clamp(1.55rem,6vw,2rem);line-height:1.2;margin:13px 0 5px}.reader-meta{font-size:.88rem;color:var(--muted)}
 .reader-tools{display:flex;align-items:center;gap:8px;margin:19px 0 12px}.reader-tools span{margin-right:auto;color:var(--muted);font-size:.86rem}.lyrics{white-space:pre-wrap;overflow-wrap:anywhere;font-size:1.18rem;line-height:1.85;background:#fff;border:1px solid var(--line);border-radius:14px;padding:19px;min-height:180px}
+.chord-pages{max-width:100%;overflow-x:auto;overflow-y:hidden;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:12px}
+.chord-pages img{display:block;width:100%;min-width:620px;max-width:900px;height:auto;margin:0 auto;background:#fff}
+@media(max-width:680px){.chord-pages{padding:6px}.chord-pages img{min-width:680px;max-width:none;margin:0}}
+:root[data-theme="dark"] .chord-pages{background:#26202e;border-color:#51445d}
 .score-section{margin-top:22px}.score-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:10px}.score-link{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);text-decoration:none;font-weight:650}.score-link span{display:block}.score-link small{display:block;color:var(--muted);font-weight:400;font-size:.76rem;margin-top:2px}.about-card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:18px;line-height:1.65}.about-logo{width:100px;height:100px;object-fit:cover;border-radius:50%;border:2px solid var(--gold)}.about-mark{display:flex;justify-content:center;margin-bottom:15px}
 footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;padding:17px 15px 0}
 
@@ -136,7 +140,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     <img class="logo" src="assets/hijp-mmc-logo.png" alt="Holy Infant Jesus Parish Music Ministry Community logo">
     <div>
       <div class="eyebrow">Holy Infant Jesus Parish<br>Music Ministry Community</div>
-      <h1>MusiKaupod<br>Digital Songbook</h1><div class="version-label">VERSION 18</div>
+      <h1>MusiKaupod<br>Digital Songbook</h1><div class="version-label">VERSION 19 BETA</div>
     </div>
   </div>
   <div class="theme-row"><button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">☾ Dark mode</button></div>
@@ -271,7 +275,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   <section id="readerView" class="hidden">
     <div class="topline"><button id="readerBackButton" class="back-btn">← Back</button></div>
     <span id="readerCategory" class="reader-category"></span><h2 id="readerTitle" class="reader-title"></h2><div id="readerMeta" class="reader-meta"></div>
-    <div class="reader-tools"><span>Lyrics / Text</span><button id="favoriteToggle" class="small-btn favorite-toggle" type="button">☆ Favorite</button><button id="addToLineup" class="small-btn" type="button">＋ Add to lineup</button><button id="smallerText" class="small-btn" aria-label="Decrease text size">A−</button><button id="largerText" class="small-btn" aria-label="Increase text size">A+</button></div>
+    <div class="reader-tools"><span>Lyrics / Text</span><button id="showChords" class="small-btn hidden" type="button">♫ Show Chords</button><button id="favoriteToggle" class="small-btn favorite-toggle" type="button">☆ Favorite</button><button id="addToLineup" class="small-btn" type="button">＋ Add to lineup</button><button id="smallerText" class="small-btn" aria-label="Decrease text size">A−</button><button id="largerText" class="small-btn" aria-label="Increase text size">A+</button></div>
     <article id="lyricsText" class="lyrics"></article>
     <section id="audioSection" class="score-section hidden">
       <h3>Tonal Guide (MP3)</h3>
@@ -602,10 +606,22 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     items.forEach(s => list.appendChild(songButton(s, collection === "chant" ? "chantListView" : collection === "holy-hour" ? "holyHourListView" : "fiestaListView")));
     $(emptyId).classList.toggle("hidden", items.length > 0);
   }
+  let chordMode=false;
+  function setChordMode(enabled){
+    const btn=$("showChords"),box=$("lyricsText");
+    chordMode=!!enabled;
+    if(chordMode){
+      const wrap=document.createElement("div");wrap.className="chord-pages";
+      currentChordPages.forEach((page,index)=>{const img=document.createElement("img");img.src=`chords-pdf-reference/page-${String(page).padStart(2,"0")}.png`;img.alt=`Original PDF chord arrangement page ${page}`;img.loading=index===0?"eager":"lazy";wrap.appendChild(img);});
+      box.replaceChildren(wrap);box.classList.remove("chord-sheet");
+    }else{box.textContent=currentLyrics;box.classList.remove("chord-sheet");}
+    btn.textContent=chordMode?"♫ Hide Chords":"♫ Show Chords";
+  }
+  let currentChordSheet="",currentChordPages=[],currentLyrics="";
   function openSong(song,backView) {
     readerBackView=backView;$("readerTitle").textContent=safe(song.title).toLocaleUpperCase();$("readerCategory").textContent=displayCategory(song.category);
     $("readerMeta").textContent=song.collection==="service"?safe(song.season):song.collection==="prayers"?"Mga Pangadeyon":"Liturgy Song";
-    $("lyricsText").textContent=safe(song.lyrics);currentFontSize=1.18;$("lyricsText").style.fontSize=currentFontSize+"rem";
+    currentLyrics=safe(song.lyrics);currentChordSheet=safe(song.chordSheet);currentChordPages=Array.isArray(song.chordPages)?song.chordPages:[];const hasChords=!!currentChordSheet&&currentChordPages.length>0;$("showChords").classList.toggle("hidden",!hasChords);$("showChords").disabled=!hasChords;$("lyricsText").classList.remove("chord-sheet");$("lyricsText").textContent=currentLyrics;chordMode=false;currentFontSize=1.18;$("lyricsText").style.fontSize=currentFontSize+"rem";$("showChords").textContent="♫ Show Chords";
     const scoreGrid=$("scoreGrid");scoreGrid.replaceChildren();
     const scores=song.scores||{};let scoreCount=0;
     ["Soprano","Alto","Tenor","Bass","Full Score"].forEach(part=>{if(!scores[part])return;scoreCount++;const a=document.createElement("a");a.className="score-link";a.href=scores[part];a.target="_blank";a.rel="noopener";a.innerHTML=`<span aria-hidden="true">♫</span><span>${part}<small>Open PDF score</small></span>`;scoreGrid.append(a);});
@@ -683,7 +699,8 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   $("modalSearchInput").addEventListener("input",renderModalSearch);
   $("searchOverlay").addEventListener("click",e=>{if(e.target===$("searchOverlay"))closeSearch();});
   document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("searchOverlay").classList.contains("hidden"))closeSearch();});
-  $("smallerText").addEventListener("click",()=>{currentFontSize=Math.max(.85,currentFontSize-.1);$("lyricsText").style.fontSize=currentFontSize+"rem"});
+  $("showChords").addEventListener("click",()=>setChordMode(!chordMode));
+  $("smallerText").addEventListener("click",()=>{currentFontSize=Math.max(.75,currentFontSize-.1);$("lyricsText").style.fontSize=currentFontSize+"rem"});
   $("largerText").addEventListener("click",()=>{currentFontSize=Math.min(2.1,currentFontSize+.1);$("lyricsText").style.fontSize=currentFontSize+"rem"});
   $("openFavorites").addEventListener("click",()=>{renderFavorites();showView("favoritesView");});
   $("openLineup").addEventListener("click",beginNewLineup);

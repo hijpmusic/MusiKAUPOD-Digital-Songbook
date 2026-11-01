@@ -58,3 +58,16 @@ The app does not embed the upload password. Administrators enter it when uploadi
 - Auxiliary Songs also excludes songs already used elsewhere in the current lineup.
 - Removing a selected song makes it available in the picker again.
 - Offline cache version advanced to v28.
+
+
+## MusiKaupod v19 Beta – Chord Library
+- Added Show Chords / Hide Chords to song entries with supplied chord arrangements.
+- Imported 13 arrangements from Barangay Mass Chords Set 1.docx.
+- Chord sheets preserve the source document line spacing and chord placement using a horizontally scrollable monospaced display.
+- Light and dark theme contrast styles included.
+- Psalm Tones sample lyrics/audio and additional tonal guides remain pending.
+
+
+## v19 Beta chord alignment revision
+
+The Show Chords view for the 13 arrangements now displays high-resolution page images rendered directly from `Barangay Mass Chords Set 1.pdf`. This preserves the source PDF's actual chord-to-syllable positioning, line spacing, and page layout rather than approximating alignment with typed spaces. The 15 reference page images are included in the service-worker precache for offline use. Glorya I and Hesus na Ginoo span multiple pages; Memoryal I and Amen I share page 9 in the source PDF.
