@@ -1881,7 +1881,7 @@ window.CHOIR_SONGS = [
     "id": "laudate-dominum",
     "title": "LAUDATE DOMINUM",
     "collection": "service",
-    "category": "Offertory",
+    "category": "Entrance",
     "season": "Ordinary Time",
     "lyrics": "Laudate Dominum, purihin ang Diyos\nO sangkatauhan, santinakpan, laudate Dominum\nLaudate Dominum, purihin ang Diyos\nO sangkatauhan, santinakpan, laudate Dominum\n\nSa bayang sinalanta, bubong ang 'Yong kalinga\nSa binagyo ng dahas, kaloob Mo ang lakas\n\nLaudate Dominum, purihin ang Diyos\nO sangkatauhan, santinakpan, laudate Dominum\nLaudate Dominum, purihin ang Diyos\nO sangkatauhan, santinakpan, laudate Dominum\n\nSa'ming mga may sakit, lunas ang Iyong pag-ibig\nSa'ming dahop sa buhay, yaman ang may kaagapay\n\nLaudate Dominum, purihin ang Diyos\nO sangkatauhan, santinakpan, laudate Dominum\nLaudate Dominum, purihin ang Diyos\nO sangkatauhan, santinakpan, laudate Dominum\n\nSa'ming nangungulila, bukload ang pagsasama\nSa nilimot ng lipunan, tinawag Mo sa handaan\n\nLaudate Dominum, purihin ang Diyos\nO sangkatauhan, santinakpan, laudate Dominum\nLaudate Dominum, purihin ang Diyos\nO sangkatauhan, santinakpan, laudate Dominum",
     "language": "Tagalog",
