@@ -46,3 +46,15 @@ The app does not embed the upload password. Administrators enter it when uploadi
 - Run initializeDatabase() once to create the ShortLinks sheet while preserving existing database records.
 - Deploy a new Web App version using the existing deployment settings (Execute as Me; access Anyone).
 - The existing deployment URL is retained in the app.
+
+
+## v18 Lineup Search and Duplicate Prevention Revision
+### Added
+- My Lineups search filters saved lineup title, occasion, season, event date, and notes as the user types.
+- General Lineups search filters published lineup title, occasion, season, uploader, and description as the user types.
+- Clear empty-search results are shown when no lineups match.
+### Fixed
+- Songs already selected in a multi-selection category are removed from that category's remaining picker choices, preventing duplicate selections.
+- Auxiliary Songs also excludes songs already used elsewhere in the current lineup.
+- Removing a selected song makes it available in the picker again.
+- Offline cache version advanced to v28.
