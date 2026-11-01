@@ -1,24 +1,23 @@
 # MusiKaupod Digital Songbook
 
-## Mass Lineup Builder update (v17)
+## Version 18 — General Lineups Integration
 
-The Mass Lineup Builder now enforces the approved liturgical structure:
-- Entrance: exactly 1
-- Kyrie: exactly 1, selected from Kyrie - Short Form or Kyrie - Long Form
-- Gloria: optional, maximum 1
-- Gospel Acclamation: exactly 1
-- Offertory: 1–5
-- Sanctus: exactly 1
-- Memorial Acclamation: optional, maximum 1
-- Amen: optional, maximum 1
-- Lord's Prayer: optional, maximum 1
-- Doxology: optional, maximum 1
-- Agnus Dei: exactly 1
-- Communion: 1–5
-- Marian Song: optional, maximum 1; catalogue songs must be tagged `marian` or assigned category `Marian Song`
-- Recessional: exactly 1
-- Auxiliary Songs: any catalogue category, maximum 7
+### Added
+- Version 18 label in the app header.
+- Separate Mass Lineup Creator, My Lineups, and General Lineups entry points.
+- General Lineups browser connected to the HIJP-MMC Apps Script API.
+- Public listing and full lineup retrieval.
+- Download online lineups as independent local copies.
+- Upload completed local lineups with manually entered uploader name and administrator password. The password is entered at runtime and is not embedded in the public app source.
+- Offline and server-connection error messages for online browsing, downloading, and uploading.
+- Psalm Tones section placeholder with the agreed subtitle; final sample lyrics and playable recording remain pending ministry-supplied content.
+- Favorites refresh/persistence handling strengthened.
 
-Sharing is enabled only when required quantities and category validation pass. Shared snapshots use formatVersion 2 and preserve the complete category sequence. Recipients can view or import a local editable copy. Existing formatVersion 1 shared links remain readable, but their legacy four-slot content will not meet the new import requirements unless complete under the current structure.
+### Preserved
+- Existing song catalogue, lyrics, scores, tonal guides, shared lineup links, Mass Lineup structure and validation, offline PWA resources, and theme support.
 
-Offline cache version: v17.
+### Backend
+The app uses the deployed HIJP-MMC General Lineups API. Public browsing requires internet. Local lineups, favorites, songbook catalogue, and bundled/downloaded resources remain available offline.
+
+### Notes
+The app does not embed the upload password. Administrators enter it when uploading. Uploaded lineups are stored in the central database; local copies are independent and do not edit the online original.
