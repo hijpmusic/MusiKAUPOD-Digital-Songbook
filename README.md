@@ -1,8 +1,15 @@
 # MusiKaupod Digital Songbook
 
-## Version 18 — General Lineups Integration
+## Version 18 — General Lineups Integration and Guided Lineup Creator
 
 ### Added
+- Three-step Mass Lineup Creator: lineup details, song selection, and final review.
+- Clear All control for selected songs, with confirmation; it does not delete saved lineups.
+- Final review uses a two-column liturgical-part/song-title table; tapping a song opens its catalogue entry.
+- Local and uploaded lineup viewers use the same two-column layout and clickable song titles, opening the available lyrics, scores, and tonal guides.
+- Save choice on the final review page: save locally or upload to MMC Cloud. A local copy is retained after confirmed cloud upload.
+- If offline or the cloud upload cannot be confirmed, the completed lineup is saved locally and the user is informed.
+- Improved dark-mode contrast for saved lineup titles.
 - Version 18 label in the app header.
 - Separate Mass Lineup Creator, My Lineups, and General Lineups entry points.
 - General Lineups browser connected to the HIJP-MMC Apps Script API.
@@ -15,6 +22,9 @@
 
 ### Preserved
 - Existing song catalogue, lyrics, scores, tonal guides, shared lineup links, Mass Lineup structure and validation, offline PWA resources, and theme support.
+
+### Event date note
+The event date is collected and retained in local lineups and shared-link snapshots. The currently deployed Apps Script database schema does not expose a dedicated event-date field, so cloud event-date persistence requires a separate backend and spreadsheet schema update.
 
 ### Backend
 The app uses the deployed HIJP-MMC General Lineups API. Public browsing requires internet. Local lineups, favorites, songbook catalogue, and bundled/downloaded resources remain available offline.
