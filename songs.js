@@ -25,7 +25,9 @@ window.CHOIR_SONGS = [
     "lyrics": "O Ginoo kaluy-i kami\nO Ginoo kaluy-I kami\nKristo, O Kristo, kaluy-i kami\nKristo, O Kristo, kaluy-i kami\nO Ginoo kaluy-i kami\nO Ginoo kaluy-I kami",
     "language": "Minasbate",
     "hasLyrics": true,
-    "chordPages": [2],
+    "chordPages": [
+      2
+    ],
     "chordSheet": "KYRIE I\n6/8 Matulin\nINTRO: D, A, D-A7\n\n          D     A    D          G   A       D  D7\nO Gino-------o,   kaluy-i kami\n           G  A            F#m Bm            Em      A        D  D7\nO Gino------------o,                   kaluy----i kami\n   G       A      F#m      Bm    Em       A         D  D7\nKris---to O Kris-----to, kaluy-----i   kami\n  G        A     F#m       Bm    Em       A         D  A7\nKris---to O Kris-----to, kaluy-----i   kami  \n         D     A    D          G   A       D  D7\nO Gino-------o,   kaluy-i kami\n           G  A            F#m Bm            Em      A        D  D7\nO Gino------------o,                   kaluy----i kami"
   },
   {
@@ -137,8 +139,17 @@ window.CHOIR_SONGS = [
     "lyrics": "Koro:\nOmawon an Dios, Omawon an Dios\nOmawon an Dios sa kahitaasan\nOmawon an Dios, Omawon an Dios\nOmawon an Dios sa kahitaasan\n\nKag sa duta katoninongan, kag sa duta katoninongan\nSa mga tawong may maayong kaburot-on.\nGina-omaw Ka namon\nGina-bantog Ka namon. Gina-samba Ka namon.\nGina-balangibog Ka namon.\nGina-pasalamatan Ka namon\nTungod san dako Mo na glorya\n\nGinoong Dios, hadi san langit,\nDios Ama na makagagahom sa tanan\nGinoong Hesukristo, Bugtong na Anak,\nGinoong Dios Kordero san Dios Anak san Ama \n\nIkaw na naga hali, san mga kasal-an san kinab-an.\nMaluoy Ka, maluoy Ka sa amon.\n\nIkaw na naga hali, san mga kasal-an san kinab-an.\nImo batunon an pakimaluoy.     \nImo batunon an pakimaluoy.\nIkaw na naga ingkod sa tuo san Ama.\nMaluoy Ka, Maluoy Ka sa amon\n\nKoro:\nOmawon an Dios, Omawon an Dios\nOmawon an Dios sa kahitaasan\n\nKay Ikaw lamang an banal,\nIkaw lamang an labaw sa tanan\nIkaw lamang O Hesukristo, an Ginoong Dios.\nKaupod san Espiritu Santo, sa glorya san Dios,\nSan Dios Ama Amen\nSan Dios Ama Amen.\n\nOmawon an Dios, Omawon an Dios\nOmawon an Dios sa kahita-a-san",
     "language": "Minasbate",
     "hasLyrics": true,
-    "chordPages": [3, 4, 5],
-    "chordSheet": "GLORYA I\n4/4 Matulin\nINTRO: G, C, G, Am, D-D7\nKoro:\n     G                     C          D7                    G\nOmawon an Dios, Omawon an Dios\n    G7                      C                 G   D      G\nOmawon an Dios sa kahita—a--san\n D7                   G                             D7                  G\nKag sa duta katoninongan, kag sa duta katoninongan\n C    E7  Am            G         Am        D                G            \nSa mga tawong may maayong kaburot-on.\n          D7                G         \nGina-omaw Ka namon\n    D7                         G             B7                           Em\nGina-bantog Ka namon. Gina-samba Ka namon.\n     A7                              D7           \nGina-balangibog Ka namon.\nG        G7           C        A7         D\nGina-pasalamatan Ka namon\n       G                            C           G  D   G\nTungod san dako Mo na glo---rya\n  G                 C      A7            D        \nGinoong Dios, hadi san langit,\n   B7                         Em                   A7      D\nDios Ama na makagagahom sa tanan\n      G          G7        C                A7               D \nGinoong Hesukristo, Bugtong na Anak,\n     G             C             G                 C         G     D       G\nGinoong Dios Kordero san Dios Anak san Ama \nSlow (G, Em, Am, D)\n\n   G     C        D      G   G7             C                A7                D\nIkaw na naga hali, san mga kasal-an san kinab-an.\n       G     Em       Bm     C       Am    D\nMaluoy Ka, maluoy Ka sa a----mon.\n    G    C        D      G   G7             C                A7                D\nIkaw na naga hali, san mga kasal-an san kinab-an.\n               G         D7                    G             Em           \nImo batunon         an pakimaluoy.     \n             Bm         C                    Bm\nImo batunon\tan pakimaluoy.\n   C                D                         G               Em          \nIkaw na naga ingkod sa tuo san Ama.\n     Am                            D7            G     \nMaluoy Ka, Maluoy Ka sa amon\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRepeat intro (G, C, G-Am-D)\n\n      G                     C          D                     G\nOmawon an Dios, Omawon an Dios\n     G7                    C                  G  D  G\nOmawon an Dios sa kahita-a-san\n            D7                               G                        \nKay Ikaw lamang an banal,\n                             C        D                 G-G7\nIkaw lamang an labaw sa tanan\n   C                                       G                   Am     D       G\nIkaw lamang O Hesukristo, an Gino---ong Dios.\n    D7                     G                       D7               G\nKaupod san Espiritu Santo, sa glorya san Dios,\n           Am      D         G     Em                Am      D        G       \nSan Dios Ama Amen.             San Dios Ama Amen.\n\n(very slow) D-D7\n\n      G                     C          D                     G\nOmawon an Dios, Omawon an Dios\n     G7                    C                  G  D  G\nOmawon an Dios sa kahita-a-san"
+    "chordPages": [
+      3,
+      4,
+      5
+    ],
+    "chordSheet": "Original chord arrangement supplied in Advent/Glorya I PDF.",
+    "chordImages": [
+      "advent-chords/page-01.png",
+      "advent-chords/page-02.png",
+      "advent-chords/page-03.png"
+    ]
   },
   {
     "id": "v1-glorya-ii",
@@ -209,7 +220,9 @@ window.CHOIR_SONGS = [
     "lyrics": "I: \nAn kahadean san Dios unahon ta\nAmo man an katanosan\nKag an tanan idadagdag na lang\nAlelu, aleluya, aleluya\n\nII: (Mahitaas)\nAn kahadean san Dios unahon ta\nAmo man an katanosan\nKag an tanan idadagdag na lang\nAlelu, aleluya",
     "language": "Minasbate",
     "hasLyrics": true,
-    "chordPages": [6],
+    "chordPages": [
+      6
+    ],
     "chordSheet": "ALELUYA I\n4/4 Malumanay\nINTRO: D, A, Bm, F#m, G, D, A-A7\n\nI:\n D             A                  Bm                 F#m\nAn kahadean san Dios unahon ta\nG                  D           Em    A\nAmo man an katano--san\n  D               A           Bm                F#m\nKag an tanan idadagdag na lang\nG   D          A      F#m     B     \nAlelu, aleluya, Ale----luya\n\nII:\n\n  E            B                C#m                G#m\nAn kahadean san Dios unahon ta\nA                   E          F#m   B\nAmo man an katano--san\n  E                B          C#m             G#m\nKag an tanan idadagdag na lang\nA    E          B      E\nAlelu, alelu—ya."
   },
   {
@@ -330,7 +343,12 @@ window.CHOIR_SONGS = [
     "season": "",
     "lyrics": "Aleluya, Aleluya, \n\nAbrihan an mga puertahan, \nmaabot na an Ginoo\n\nAleluya, Aleluya, \n\nSugaton ta an Emmanuel\n\nAleluya",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/aleluya-xiii-adbiento.m4a",
+    "chordImages": [
+      "advent-chords/page-09.png"
+    ],
+    "chordSheet": "Original chord arrangement supplied in Advent/Glorya I PDF."
   },
   {
     "id": "v1-aleluya-xiv-pasko",
@@ -361,7 +379,9 @@ window.CHOIR_SONGS = [
     "lyrics": "Banal, banal, banal,\nbanal na Ginoo\nDios san mga hukbo,\nan langit kag an duta\nPuno san dako Mo na glorya\nOsana, Osana, sa kahitaasan\n\nMapalad an nagapakadi \nsa ngaran san Ginoo\nOsana, Osana, sa kahitaasan\nOsana, Osana, sa kahitaasan",
     "language": "Minasbate",
     "hasLyrics": true,
-    "chordPages": [8],
+    "chordPages": [
+      8
+    ],
     "chordSheet": "BANAL I\n3/4 Matulin\nINTRO: G, A, D, Bm, Em, A, D, A\n\n      D            A           G           D    A            D   D7\nBanal, banal, banal, banal na Ginoo\n    G      A    F#m       Bm         \nDios san mga hukbo,\n      Em     A            D\nan la---ngit kag an duta\n      G    A      F#m  Bm       Em   A       D  D7\nPuno san dako    Mo na glo-------rya\n    G          A     F#m   Bm           Em      A     D    D7\nOsa----na, Osa----na, sa kahita---a--san\n        G         A             F#m      Bm\nMapalad an nagapa------kadi \n        Em         A          D  D7 \nsa ngaran san Ginoo\n   G          A     F#m   Bm           Em      A     D    D7\nOsa----na, Osa----na, sa kahita---a—san\n   G          A     F#m   Bm           Em      A      D\nOsa----na, Osa----na, sa kahita---a—san"
   },
   {
@@ -443,7 +463,9 @@ window.CHOIR_SONGS = [
     "lyrics": "Si Kristo namatay,\nsi Kristo nabuhay-liwat\nsi Kristo, si Kristo,\nmabalik gihapon",
     "language": "Minasbate",
     "hasLyrics": true,
-    "chordPages": [9],
+    "chordPages": [
+      9
+    ],
     "chordSheet": "MEMORYAL I\n4/4 Malumanay\nINTRO: G, A, F#m, B7, Em, A, D, A\n\n       D    B7           Em             A                              D     D7\nSi Kristo, namatay.    Si Kristo nabuhay liwat\n        G       A        F#m    B7             Em     A   D       \nSi Kristo,       si Kristo         mabalik gihapon"
   },
   {
@@ -515,7 +537,9 @@ window.CHOIR_SONGS = [
     "lyrics": "Amen, Amen, Amen, Amen, Amen\nAmen, Amen, Amen, Amen, Amen",
     "language": "Minasbate",
     "hasLyrics": true,
-    "chordPages": [9],
+    "chordPages": [
+      9
+    ],
     "chordSheet": "AMEN I\n4/4 Malumanay\nINTRO: G, A, F#m, Bm, Em, A, D, D7\n \n     G                           A\nAmen                  Amen\n  F#m                     Bm\nAmen                  Amen\nEm    A     D\nA--------men\n     G                           A\nAmen                  Amen\n  F#m                     Bm\nAmen                  Amen\nEm    A     D\nA--------men"
   },
   {
@@ -577,7 +601,9 @@ window.CHOIR_SONGS = [
     "lyrics": "Ama namon na ada sa langit\nPabanalon an ngaran Mo\nMapasaamon an kahadean Mo\nSundon an pagbuot Mo\nDidi sa duta sugad san sa langit\n\nAn amon pagkaon sa uruadlaw\nIhatag Mo sa amon niyan\nKag patawadon Mo,\nkami san amon mga kasal-an\nSugad san pagpapatawad namon sa mga nagkasala sa amon\nAyaw man kami pagpabayae na madaog san sugot\nUgaring agawon Mo kami\nSa maraot",
     "language": "Minasbate",
     "hasLyrics": true,
-    "chordPages": [10],
+    "chordPages": [
+      10
+    ],
     "chordSheet": "AMA NAMON I\n6/8 May Katulinan\nINTRO: Am, Dm, G, C, E7\n\n          Am                             Dm\nAma namon na ada sa langit\n                 G                          C\nPabanalon an ngaran Mo\n               A7                          Dm\nMapasaamon an kahadean Mo\n          B7                            E\nSundon an pagbuot Mo\n   Am          A7             Dm        A    E7    Am   G\nDidi sa duta sugad san sa la-------ngit\n      C                    F             G           C\nAn amon pagkaon sa uruadlaw\n      F                   A7            Dm\nIhatag Mo sa amon niyan\n                                  E7        Am             F         B7              E  G7\nKag patawadon Mo, kami san amon mga kasal-an\n                C                                      F                     \nSugad san pagpapatawad namon\n         B7                             E7\nsa mga nagkasala sa amon\n  Am                                         Dm                    G                   C\nAyaw man kami pagpabayae na madaog san sugot\n    A7                        Dm                  Am      E7   Am\nUgaring agawon Mo kami Sa ma----ra---ot"
   },
   {
@@ -629,7 +655,9 @@ window.CHOIR_SONGS = [
     "lyrics": "Kay saimo an kahadean\nSaimo an kagamhanan\nSaimo an glorya. Niyan kag sa panahon na waran katapusan",
     "language": "Minasbate",
     "hasLyrics": true,
-    "chordPages": [11],
+    "chordPages": [
+      11
+    ],
     "chordSheet": "DOXOLOGIA I\n6/8 May Katulinan\nINTRO: G7 (7 na matulin na duon)\n\n            C       A7           Dm\nKay Saimo an kahadean\n    G                             C        C7\nSaimo an kagamhanan\n    F        G         Em              A7      \nSai----mo an glor--------ya\n    Dm\nNiyan kag sa panahon\n              G                    C\nNa waran katapusan"
   },
   {
@@ -681,7 +709,9 @@ window.CHOIR_SONGS = [
     "lyrics": "Kordero san Dios na naga hali\nSan mga kasal-an san kalibutan\nMaluoy Ka, maluoy Ka sa amon\n\nKordero san Dios na naga hali\nSan mga kasal-an san kalibutan\nMaluoy Ka, maluoy Ka sa amon\n\nKordero san Dios na naga hali\nSan mga kasal-an san kalibutan\nIhatag Mo sa amon an katoninongan",
     "language": "Minasbate",
     "hasLyrics": true,
-    "chordPages": [12],
+    "chordPages": [
+      12
+    ],
     "chordSheet": "KORDERO I\n3/4 Matulin\nINTRO: A, Bm, E, A, E\n\n        A                                   F#m\nKordero san Dios na nagahali\n              E                               A\nSan mga kasal-an san kalibutan\n       A      A7         D       A         D   E      A\nMaluoy Ka, maluoy Ka sa a------mon\n\n        A                                   F#m\nKordero san Dios na nagahali\n              E                               A\nSan mga kasal-an san kalibutan\n       A      A7         D       A       Bm   E     A    A7\nMaluoy Ka, maluoy Ka sa a------mon\n\n        D                                      A\nKordero san Dios na nagahali\n             D                E             A\nSan mga kasal-an san kalibutan\n   E                     A    D                A     E     A  \nIhatag Mo sa amon an katoninongan"
   },
   {
@@ -773,7 +803,9 @@ window.CHOIR_SONGS = [
     "lyrics": "Berso I:\nMagkanta, maglipay sa Ginoo\nKamo tanan na adi sa kinab-an\nMagkanta, maglipay sa Ginoo\n         \nRefrano:\nKadi sa atubangan Niya,\nmalipay na magkanta\nKadi sa atubangan Niya,\nmalipay na magkanta\n\nBerso II:\nMagsulod sa Iya mga puertahan\nMagsulod dara an kanta\nSan kaomawan, salamat sa Iya.\nOmawon an Iya ngaran       (refrano)",
     "language": "Minasbate",
     "hasLyrics": true,
-    "chordPages": [1],
+    "chordPages": [
+      1
+    ],
     "chordSheet": "DIOS KAGLALANG KAG PASTOR\n6/8 Matulin\nINTRO: C, D, Bm, Em, Am, D, G, Am, D, D7\n\n         G                    C               D    G   G7\nMagkanta, maglipay sa Ginoo\n      C         D            Bm  Em  C   D         G\nKamo tanan na adi             sa kinab-an\n          C                  G             Am    D \nMagkanta, maglipay sa Ginoo\n  \n     C      D         Bm            Em        C                  D          G   G7 \nKadi     sa atubangan Niya, malipay na magkanta\n     C      D         Bm            Em        C                  D          G\nKadi     sa atubangan Niya, malipay na magkanta\n\n              G           C       D                  G    G7\nMagsulod sa Iya mga pwertahan\n               C        D              Bm  Em    C    D      G\nMagsulod dara an kanta,           san kaomawan\n     C                 G       Am                D            G    G7\nSalamat sa Iya, omawon an Iya ngaran\n\n     C      D         Bm            Em        C                  D          G   G7 \nKadi     sa atubangan Niya, malipay na magkanta\n     C      D         Bm            Em        C                  D          G\nKadi     sa atubangan Niya, malipay na magkanta"
   },
   {
@@ -845,7 +877,9 @@ window.CHOIR_SONGS = [
     "lyrics": "Berso I:\nAno man na kaayuhan,\nNa nahimo san katawhan\nIna dahilan lang sa Dios,\nsa Dios na naghimo san tanan\n         \nRefrano:\nMagbulig ka man sa kapwa mo,    \nmaglimos man sa iba\nIna tanan waran kahulugan,\nkun dili sa pagkamoot\n\nBerso II:\nGinbuot na kita gamiton\nsan aton Ginoo\nsa pagbalangibog Niya\nsan katalingkasan san tanan",
     "language": "Minasbate",
     "hasLyrics": true,
-    "chordPages": [7],
+    "chordPages": [
+      7
+    ],
     "chordSheet": "MGA KASANGKAPAN LAMANG\n4/4 Malumanay\nINTRO: D, F#m, G, Em, A\n\nI:\n   D                         F#m                    G                       A\nAno man na kaayohan Na nahimo san katawhan\n  Em       B7                      Em     \nIna dahilan lang san Dios\n            G                   A                      D   \nSan Dios na naghimo san tanan\n\nRefrano:\n          G                A                F#m    Bm\nMagbulig ka man sa kapwa      mo,\nEm                               F#7\nmaglimos man sa iba\n B7                                 Em            \nIna tanan waran kahulugan \n E7                        A    G          Em-A\nKun dili sa pagkamo-----ot\n\nII:\n              D                    F#m                G            A\nGin-buot na kita gamiton san aton Ginoo\n       Em          B7         Em     \nSa pagbalingibog Niya\n         G              A                        D   \nSan katalingkasan san tanan"
   },
   {
@@ -927,7 +961,10 @@ window.CHOIR_SONGS = [
     "lyrics": "Berso I:\nHesus na Ginoo,\nkami na Imo namumot-an\nIkaw an kusog, Ikaw an buhay\nBilog na lawas kag san kalag\n\nBerso II:\nHesus na Ginoo,\nsa krus buhay Mo inihalad\nAn Imo lawas, an Imo dugo;\nbuhay na waran katapusan\n         \nRefrano:\nIkaw an tinapay na banal,\npinihak para sa amon\nIkaw an alak na banal\nhinatag Mo sa amon\ninumon san buhay\n\nBerso III:\nHesus na Ginoo,\nIkaw an amon paglaom\nIkaw an pagkaon sa langit hali.\nPakaona kami O Ginoo\n\nBerso IV:\nHesus na Ginoo,\nIkaw an nagpara san kaduluman\nTinipon niyan, banal Mong katawhan\nsa bangkete san pagkamoot",
     "language": "Minasbate",
     "hasLyrics": true,
-    "chordPages": [13, 14],
+    "chordPages": [
+      13,
+      14
+    ],
     "chordSheet": "HESUS NA GINOO\n4/4 Matulin\nINTRO: A, D, A, D, Bm, E\n\n        A           D     A        D        E              A           \nHesus na Ginoo, kami na Imo namomot-an\n   D                 E     C#m            F#m\nIkaw an kusog, Ikaw an buhay\n   Bm                                            E\nBilog na lawas kag san kalag\n\n        A           D     A          D           E              A           \nHesus na Ginoo, sa krus buhay Mo inihalad\n      D             E          C#m      F#m\nAn Imo Lawas, an Imo Dugo\n Bm                                          E\nBuhay na waran katapusan\n\nRefrano:\n    A               A7                   D          A            Bm           E\nIkaw an Tinapay na Banal, pinihak para sa amon\n   A              A7               D            \nIkaw an Alak na Banal\n      A                     Bm           E                           A  \nHinatag Mo sa amon, inumon san buhay\n\n\n\n\n\n\n\n\n\n\n\n\n\n        A           D     A      D          E                   A           \nHesus na Ginoo, Ikaw an amon paglaom\n   D                        E       C#m      F#m\nIkaw an pagkaon sa langit hali\n        Bm                             E\nPakauna kami O Ginoo\n\nRefrano:\n    A               A7                   D          A            Bm           E\nIkaw an Tinapay na Banal, pinihak para sa amon\n   A              A7               D            \nIkaw an Alak na Banal\n      A                     Bm           E                           A  \nHinatag Mo sa amon, inumon san buhay\n\n        A           D     A      D                    E                    A           \nHesus na Ginoo, Ikaw an nagpara san kaduluman\n     D             E         C#m                      F#m\nTinipon niyan banal Mong katawhan\n Bm                                             E\nSa bangkete san pagkamoot "
   },
   {
@@ -989,7 +1026,9 @@ window.CHOIR_SONGS = [
     "lyrics": "Refrano:\nSalamat sa Dios, Salamat sa Dios\nSalamat sa Dios sa kahitaasan\nSalamat sa Dios, Salamat sa Dios\nSalamat sa Dios sa kahitaasan",
     "language": "Minasbate",
     "hasLyrics": true,
-    "chordPages": [15],
+    "chordPages": [
+      15
+    ],
     "chordSheet": "SALAMAT SA DIOS\n4/4 Matulin\nINTRO: G, C, G, Am-D-D7\n\n     G                    C         D                   G           \nSalamat sa Dios, salamat sa Dios\n     G  G7            C                  G   D      D   D7\nSalamat sa Dios sa kahita—a—san\n\n     G                    C         D                   G           \nSalamat sa Dios, salamat sa Dios\n     G  G7            C                  G   D      D\nSalamat sa Dios sa kahita—a--san"
   },
   {
@@ -1394,9 +1433,14 @@ window.CHOIR_SONGS = [
     "collection": "service",
     "category": "Entrance",
     "season": "Advent",
-    "lyrics": "Refrano:\nAn Hadi san langit maabot,\nMag-omaw an katawohan\nAbrehan an mag pwertahan\nMagkanta sa kalipayan\n\nBerso I:     \nSin-o an hadi san langit? Nano an tawag sa Iya?\nSiya an Emmanuel; Dios adi sa aton\n\nBerso II:\nBuhay Niya inihalad para maligtas kita\nSiya an nagpara san sala naton\n\nBerso III:\nPinara Niya an kasal-an, dinaog an kamatayon\nSiya an paglaom san mga kalag",
+    "lyrics": "Refrano:\nAn Hadi san langit maabot,\nMag-omaw an katawohan\nAbrehan an mga pwertahan\nMagkanta sa kalipayan\n\nBerso I:     \nSin-o an hadi san langit? Nano an tawag sa Iya?\nSiya an Emmanuel; Dios adi sa aton\n\nBerso II:\nBuhay Niya inihalad para maligtas kita\nSiya an nagpara san sala naton\n\nBerso III:\nPinara Niya an kasal-an, dinaog an kamatayon\nSiya an paglaom san mga kalag",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/an-hadi-san-langit-maabot.m4a",
+    "chordImages": [
+      "advent-chords/page-04.png"
+    ],
+    "chordSheet": "Original chord arrangement supplied in Advent/Glorya I PDF."
   },
   {
     "id": "v1-an-hadi-san-glorya",
@@ -1426,7 +1470,11 @@ window.CHOIR_SONGS = [
     "season": "Advent",
     "lyrics": "Berso I:\nMaglipay an kalangitan\nMag-omaw an kinab-an\nMagkaranta an tanan, kita na katawhan\nMaabot na an Ginoo\n\nRefrano:     \nKadi O Ginoo, kadi Mesiyas san Dios\nAn biyaya san kaligtasan, kami Imo hatagan\n\nBerso II:\nAbrehan an mga pwertahan\nAdi na an kagtubos\nKaraotan isikway, mag bag-on buhay\nMaabot na an Ginoo",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "chordImages": [
+      "advent-chords/page-05.png"
+    ],
+    "chordSheet": "Original chord arrangement supplied in Advent/Glorya I PDF."
   },
   {
     "id": "v1-abrehan-kag-linisan",
@@ -1436,7 +1484,12 @@ window.CHOIR_SONGS = [
     "season": "Advent",
     "lyrics": "Berso I: \nAbrehan naton kag linisan\npusong may kakulangan\nKay maabot na si Kristo\nNa aton Ginoo\nMagdolot kita sa Iya\nSini’n banal na halad\nTanan maglipay, tanan mag-omaw\nSa Dios na gamhanan\n\nBerso II:\nNalilipay na an katawhan\nKay adi na Siya niyan\nAn Hadi san kaayohan\nSan bilog na kinab-an\nBurabod Siya san biyaya\nKag san kaginhawaan\nKaya an tanan, magsarig sa Dios\nSa Dios na gamhanan",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/abrehan-kag-linisan.m4a",
+    "chordImages": [
+      "advent-chords/page-06.png"
+    ],
+    "chordSheet": "Original chord arrangement supplied in Advent/Glorya I PDF."
   },
   {
     "id": "v1-panugang-kaligtasan",
@@ -1446,7 +1499,12 @@ window.CHOIR_SONGS = [
     "season": "Advent",
     "lyrics": "Refrano:\nSi Kristo na aton Hadi\nMaabot sa aton niyan\nSiya an Kordero san Dios\nPanugang kaligtasan\n\nBerso I:\nAbrehan naton kag linisan\nPuso na may kasal-an\nMaghalad kita sa Iya\nSini na banal na halad\n\nBerso II:\nNalilipay an kataw-han\nKay adi na Siya niyan\nBurabod Siya san biyaya\nKag san kaginhawaan",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/panugang-kaligtasan.m4a",
+    "chordImages": [
+      "advent-chords/page-07.png"
+    ],
+    "chordSheet": "Original chord arrangement supplied in Advent/Glorya I PDF."
   },
   {
     "id": "v1-maabot-na-an-ginoo",
@@ -1476,7 +1534,11 @@ window.CHOIR_SONGS = [
     "season": "Advent",
     "lyrics": "Refrano:\nO Kristo na Ginoo namon\nMagkadi ka sa amon puso\nMaghadi ka sa amon buhay\nKadi, kadi sa amon\n\nBerso I:\nBituon ka san kaagahon\nLiwanag sa kaduluman\n \nBerso II:\nHatagi kami san tubig\nAn tubig san kaligtasan\n\nBerso III:\nKordero san Dios na naghali\nSan aton mga kasal-an\n\nBerso IV:\nPaabot an Dios sa aton\nEmmanuel an Iya Ngaran",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "chordImages": [
+      "advent-chords/page-10.png"
+    ],
+    "chordSheet": "Original chord arrangement supplied in Advent/Glorya I PDF."
   },
   {
     "id": "v1-kadi-emmanuel",
@@ -1496,7 +1558,8 @@ window.CHOIR_SONGS = [
     "season": "Advent",
     "lyrics": "Refrano:\nIbareta sa kalibutan,\nan liwanag sa kaduluman\nIhayag sa katawohan,\nmaabot na Siya niyan\n         \nBerso I:\nPatagon an kabukidan,\ntadungon an mga dalan\nLinisan an aton puso,\nbatunon an Ginoo\n\nBerso II: \nAbrehan an mga pwertahan\nKay Siya maabot na Niyan\nAn Hadi san kaayohan\nEmmanuel Dios adi sa aton",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/ibareta-sa-kalibutan.m4a"
   },
   {
     "id": "v1-kumadto-kag-ipahayag",
@@ -1729,7 +1792,9 @@ window.CHOIR_SONGS = [
     "season": "",
     "lyrics": "O Salutaris Hostia\nQuae caeli pandis ostium.\nBella premunt hostilia;\nDa robur, fer auxilium.\n\nUni trinoque Domino\nSit sempiterna gloria:\nQui vitam sine termino,\nNobis donet in patria.\n\nAmen.",
     "language": "Latin",
+    "audio": "audio/o-salutaris-hostia-satb.mp3",
     "scores": {
+      "Full Score": "scores/combined/o-salutaris-hostia-satb.pdf",
       "Soprano": "scores/soprano/o-salutaris-hostia-soprano.pdf",
       "Alto": "scores/alto/o-salutaris-hostia-alto.pdf",
       "Tenor": "scores/tenor/o-salutaris-hostia-tenor.pdf",
@@ -1740,7 +1805,7 @@ window.CHOIR_SONGS = [
   },
   {
     "id": "mp-set1-simplified-kyrie",
-    "title": "KYRIE",
+    "title": "KYRIE (MISA PASTORELLA I - SIMPLIFIED)",
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
@@ -1755,7 +1820,7 @@ window.CHOIR_SONGS = [
   },
   {
     "id": "mp-set1-simplified-gloria",
-    "title": "GLORIA",
+    "title": "GLORIA (MISA PASTORELLA I - SIMPLIFIED)",
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
@@ -1770,7 +1835,7 @@ window.CHOIR_SONGS = [
   },
   {
     "id": "mp-set1-simplified-alleluia",
-    "title": "ALLELUIA",
+    "title": "ALLELUIA (MISA PASTORELLA I - SIMPLIFIED)",
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
@@ -1785,7 +1850,7 @@ window.CHOIR_SONGS = [
   },
   {
     "id": "mp-set1-simplified-sanctus",
-    "title": "SANCTUS",
+    "title": "SANCTUS (MISA PASTORELLA I - SIMPLIFIED)",
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
@@ -1800,7 +1865,7 @@ window.CHOIR_SONGS = [
   },
   {
     "id": "mp-set1-simplified-memoriale",
-    "title": "MEMORIALE",
+    "title": "MEMORIALE (MISA PASTORELLA I - SIMPLIFIED)",
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
@@ -1815,7 +1880,7 @@ window.CHOIR_SONGS = [
   },
   {
     "id": "mp-set1-simplified-amen",
-    "title": "AMEN",
+    "title": "AMEN (MISA PASTORELLA I - SIMPLIFIED)",
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
@@ -1830,7 +1895,7 @@ window.CHOIR_SONGS = [
   },
   {
     "id": "mp-set1-simplified-agnus-dei",
-    "title": "AGNUS DEI",
+    "title": "AGNUS DEI (MISA PASTORELLA I - SIMPLIFIED)",
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
@@ -1975,7 +2040,7 @@ window.CHOIR_SONGS = [
   },
   {
     "id": "mp-set1-restored-kyrie",
-    "title": "KYRIE",
+    "title": "KYRIE (MISA PASTORELLA I - RESTORED)",
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
@@ -1986,7 +2051,7 @@ window.CHOIR_SONGS = [
   },
   {
     "id": "mp-set1-restored-gloria",
-    "title": "GLORIA",
+    "title": "GLORIA (MISA PASTORELLA I - RESTORED)",
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
@@ -1997,7 +2062,7 @@ window.CHOIR_SONGS = [
   },
   {
     "id": "mp-set1-restored-alleluia",
-    "title": "ALLELUIA",
+    "title": "ALLELUIA (MISA PASTORELLA I - RESTORED)",
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
@@ -2008,7 +2073,7 @@ window.CHOIR_SONGS = [
   },
   {
     "id": "mp-set1-restored-sanctus",
-    "title": "SANCTUS",
+    "title": "SANCTUS (MISA PASTORELLA I - RESTORED)",
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
@@ -2019,7 +2084,7 @@ window.CHOIR_SONGS = [
   },
   {
     "id": "mp-set1-restored-memoriale",
-    "title": "MEMORIALE",
+    "title": "MEMORIALE (MISA PASTORELLA I - RESTORED)",
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
@@ -2030,7 +2095,7 @@ window.CHOIR_SONGS = [
   },
   {
     "id": "mp-set1-restored-amen",
-    "title": "AMEN",
+    "title": "AMEN (MISA PASTORELLA I - RESTORED)",
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",
@@ -2041,7 +2106,7 @@ window.CHOIR_SONGS = [
   },
   {
     "id": "mp-set1-restored-agnus-dei",
-    "title": "AGNUS DEI",
+    "title": "AGNUS DEI (MISA PASTORELLA I - RESTORED)",
     "collection": "misa-pastorella",
     "category": "Misa Pastorella",
     "season": "",

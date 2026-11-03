@@ -25,7 +25,7 @@ header{color:white;background:linear-gradient(140deg,var(--violet),var(--violet2
 main{padding:18px clamp(18px,3vw,36px)}.view-title{font-size:1.4rem;margin:4px 0 6px}.subtitle{color:var(--muted);margin:0 0 17px;font-size:.91rem}
 .welcome-row{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:12px}.welcome-copy{flex:1;min-width:0}.welcome-row .view-title{flex:1;min-width:0;margin:0 0 5px}.welcome-copy .subtitle{margin:0}.dot-legend{flex:0 0 auto;min-width:240px;border:1px solid #e4d7b9;border-radius:12px;background:#fffdf8;padding:10px 12px;box-shadow:0 2px 8px #3920520a}.dot-legend-title{font-size:.76rem;font-weight:750;color:var(--violet);margin-bottom:7px}.dot-legend-item{display:flex;align-items:center;gap:8px;font-size:.76rem;line-height:1.45;color:#514956}.dot-legend-item+.dot-legend-item{margin-top:4px}.dot-legend .resource-dot{width:9px!important;height:9px!important;min-width:9px!important;max-width:9px!important;min-height:9px!important;max-height:9px!important;flex-basis:9px!important}
 :root[data-theme="dark"] .dot-legend{background:#26202e;border-color:#665575}:root[data-theme="dark"] .dot-legend-title{color:#f3d98d}:root[data-theme="dark"] .dot-legend-item{color:#e4dbea}
-@media(max-width:680px){header{min-height:0;padding:14px 16px;gap:12px}.brand{gap:10px}.logo{width:62px;height:62px;flex-basis:62px}.theme-toggle{padding:7px 10px;font-size:.78rem}.welcome-row{align-items:stretch;flex-direction:column;gap:10px}.dot-legend{width:100%;min-width:0}.dot-legend-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.dot-legend-item+.dot-legend-item{margin-top:0}}
+@media(max-width:680px){header{min-height:0;padding:14px 16px;gap:12px}.brand{gap:10px}.logo{width:62px;height:62px;flex-basis:62px}.theme-toggle{padding:7px 10px;font-size:.78rem}.welcome-row{align-items:stretch;flex-direction:column;gap:10px}.dot-legend{width:100%;min-width:0}.dot-legend-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.dot-legend-item+.dot-legend-item{margin-top:0}}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tile{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:8px;min-height:100px;padding:14px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:15px;color:var(--ink);cursor:pointer;box-shadow:0 2px 8px #39205208}
 .tile:active,.song:active{transform:scale(.99)}
 .tile-disabled,.tile:disabled{background:#e5e5e5!important;border-color:#d0d0d0!important;color:#858585!important;cursor:not-allowed;box-shadow:none;opacity:1}
@@ -80,7 +80,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
 .search-panel-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}.search-panel-head h2{font-size:1.12rem;margin:0;flex:1}.search-close{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 12px;cursor:pointer}
 .search-panel .search-wrap{margin:0}.search-panel .search-wrap input{font-size:1rem}.search-results{overflow-y:auto;display:grid;gap:8px;margin-top:12px;min-height:0}.search-hint{padding:20px 8px;text-align:center;color:var(--muted);font-size:.9rem}.search-results .song{flex-shrink:0}
 :root[data-theme="dark"] .search-trigger{background:#26202e;color:#c5b9d0;border-color:#51445d}:root[data-theme="dark"] .search-icon{color:#f3d98d}
-.resource-dots{display:flex;flex-direction:row;gap:6px;align-items:center;justify-content:center;flex:0 0 auto;flex-shrink:0;min-width:0;min-height:0;height:14px;line-height:0}.resource-dot{display:block!important;box-sizing:border-box!important;width:10px!important;height:10px!important;min-width:10px!important;max-width:10px!important;min-height:10px!important;max-height:10px!important;flex:0 0 10px!important;aspect-ratio:1/1;border-radius:50%!important;overflow:hidden;border:0!important;padding:0!important;margin:0!important;font-size:0!important;line-height:0!important;min-height:10px!important;max-height:10px!important;transform:none!important;align-self:center;white-space:nowrap!important;box-shadow:none!important}.resource-dot.lyrics{background:#f1dfc0!important;background-color:#f1dfc0!important;border:1px solid #cbb78f!important}.resource-dot.pdf{background:#38a169;border-color:#2f855a}.resource-dot.audio{background:#3182ce;border-color:#2b6cb0}.resource-dot[aria-label]{cursor:help}
+.resource-dots{display:flex;flex-direction:row;gap:6px;align-items:center;justify-content:center;flex:0 0 auto;flex-shrink:0;min-width:0;min-height:0;height:14px;line-height:0}.resource-dot{display:block!important;box-sizing:border-box!important;width:10px!important;height:10px!important;min-width:10px!important;max-width:10px!important;min-height:10px!important;max-height:10px!important;flex:0 0 10px!important;aspect-ratio:1/1;border-radius:50%!important;overflow:hidden;border:0!important;padding:0!important;margin:0!important;font-size:0!important;line-height:0!important;min-height:10px!important;max-height:10px!important;transform:none!important;align-self:center;white-space:nowrap!important;box-shadow:none!important}.resource-dot.lyrics{background:#f1dfc0!important;background-color:#f1dfc0!important;border:1px solid #cbb78f!important}.resource-dot.pdf{background:#38a169;border-color:#2f855a}.resource-dot.audio{background:#3182ce;border-color:#2b6cb0}.resource-dot.chords{background:#e04444!important;border:1px solid #b92e37!important}.resource-dot[aria-label]{cursor:help}
 .song-title{text-transform:uppercase}
 
 /* MusiKaupod 4-feature update */
@@ -152,6 +152,44 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   .reader-tools .small-btn{min-height:46px;padding:9px 12px}
   .chord-pages img{width:100%;min-width:0;max-width:100%}
 }
+
+.psalm-lyrics-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;line-height:1.75}
+.psalm-lyrics-card h3{font-size:.82rem;letter-spacing:.06em;color:var(--violet2);margin:0 0 5px}
+.psalm-lyrics-card p{white-space:pre-wrap;margin:0 0 17px;font-size:1.08rem;line-height:1.75}
+.psalm-lyrics-card p:last-child{margin-bottom:0}
+.psalm-actions{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}
+.psalm-actions button{min-height:46px;padding:10px 15px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font-weight:650}
+.psalm-audio{width:100%;margin:3px 0 14px}
+.psalm-chord-heading{font-size:.85rem;color:var(--muted);margin:12px 0 7px}
+:root[data-theme="dark"] .psalm-lyrics-card{background:#26202e;border-color:#51445d}
+:root[data-theme="dark"] .psalm-lyrics-card h3{color:#f3d98d}
+@media(max-width:480px){.psalm-lyrics-card{padding:14px}.psalm-lyrics-card p{font-size:1rem}.psalm-actions{display:grid;grid-template-columns:1fr 1fr}.psalm-actions button{width:100%;padding:9px 7px;font-size:.86rem}}
+
+
+/* Universal tonal guide player — shared visual language for every audio guide. */
+.universal-player{--player-accent:var(--violet2);border:1px solid var(--line);border-radius:18px;background:var(--card);padding:14px 16px;margin:10px 0 16px;box-shadow:0 3px 12px #39205212}
+.player-track{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.82rem;font-variant-numeric:tabular-nums}
+.player-track input[type=range]{flex:1;min-width:0;accent-color:var(--gold);height:6px;cursor:pointer}
+.player-controls{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}
+.player-controls button{border:0;cursor:pointer;display:grid;place-items:center;flex:0 0 auto}
+.player-side{width:42px;height:42px;border-radius:50%;background:transparent;color:var(--ink);font-size:1.35rem;font-weight:750}
+.player-side[aria-pressed="true"]{background:#d6af5530;color:var(--violet2)}
+.player-main{width:62px;height:62px;border-radius:50%;background:var(--violet2);color:#fff;font-size:1.55rem;box-shadow:0 3px 10px #39205235}
+.player-main:active{transform:scale(.96)}
+.player-speed{min-width:38px;text-align:center;color:var(--muted);font-weight:750;font-size:.88rem;font-variant-numeric:tabular-nums}
+:root[data-theme="dark"] .universal-player{background:#26202e;border-color:#51445d;box-shadow:none}
+:root[data-theme="dark"] .player-side{color:#f5f0fa}
+:root[data-theme="dark"] .player-side[aria-pressed="true"]{color:#f3d98d}
+:root[data-theme="dark"] .player-main{background:#74469a}
+.psalm-toolbar{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:0 0 12px}
+.psalm-toolbar button{min-height:42px;padding:8px 13px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font-weight:650}
+.psalm-lyrics-card{margin-bottom:4px}
+#psalmLyricsContent p{font-size:var(--psalm-font-size,1.08rem)}
+#psalmChordViewer{width:100%}
+#psalmChordViewer .chord-pages{margin:0}
+#psalmAudio{display:none}
+@media(max-width:480px){.universal-player{padding:12px}.player-controls{gap:6px}.player-side{width:38px;height:40px}.player-main{width:58px;height:58px}.player-speed{min-width:32px}.psalm-toolbar{gap:6px}.psalm-toolbar button{flex:1;padding:8px 7px;font-size:.86rem}}
+
 </style>
 </head>
 <body>
@@ -161,7 +199,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     <img class="logo" src="assets/hijp-mmc-logo.png" alt="Holy Infant Jesus Parish Music Ministry Community logo">
     <div>
       <div class="eyebrow">Holy Infant Jesus Parish<br>Music Ministry Community</div>
-      <h1>MusiKaupod<br>Digital Songbook</h1><div class="version-label">VERSION 19 BETA</div>
+      <h1>MusiKaupod<br>Digital Songbook</h1><div class="version-label">VERSION BETA 19.5</div>
     </div>
   </div>
   <div class="theme-row"><button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">☾ Dark mode</button></div>
@@ -179,6 +217,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
           <div class="dot-legend-item"><span class="resource-dot lyrics" aria-hidden="true"></span><span>Song has Lyrics</span></div>
           <div class="dot-legend-item"><span class="resource-dot pdf" aria-hidden="true"></span><span>Song has Notations</span></div>
           <div class="dot-legend-item"><span class="resource-dot audio" aria-hidden="true"></span><span>Song has Tonal Guides</span></div>
+          <div class="dot-legend-item"><span class="resource-dot chords" aria-hidden="true"></span><span>Song has Chords</span></div>
         </div>
       </aside>
     </div>
@@ -274,12 +313,38 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   <section id="psalmTonesView" class="hidden">
   <div class="topline"><button class="back-btn" data-back="homeView">← Home</button><h2 class="view-title">PSALM TONES</h2></div>
   <p class="subtitle">Mga tono na ginagamit sa Salmo Responsorio</p>
-  <div class="psalm-placeholder">
-    <h3>Psalm Responsorial</h3>
-    <p>Psalm Tones collection is prepared for the addition of approved Psalm lyrics and audio recordings.</p>
-    <p class="subtitle">Sample Psalm lyrics and playable audio will appear here once the ministry's selected text and recording are supplied.</p>
-    <span class="status-pill">Lyrics and audio recording pending</span>
+  <p class="subtitle">Mga tono na ginagamit sa Salmo Responsorio</p>
+  <div id="psalmToneList" class="song-list"></div>
+</section>
+<section id="psalmDetailView" class="hidden">
+  <div class="topline"><button class="back-btn" data-back="psalmTonesView">← Psalm Tones</button><h2 class="view-title" id="psalmDetailTitle">SALMO</h2></div>
+  <div class="psalm-toolbar">
+    <button id="psalmChordButton" class="small-btn" type="button">♫ Show Chords</button>
+    <button id="psalmSmallerText" class="small-btn" type="button" aria-label="Decrease text size">A−</button>
+    <button id="psalmLargerText" class="small-btn" type="button" aria-label="Increase text size">A+</button>
   </div>
+  <div class="psalm-lyrics-card" id="psalmLyricsCard">
+    <div id="psalmLyricsContent">
+      <h3>SABAT</h3><p id="psalmResponse"></p>
+      <h3>BERSO</h3><p id="psalmStrophe"></p>
+      <h3>ULTIMO NA SABAT</h3><p id="psalmFinalResponse"></p>
+    </div>
+    <div id="psalmChordViewer" class="hidden"><div class="chord-pages"><img id="psalmChordImage" alt="Psalm chord arrangement"></div></div>
+  </div>
+  <section id="psalmAudioSection" class="score-section">
+    <h3>Tonal Guide (MP3)</h3>
+    <audio id="psalmAudio" preload="metadata"></audio>
+    <div class="universal-player" data-audio="psalmAudio" data-prefix="psalmAudioUI">
+      <div class="player-track"><span id="psalmAudioUICurrent">0:00</span><input id="psalmAudioUIProgress" type="range" min="0" max="1000" value="0" aria-label="Psalm audio position"><span id="psalmAudioUIDuration">0:00</span></div>
+      <div class="player-controls">
+        <button id="psalmAudioUIRepeat" class="player-side" type="button" aria-label="Repeat off" aria-pressed="false" title="Repeat">↻</button>
+        <button id="psalmAudioUISlow" class="player-side" type="button" aria-label="Slow down" title="Slow down">−</button>
+        <button id="psalmAudioUIPlay" class="player-main" type="button" aria-label="Play">▶</button>
+        <button id="psalmAudioUIFast" class="player-side" type="button" aria-label="Speed up" title="Speed up">＋</button>
+        <span id="psalmAudioUISpeed" class="player-speed" aria-live="polite">1×</span>
+      </div>
+    </div>
+  </section>
 </section>
 
 <section id="prayersView" class="hidden">
@@ -300,9 +365,17 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     <article id="lyricsText" class="lyrics"></article>
     <section id="audioSection" class="score-section hidden">
       <h3>Tonal Guide (MP3)</h3>
-      <audio id="tonalAudio" preload="metadata" style="width:100%;margin:8px 0 4px"></audio>
-      <div class="audio-tools"><button id="audioPlay" class="feature-btn" type="button">▶ Play</button><button id="audioRepeat" class="feature-btn secondary" type="button" aria-pressed="false">↻ Repeat: Off</button><label>Speed <select id="audioSpeed" class="feature-select"><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option></select></label></div>
-      <div class="audio-tools"><span id="audioCurrent">0:00</span><input id="audioProgress" type="range" min="0" max="1000" value="0" aria-label="Audio position"><span id="audioDuration">0:00</span></div>
+      <audio id="tonalAudio" preload="metadata"></audio>
+      <div class="universal-player" data-audio="tonalAudio" data-prefix="audio">
+        <div class="player-track"><span id="audioCurrent">0:00</span><input id="audioProgress" type="range" min="0" max="1000" value="0" aria-label="Audio position"><span id="audioDuration">0:00</span></div>
+        <div class="player-controls">
+          <button id="audioRepeat" class="player-side" type="button" aria-label="Repeat off" aria-pressed="false" title="Repeat">↻</button>
+          <button id="audioSlow" class="player-side" type="button" aria-label="Slow down" title="Slow down">−</button>
+          <button id="audioPlay" class="player-main" type="button" aria-label="Play">▶</button>
+          <button id="audioFast" class="player-side" type="button" aria-label="Speed up" title="Speed up">＋</button>
+          <span id="audioSpeed" class="player-speed" aria-live="polite">1×</span>
+        </div>
+      </div>
     </section>
     <section id="scoreSection" class="score-section hidden">
       <h3>Vocal Scores (PDF)</h3>
@@ -391,7 +464,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   const liturgyCategories = ["Kyrie - Short Form","Kyrie - Long Form","Gloria","Gospel Acclamation","Sanctus","Memorial Acclamation","Amen","Lord's Prayer","Doxology","Agnus Dei"];
   const seasons = ["Ordinary Time","Lent","Easter","Advent","Christmas"];
   const serviceCategories = ["Entrance","Offertory","Communion","Recessional"];
-  const viewIds = ["homeView","liturgyCategories","seasonList","seasonCategories","songListView","chantListView","holyHourListView","fiestaListView","prayersView","prayerListView","readerView","aboutView","misaPastorellaView","misaSet1View","misaSet2View","misaSimplifiedView","misaRestoredView","sietePalabrasView","favoritesView","lineupView","myLineupsView","onlineLineupsView","psalmTonesView","resourcesView","sharedLineupView"];
+  const viewIds = ["homeView","liturgyCategories","seasonList","seasonCategories","songListView","chantListView","holyHourListView","fiestaListView","prayersView","prayerListView","readerView","aboutView","misaPastorellaView","misaSet1View","misaSet2View","misaSimplifiedView","misaRestoredView","sietePalabrasView","favoritesView","lineupView","myLineupsView","onlineLineupsView","psalmTonesView","psalmDetailView","resourcesView","sharedLineupView"];
   const $ = id => document.getElementById(id);
   let currentList = [], currentBackView = "liturgyCategories", currentFontSize = 1.18, readerBackView = "songListView";
   const safe = v => String(v ?? "");
@@ -464,7 +537,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   function renderFavorites(){const list=$("favoritesList");list.replaceChildren();try{const stored=JSON.parse(localStorage.getItem(FAVORITES_KEY)||"[]");if(Array.isArray(stored))favorites=new Set(stored);}catch(_){}const items=songs.filter(song=>favorites.has(song.id));items.forEach(song=>list.append(songButton(song,"favoritesView")));$("favoritesEmpty").classList.toggle("hidden",items.length>0);}
   const onlineLineupCache=[];
   function showOnlineUnavailable(message){const status=$("onlineLineupStatus");status.textContent=message||"Internet connection required. Connect to the internet and try again.";$("onlineLineupList").innerHTML='<div class="empty">Online General Lineups cannot be loaded right now. Please check your internet connection and retry.</div>';}
-  function renderOnlineLineupCards(){const list=$("onlineLineupList");list.replaceChildren();const q=($("generalLineupsSearch")?.value||"").trim().toLocaleLowerCase();const matches=onlineLineupCache.filter(item=>[item.title,item.occasion,item.season,item.uploader,item.description].some(value=>String(value||"").toLocaleLowerCase().includes(q)));if(!matches.length){const p=document.createElement("div");p.className="empty";p.textContent=q?"No General Lineups match your search.":"No published lineups yet.";list.append(p);return;}matches.forEach(item=>{const card=document.createElement("article");card.className="online-card";const h=document.createElement("h3");h.textContent=item.title||"Untitled lineup";const meta=document.createElement("p");meta.className="meta";meta.textContent=[item.occasion,item.season,item.uploader,item.created_at?new Date(item.created_at).toLocaleDateString():""].filter(Boolean).join(" · ");const desc=document.createElement("p");desc.textContent=item.description||"";const actions=document.createElement("div");actions.className="online-actions";const view=document.createElement("button");view.className="feature-btn secondary";view.textContent="View Songs";view.addEventListener("click",()=>viewOnlineLineup(item.id));const download=document.createElement("button");download.className="feature-btn";download.textContent="Download Copy";download.addEventListener("click",()=>downloadOnlineLineup(item.id));actions.append(view,download);card.append(h,meta,desc,actions);list.append(card);});}
+  function renderOnlineLineupCards(){const list=$("onlineLineupList");list.replaceChildren();const q=($("generalLineupsSearch")?.value||"").trim().toLocaleLowerCase();const matches=onlineLineupCache.filter(item=>[item.title,item.occasion,item.season,item.uploader,item.description].some(value=>String(value||"").toLocaleLowerCase().includes(q))).slice().sort((a,b)=>String(a.title||"Untitled lineup").localeCompare(String(b.title||"Untitled lineup"),undefined,{sensitivity:"base",numeric:true}));if(!matches.length){const p=document.createElement("div");p.className="empty";p.textContent=q?"No General Lineups match your search.":"No published lineups yet.";list.append(p);return;}matches.forEach(item=>{const card=document.createElement("article");card.className="online-card";const h=document.createElement("h3");h.textContent=item.title||"Untitled lineup";const meta=document.createElement("p");meta.className="meta";meta.textContent=[item.occasion,item.season,item.uploader,item.created_at?new Date(item.created_at).toLocaleDateString():""].filter(Boolean).join(" · ");const desc=document.createElement("p");desc.textContent=item.description||"";const actions=document.createElement("div");actions.className="online-actions";const view=document.createElement("button");view.className="feature-btn secondary";view.textContent="View Songs";view.addEventListener("click",()=>viewOnlineLineup(item.id));const download=document.createElement("button");download.className="feature-btn";download.textContent="Download Copy";download.addEventListener("click",()=>downloadOnlineLineup(item.id));actions.append(view,download);card.append(h,meta,desc,actions);list.append(card);});}
   async function loadOnlineLineups(){const status=$("onlineLineupStatus");if(!navigator.onLine){showOnlineUnavailable("You are offline. Connect to the internet to browse General Lineups.");return;}status.textContent="Loading published lineups…";$("onlineLineupList").replaceChildren();try{const response=await fetch(API_URL+"?action=list&_="+Date.now(),{cache:"no-store"});if(!response.ok)throw new Error("Server returned HTTP "+response.status);const data=await response.json();if(!data.ok||!Array.isArray(data.lineups))throw new Error(data.error||"Invalid server response");onlineLineupCache.splice(0,onlineLineupCache.length,...data.lineups);status.textContent=`${data.lineups.length} published lineup(s) available.`;renderOnlineLineupCards();}catch(error){showOnlineUnavailable(!navigator.onLine?"You are offline. Connect to the internet to browse General Lineups.":"Unable to reach the General Lineups server. Please try again.");}}
   async function getOnlineLineup(id){if(!navigator.onLine)throw new Error("Internet connection required. Connect and try again.");const response=await fetch(API_URL+"?action=get&id="+encodeURIComponent(id)+"&_="+Date.now(),{cache:"no-store"});if(!response.ok)throw new Error("Server returned HTTP "+response.status);const data=await response.json();if(!data.ok||!data.lineup)throw new Error(data.error||"Unable to retrieve lineup");return data.lineup;}
   function renderLineupViewer(item, sourceLabel){const box=$("sharedLineupContent");box.replaceChildren();const heading=document.createElement("h2");heading.textContent=item.title||item.name||"Mass Lineup";box.append(heading);const meta=document.createElement("p");meta.className="subtitle";meta.textContent=[item.occasion,item.date||item.eventDate,item.uploader||sourceLabel].filter(Boolean).join(" · ");box.append(meta);const table=document.createElement("div");table.className="lineup-view-table";["LITURGICAL PART","SONG TITLE"].forEach(t=>{const c=document.createElement("div");c.className="lineup-view-cell lineup-view-head";c.textContent=t;table.append(c);});const addRow=(slot,song)=>{const a=document.createElement("div");a.className="lineup-view-cell";a.textContent=slot;const b=document.createElement("div");b.className="lineup-view-cell";const found=song&& (songs.find(x=>x.id===song.songId)||songs.find(x=>x.title===song.title));if(found){const btn=document.createElement("button");btn.className="review-song";btn.type="button";btn.textContent=found.title;btn.addEventListener("click",()=>openSong(found,"sharedLineupView"));const previewBtn=document.createElement("button");previewBtn.type="button";previewBtn.className="small-btn";previewBtn.style.marginTop="6px";previewBtn.textContent="Lyrics preview ▾";const preview=document.createElement("div");preview.className="picker-preview hidden";preview.textContent=safe(found.lyrics)||"No lyrics available for preview.";previewBtn.addEventListener("click",()=>{const opening=preview.classList.contains("hidden");preview.classList.toggle("hidden",!opening);previewBtn.textContent=opening?"Hide lyrics preview ▴":"Lyrics preview ▾";});b.append(btn,previewBtn,preview);}else{b.textContent=(song&&song.title)||"Song not available in this catalogue";}table.append(a,b);};if(item.slots){MASS_SLOTS.forEach(slot=>(item.slots[slot.key]||[]).forEach(id=>{const song=songs.find(x=>x.id===id);addRow(slot.label,{songId:id,title:song?.title});}));}else{const entries=item.songs||[];MASS_SLOTS.forEach(slot=>entries.filter(x=>(x.slot||x.category)===slot.key).forEach(song=>addRow(slot.label,song)));}box.append(table);if(item.notes||item.description){const note=document.createElement("p");note.className="subtitle";note.style.marginTop="16px";note.textContent=item.notes||item.description;box.append(note);}showView("sharedLineupView");}
@@ -492,9 +565,19 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   const emptySlots=()=>Object.fromEntries(MASS_SLOTS.map(x=>[x.key,[]]));
   function normalizeLineup(item){if(!item.slots)item.slots=emptySlots();MASS_SLOTS.forEach(x=>{if(!Array.isArray(item.slots[x.key]))item.slots[x.key]=[];});return item;}
   lineups=lineups.map(normalizeLineup);
-  const candidatesFor=slot=>songs.filter(song=>slot.category==="__ANY__" || (Array.isArray(slot.category)?slot.category.includes(song.category):slot.category==="__MARIAN_TAG__"?((Array.isArray(song.tags)&&song.tags.includes("marian"))||song.category==="Marian Song"):song.category===slot.category));
+  function misaPastorellaSlotMatch(song,slot){
+    if(song.collection!=="misa-pastorella")return false;
+    const id=safe(song.id).toLocaleLowerCase();
+    const base=id.replace(/^mp-set\d+-(?:simplified|restored)-/,"").replace(/-/g," ").toLocaleUpperCase();
+    const slotMap={"KYRIE":"Kyrie","GLORIA":"Gloria","ALLELUIA":"Gospel Acclamation","SANCTUS":"Sanctus","MEMORIALE":"Memorial Acclamation","AMEN":"Amen","AGNUS DEI":"Agnus Dei"};
+    return slotMap[base]===slot.key;
+  }
+  const candidatesFor=slot=>songs.filter(song=>{
+    const normal=slot.category==="__ANY__" || (Array.isArray(slot.category)?slot.category.includes(song.category):slot.category==="__MARIAN_TAG__"?((Array.isArray(song.tags)&&song.tags.includes("marian"))||song.category==="Marian Song"):song.category===slot.category);
+    return normal||misaPastorellaSlotMatch(song,slot);
+  });
   function lineupErrors(lineup){const errors=[];MASS_SLOTS.forEach(slot=>{const n=(lineup?.slots?.[slot.key]||[]).length;if(n<slot.min)errors.push(`${slot.label}: add at least ${slot.min}.`);if(n>slot.max)errors.push(`${slot.label}: maximum ${slot.max}.`);});return errors;}
-  function lineupCategoryErrors(lineup){const errors=[];MASS_SLOTS.forEach(slot=>(lineup?.slots?.[slot.key]||[]).forEach(id=>{const song=songs.find(x=>x.id===id);if(!song){errors.push(`${slot.label}: missing song ${id}.`);return;}const allowed=slot.category==="__ANY__"||(Array.isArray(slot.category)?slot.category.includes(song.category):slot.category==="__MARIAN_TAG__"?((song.tags||[]).includes("marian")||song.category==="Marian Song"):song.category===slot.category);if(!allowed)errors.push(`${song.title} is not allowed in ${slot.label}.`);}));return errors;}
+  function lineupCategoryErrors(lineup){const errors=[];const set1Songs=MASS_SLOTS.flatMap(slot=>lineup?.slots?.[slot.key]||[]).map(id=>songs.find(song=>song.id===id)).filter(song=>song&&song.collection==="misa-pastorella"&&safe(song.subcategory).startsWith("Set 1 ·"));const set1Modes=new Set(set1Songs.map(song=>song.subcategory.endsWith("Simplified")?"Simplified":"Restored"));if(set1Modes.size>1)errors.push("Misa Pastorella Set 1: Simplified and Restored songs cannot be mixed in one lineup.");MASS_SLOTS.forEach(slot=>(lineup?.slots?.[slot.key]||[]).forEach(id=>{const song=songs.find(x=>x.id===id);if(!song){errors.push(`${slot.label}: missing song ${id}.`);return;}const allowed=slot.category==="__ANY__"||(Array.isArray(slot.category)?slot.category.includes(song.category):slot.category==="__MARIAN_TAG__"?((song.tags||[]).includes("marian")||song.category==="Marian Song"):song.category===slot.category)||misaPastorellaSlotMatch(song,slot);if(!allowed)errors.push(`${song.title} is not allowed in ${slot.label}.`);}));return errors;}
   function viewLocalLineup(index){const item=lineups[index];if(!item)return;renderLineupViewer(item,"Saved on this device");}
   function copyAndModifyLineup(index){const source=lineups[index];if(!source)return;const copy=JSON.parse(JSON.stringify(source));copy.id=`copy-${Date.now()}-${Math.random().toString(36).slice(2,8)}`;copy.name=(source.name||"Mass Lineup")+" (Copy)";delete copy.downloadedFrom;delete copy.downloadedAt;delete copy.importedSnapshotId;lineups.push(copy);activeLineup=lineups.length-1;persistLineups();renderLineups();showView("lineupView");alert("An independent editable copy has been created. Changes will not affect the original or its online version.");}
   function renderLineups(){const saved=$("savedLineups");saved.replaceChildren();const h=document.createElement("h3");h.textContent="Saved lineups";saved.append(h);const q=($("myLineupsSearch")?.value||"").trim().toLocaleLowerCase();const visible=lineups.map((item,index)=>({item,index})).filter(({item})=>!item._draft&&[item.name,item.occasion,item.season,item.date,item.notes].some(value=>String(value||"").toLocaleLowerCase().includes(q)));if(!visible.length){const p=document.createElement("p");p.className="subtitle";p.textContent=q?"No saved lineups match your search.":"No saved lineups yet.";saved.append(p);}visible.forEach(({item,index})=>{const card=document.createElement("div");card.className="online-card";const title=document.createElement("h3");title.textContent=item.name||`Mass Lineup ${index+1}`;const meta=document.createElement("p");meta.className="meta";meta.textContent=[item.date,item.occasion,item.season,item.downloadedFrom?"Downloaded from General Lineups":"Saved on this device"].filter(Boolean).join(" · ");const actions=document.createElement("div");actions.className="online-actions";const view=document.createElement("button");view.className="feature-btn secondary";view.textContent="View Songs";view.addEventListener("click",()=>viewLocalLineup(index));const copy=document.createElement("button");copy.className="feature-btn secondary";copy.textContent="Copy & Modify";copy.addEventListener("click",()=>copyAndModifyLineup(index));const edit=document.createElement("button");edit.className="feature-btn secondary";edit.textContent="Edit";edit.addEventListener("click",()=>startEditingLineup(index));const share=document.createElement("button");share.className="feature-btn secondary";share.textContent="Share";share.disabled=lineupErrors(item).length>0;share.addEventListener("click",()=>shareLineup(index));const upload=document.createElement("button");upload.className="feature-btn";upload.textContent="Upload to MMC";upload.addEventListener("click",()=>uploadLineup(index));const del=document.createElement("button");del.className="feature-btn secondary";del.textContent="Delete";del.addEventListener("click",()=>{if(confirm("Delete this saved lineup from this device?")){lineups.splice(index,1);activeLineup=Math.max(0,Math.min(activeLineup,lineups.length-1));persistLineups();renderLineups();}});actions.append(view,edit,copy,share,upload,del);card.append(title,meta,actions);saved.append(card);});renderLineupSlots();}
@@ -505,7 +588,13 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     const lineup=lineups[activeLineup];if(!lineup)return;
     const selectedInSlot=new Set(lineup.slots[slot.key]||[]);
     const selectedAnywhere=new Set(MASS_SLOTS.flatMap(existing=>(lineup.slots[existing.key]||[])));
-    const candidates=candidatesFor(slot).filter(song=>!selectedInSlot.has(song.id)&&(slot.key!=="Auxiliary Songs"||!selectedAnywhere.has(song.id)));
+    const existingSet1=lineup.slots ? MASS_SLOTS.flatMap(s=>lineup.slots[s.key]||[]).map(id=>songs.find(x=>x.id===id)).filter(song=>song&&song.collection==="misa-pastorella"&&safe(song.subcategory).startsWith("Set 1 ·")) : [];
+    const set1Mode=existingSet1.length?(existingSet1[0].subcategory.endsWith("Simplified")?"Simplified":"Restored"):null;
+    const candidates=candidatesFor(slot).filter(song=>{
+      if(selectedInSlot.has(song.id)||(slot.key==="Auxiliary Songs"&&selectedAnywhere.has(song.id)))return false;
+      if(song.collection==="misa-pastorella"&&safe(song.subcategory).startsWith("Set 1 ·")&&set1Mode&&!song.subcategory.endsWith(set1Mode))return false;
+      return true;
+    });
     if(!candidates.length){alert(slot.key==="Marian Song"?"No songs are currently tagged as Marian. Marian songs must be tagged in the catalogue before they can be selected here.":`No songs are currently available for ${slot.label}.`);return;}
     const backdrop=document.createElement("div");backdrop.className="picker-backdrop";
     const picker=document.createElement("section");picker.className="picker-panel";picker.setAttribute("role","dialog");picker.setAttribute("aria-modal","true");picker.setAttribute("aria-label",`Choose ${slot.label}`);
@@ -524,9 +613,22 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
       toggle.addEventListener("click",()=>{const opening=preview.classList.contains("hidden");preview.classList.toggle("hidden",!opening);toggle.setAttribute("aria-expanded",String(opening));});
       add.addEventListener("click",()=>{
         if(!lineups.includes(lineup)){alert("This lineup is no longer active. Please reopen it and try again.");backdrop.remove();return;}
-        const allowed=slot.category==="__ANY__"||(Array.isArray(slot.category)?slot.category.includes(song.category):slot.category==="__MARIAN_TAG__"?((song.tags||[]).includes("marian")||song.category==="Marian Song"):song.category===slot.category);
+        const allowed=slot.category==="__ANY__"||(Array.isArray(slot.category)?slot.category.includes(song.category):slot.category==="__MARIAN_TAG__"?((song.tags||[]).includes("marian")||song.category==="Marian Song"):song.category===slot.category)||misaPastorellaSlotMatch(song,slot);
         if(!allowed){alert("That song does not belong in this lineup category.");return;}
         if(lineup.slots[slot.key].length>=slot.max){alert(`Maximum ${slot.max} song(s) allowed.`);return;}
+        if(song.collection==="misa-pastorella"&&safe(song.subcategory).startsWith("Set 1 ·")){
+          const already=lineup.slots?MASS_SLOTS.flatMap(s=>lineup.slots[s.key]||[]).map(id=>songs.find(x=>x.id===id)).filter(x=>x&&x.collection==="misa-pastorella"&&safe(x.subcategory).startsWith("Set 1 ·")):[];
+          const currentMode=already.length?(already[0].subcategory.endsWith("Simplified")?"Simplified":"Restored"):null;
+          const songMode=song.subcategory.endsWith("Simplified")?"Simplified":"Restored";
+          if(currentMode&&currentMode!==songMode){alert(`This lineup is already using Misa Pastorella Set 1 – ${currentMode}. You cannot mix it with the ${songMode} version.`);return;}
+          if(!currentMode){
+            const choice=window.prompt("You selected Misa Pastorella Set 1. Choose one version for this entire lineup by typing SIMPLIFIED or RESTORED:","SIMPLIFIED");
+            if(choice===null)return;
+            const normalized=choice.trim().toLocaleLowerCase();
+            if(!["simplified","restored"].includes(normalized)){alert("Please enter SIMPLIFIED or RESTORED.");return;}
+            if(normalized!==songMode.toLocaleLowerCase()){alert(`You selected ${normalized.toLocaleUpperCase()}, but this song belongs to the ${songMode.toLocaleUpperCase()} version. Please choose a matching song.`);return;}
+          }
+        }
         lineup.slots[slot.key].push(song.id);persistLineups();backdrop.remove();renderLineupSlots();renderLineups();
       });
       row.append(toggle,add);card.append(row,preview);list.append(card);
@@ -560,7 +662,32 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   const RESOURCE_CACHE="musikaupod-resources-v1";
   async function renderResources(){const list=$("resourceList");list.replaceChildren();const entries=resourceEntries();let cache=null,allCaches=[];try{cache=await caches.open(RESOURCE_CACHE);allCaches=await caches.keys();}catch(_){}let saved=0,total=0;for(const item of entries){let cached=false,bundled=false;try{cached=!!(cache&&await cache.match(item.url));if(!cached){for(const key of allCaches){if(key===RESOURCE_CACHE)continue;const c=await caches.open(key);if(await c.match(item.url)){bundled=true;break;}}}}catch(_){}if(cached||bundled)saved++;total++;const row=document.createElement("div");row.className="resource-item";const info=document.createElement("div");info.textContent=item.song;const small=document.createElement("small");small.textContent=item.type;info.append(small);const status=document.createElement("span");status.className="status-pill";status.textContent=bundled?"Included with app":cached?"Downloaded offline":"Not downloaded";const btn=document.createElement("button");btn.className="feature-btn secondary";btn.textContent=bundled?"Included":cached?"Remove":"Download";btn.disabled=bundled;btn.addEventListener("click",async()=>{btn.disabled=true;try{const c=await caches.open(RESOURCE_CACHE);if(cached){await c.delete(item.url);}else{const response=await fetch(item.url);if(!response.ok)throw new Error("Download failed");await c.put(item.url,response);}await renderResources();}catch(e){alert(`Could not update ${item.type}: ${e.message}`);btn.disabled=false;}});row.append(info,status,btn);list.append(row);}$("resourceSummary").textContent=`${saved} of ${total} resources available offline`;$("resourceStorage").textContent="Storage usage is available in browsers that support the Storage API.";try{const estimate=await navigator.storage?.estimate?.();if(estimate){const mb=n=>(n/1048576).toFixed(1)+" MB";$("resourceStorage").textContent=`Approx. ${mb(estimate.usage||0)} used of ${mb(estimate.quota||0)} available browser storage.`;}}catch(_){}}
   function formatTime(value){if(!Number.isFinite(value))return"0:00";const m=Math.floor(value/60),sec=Math.floor(value%60);return `${m}:${String(sec).padStart(2,"0")}`;}
-  function setupAudioTools(){const audio=$("tonalAudio"),play=$("audioPlay"),repeat=$("audioRepeat"),speed=$("audioSpeed"),progress=$("audioProgress");play.addEventListener("click",()=>{if(audio.paused)audio.play().catch(()=>{});else audio.pause();});audio.addEventListener("play",()=>play.textContent="Ⅱ Pause");audio.addEventListener("pause",()=>play.textContent="▶ Play");speed.addEventListener("change",()=>audio.playbackRate=Number(speed.value));repeat.addEventListener("click",()=>{audio.loop=!audio.loop;repeat.textContent=`↻ Repeat: ${audio.loop?"On":"Off"}`;repeat.setAttribute("aria-pressed",String(audio.loop));});audio.addEventListener("timeupdate",()=>{if(audio.duration){progress.value=String(Math.round(audio.currentTime/audio.duration*1000));$("audioCurrent").textContent=formatTime(audio.currentTime);$("audioDuration").textContent=formatTime(audio.duration);}});progress.addEventListener("input",()=>{if(audio.duration)audio.currentTime=(Number(progress.value)/1000)*audio.duration;});audio.addEventListener("loadedmetadata",()=>{$("audioDuration").textContent=formatTime(audio.duration);});}
+  function setupUniversalPlayer(audioId,prefix){
+    const audio=$(audioId),play=$(prefix+"Play"),repeat=$(prefix+"Repeat"),slow=$(prefix+"Slow"),fast=$(prefix+"Fast"),speedLabel=$(prefix+"Speed"),progress=$(prefix+"Progress"),current=$(prefix+"Current"),duration=$(prefix+"Duration");
+    if(!audio||!play||audio.dataset.playerReady==="1")return;
+    audio.dataset.playerReady="1";
+    const updateSpeed=()=>{speedLabel.textContent=`${audio.playbackRate.toFixed(2).replace(/0+$/,"").replace(/\\.$/,"")}×`;};
+    play.addEventListener("click",()=>{if(audio.paused)audio.play().catch(()=>{});else audio.pause();});
+    audio.addEventListener("play",()=>{play.textContent="Ⅱ";play.setAttribute("aria-label","Pause");});
+    audio.addEventListener("pause",()=>{play.textContent="▶";play.setAttribute("aria-label","Play");});
+    repeat.addEventListener("click",()=>{audio.loop=!audio.loop;repeat.setAttribute("aria-pressed",String(audio.loop));repeat.setAttribute("aria-label",audio.loop?"Repeat on":"Repeat off");});
+    slow.addEventListener("click",()=>{audio.playbackRate=Math.max(.5,Math.round((audio.playbackRate-.1)*10)/10);updateSpeed();});
+    fast.addEventListener("click",()=>{audio.playbackRate=Math.min(2,Math.round((audio.playbackRate+.1)*10)/10);updateSpeed();});
+    audio.addEventListener("timeupdate",()=>{if(Number.isFinite(audio.duration)&&audio.duration>0){progress.value=String(Math.round(audio.currentTime/audio.duration*1000));current.textContent=formatTime(audio.currentTime);duration.textContent=formatTime(audio.duration);}});
+    progress.addEventListener("input",()=>{if(Number.isFinite(audio.duration)&&audio.duration>0)audio.currentTime=(Number(progress.value)/1000)*audio.duration;});
+    audio.addEventListener("loadedmetadata",()=>{duration.textContent=formatTime(audio.duration);});
+    audio.addEventListener("ended",()=>{if(!audio.loop){play.textContent="▶";play.setAttribute("aria-label","Play");}});
+    updateSpeed();
+  }
+  function resetUniversalPlayer(audioId,prefix,source){
+    const audio=$(audioId),play=$(prefix+"Play"),repeat=$(prefix+"Repeat"),progress=$(prefix+"Progress"),current=$(prefix+"Current"),duration=$(prefix+"Duration"),speed=$(prefix+"Speed");
+    audio.pause();audio.src=source||"";audio.loop=false;audio.playbackRate=1;
+    if(source)audio.load();
+    play.textContent="▶";play.setAttribute("aria-label","Play");repeat.setAttribute("aria-pressed","false");repeat.setAttribute("aria-label","Repeat off");
+    progress.value="0";current.textContent="0:00";duration.textContent="0:00";speed.textContent="1×";
+  }
+  function setupAudioTools(){setupUniversalPlayer("tonalAudio","audio");setupUniversalPlayer("psalmAudio","psalmAudioUI");}
+
   function renderTiles() {
     const lg=$("liturgyGrid");lg.replaceChildren();
     liturgyCategories.forEach(cat=>lg.appendChild(makeTile(cat,`${songs.filter(s=>s.collection==="liturgy"&&s.category===cat).length} songs`,"✝",()=>openSongs({collection:"liturgy",category:cat},"liturgyCategories",cat))));
@@ -601,6 +728,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     if(song.hasLyrics===true || safe(song.lyrics).trim()){const d=document.createElement("span");d.className="resource-dot lyrics";d.title="Lyrics available";d.setAttribute("aria-label","Lyrics available");dots.append(d);}
     if(song.scores && Object.keys(song.scores).length){const d=document.createElement("span");d.className="resource-dot pdf";d.title="PDF notation available";d.setAttribute("aria-label","PDF notation available");dots.append(d);}
     if(song.audio){const d=document.createElement("span");d.className="resource-dot audio";d.title="MP3 tonal guide available";d.setAttribute("aria-label","MP3 tonal guide available");dots.append(d);}
+    if((Array.isArray(song.chordPages)&&song.chordPages.length)||(Array.isArray(song.chordImages)&&song.chordImages.length)||safe(song.chordSheet).trim()){const d=document.createElement("span");d.className="resource-dot chords";d.title="Chord arrangement available";d.setAttribute("aria-label","Chord arrangement available");dots.append(d);}
     if(!dots.childElementCount)dots.hidden=true;
     const ar=document.createElement("span");ar.className="chevron";ar.textContent="›";
     b.append(ic,info,dots,ar);b.addEventListener("click",()=>{if($("searchOverlay")&&!$("searchOverlay").classList.contains("hidden"))closeSearch();openSong(song,backView);});return b;
@@ -633,23 +761,23 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     chordMode=!!enabled;
     if(chordMode){
       const wrap=document.createElement("div");wrap.className="chord-pages";
-      currentChordPages.forEach((page,index)=>{const img=document.createElement("img");img.src=`chords-pdf-reference/page-${String(page).padStart(2,"0")}.png`;img.alt=`Original PDF chord arrangement page ${page}`;img.loading=index===0?"eager":"lazy";wrap.appendChild(img);});
+      const imageSources=currentChordImages.length?currentChordImages:currentChordPages.map(page=>`chords-pdf-reference/page-${String(page).padStart(2,"0")}.png`);imageSources.forEach((src,index)=>{const img=document.createElement("img");img.src=src;img.alt=`Original chord arrangement page ${index+1}`;img.loading=index===0?"eager":"lazy";wrap.appendChild(img);});
       box.replaceChildren(wrap);box.classList.remove("chord-sheet");
     }else{box.textContent=currentLyrics;box.classList.remove("chord-sheet");}
     btn.textContent=chordMode?"♫ Hide Chords":"♫ Show Chords";
   }
-  let currentChordSheet="",currentChordPages=[],currentLyrics="";
+  let currentChordSheet="",currentChordPages=[],currentChordImages=[],currentLyrics="";
   function openSong(song,backView) {
     readerBackView=backView;$("readerTitle").textContent=safe(song.title).toLocaleUpperCase();$("readerCategory").textContent=displayCategory(song.category);
     $("readerMeta").textContent=song.collection==="service"?safe(song.season):song.collection==="prayers"?"Mga Pangadeyon":"Liturgy Song";
-    currentLyrics=safe(song.lyrics);currentChordSheet=safe(song.chordSheet);currentChordPages=Array.isArray(song.chordPages)?song.chordPages:[];const hasChords=!!currentChordSheet&&currentChordPages.length>0;$("showChords").classList.toggle("hidden",!hasChords);$("showChords").disabled=!hasChords;$("lyricsText").classList.remove("chord-sheet");$("lyricsText").textContent=currentLyrics;chordMode=false;currentFontSize=1.18;$("lyricsText").style.fontSize=currentFontSize+"rem";$("showChords").textContent="♫ Show Chords";
+    currentLyrics=safe(song.lyrics);currentChordSheet=safe(song.chordSheet);currentChordPages=Array.isArray(song.chordPages)?song.chordPages:[];currentChordImages=Array.isArray(song.chordImages)?song.chordImages:[];const hasChords=!!currentChordSheet&&(currentChordImages.length>0||currentChordPages.length>0);$("showChords").classList.toggle("hidden",!hasChords);$("showChords").disabled=!hasChords;$("lyricsText").classList.remove("chord-sheet");$("lyricsText").textContent=currentLyrics;chordMode=false;currentFontSize=1.18;$("lyricsText").style.fontSize=currentFontSize+"rem";$("showChords").textContent="♫ Show Chords";
     const scoreGrid=$("scoreGrid");scoreGrid.replaceChildren();
     const scores=song.scores||{};let scoreCount=0;
     ["Soprano","Alto","Tenor","Bass","Full Score"].forEach(part=>{if(!scores[part])return;scoreCount++;const a=document.createElement("a");a.className="score-link";a.href=scores[part];a.target="_blank";a.rel="noopener";a.innerHTML=`<span aria-hidden="true">♫</span><span>${part}<small>Open PDF score</small></span>`;scoreGrid.append(a);});
     $("scoreSection").classList.toggle("hidden",scoreCount===0);
     const audioSection=$("audioSection"),audio=$("tonalAudio");
     selectedSongForLineup=song;const fav=$("favoriteToggle");fav.classList.toggle("active",favorites.has(song.id));fav.textContent=favorites.has(song.id)?"★ Favorited":"☆ Favorite";
-    if(song.audio){audio.pause();audio.src=song.audio;audio.playbackRate=Number($("audioSpeed").value);audio.loop=false;$("audioRepeat").textContent="↻ Repeat: Off";$("audioRepeat").setAttribute("aria-pressed","false");$("audioProgress").value="0";$("audioCurrent").textContent="0:00";$("audioDuration").textContent="0:00";$("audioPlay").textContent="▶ Play";audioSection.classList.remove("hidden");}else{audio.pause();audio.removeAttribute("src");audio.load();audioSection.classList.add("hidden");}
+    if(song.audio){resetUniversalPlayer("tonalAudio","audio",song.audio);audioSection.classList.remove("hidden");}else{resetUniversalPlayer("tonalAudio","audio","");audioSection.classList.add("hidden");}
     showView("readerView");
   }
   function renderMisaSimplified(){
@@ -667,6 +795,57 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     items.forEach(s=>list.appendChild(songButton(s,"misaRestoredView")));
   }
   function renderSpecialCollection(collection,listId,emptyId,backView){const items=songs.filter(s=>s.collection===collection).slice().sort((a,b)=>safe(a.title).localeCompare(safe(b.title),undefined,{sensitivity:"base"}));const list=$(listId);list.replaceChildren();items.forEach(s=>list.appendChild(songButton(s,backView)));$(emptyId).classList.toggle("hidden",items.length>0);}
+  const psalmTones = [
+    {title:"SALMO – PAGTALUBO",pending:true},
+    {title:"SALMO – PAGLAOM",response:"Maga estar ako, sa balay san Ginoo\nSa tanan na adlaw san akon buhay",strophe:"Ikaw an Pastor ko Ginoo, dili ako makukulangan\nSa mga berde na pahuraban, kag matin-aw na katubigan\nAko Imo papahuwayan",final:"Maga estar ako, sa balay san Ginoo\nSa tanan na adlaw san akon buhay",audio:"audio/salmo-paglaom.mp3",chord:5},
+    {title:"SALMO – PAGTANOM",response:"Ihalad niyo sa Ginoo, an glorya kag paggalang",strophe:"Magkanta sa Ginoo sin bag-o na kanta\nMagkanta sa Ginoo kamo tanan sa duta\nIpang-istorya an Iya glorya sa tanan na nasyon\nAn makangangawa na Iya hinimo sa tanan na tawo",final:"Ihalad niyo sa Ginoo, an glorya kag paggalang",audio:"audio/salmo-pagtanom.mp3",chord:6},
+    {title:"SALMO – PAGMAW-OT",pending:true},
+    {title:"SALMO – PAGPHANDUM",pending:true},
+    {title:"SALMO – PAGTAWAG",pending:true},
+    {title:"SALMO – PAG-AYUNO",response:"Nasa Ginoo an pagkaluoy kag kapunuan san pagtubos",strophe:"Sa kahidaluman nagatawag ako sa imo, Ginoo;\nGinoo, bati-a an boses ko!\nMakabati lugod an imo mga talinga\nsan boses san akon pakimaluoy!",final:"Nasa Ginoo an pagkaluoy kag kapunuan san pagtubos",audio:"audio/salmo-pag-ayuno.mp3",chord:2},
+    {title:"SALMO – PAGMAKALUOY",response:"Dios ko, Dios ko, nano kay ginpabayaan mo ako.",strophe:"An tanan na nakakakita sa akon ginatuyâ ako,\nginatiwi ninda an nguso, ginapiling-piling an ulo.\nGinhatag niya an iya sadiri sa Ginoo; sa iya siya idulag!\nAagawon niya siya, kay naiilaan siya san Ginoo.",final:"Dios ko, Dios ko, nano kay ginpabayaan mo ako.",audio:"audio/salmo-pagmakaluoy.mp3",chord:1},
+    {title:"SALMO – PAGLIPAY",response:"Nagalipay an puso ko sa Ginoo na akon paraligtas",strophe:"An puso ko nagalipay sa Ginoo,\nsa akon Ginoo an akon kusog ginapasarig,\nginatawahan san baba ko an akon mga kaaway,\nkay nagalipay ako san iya pagligtas.",final:"Nagalipay an puso ko sa Ginoo na akon paraligtas",audio:"audio/salmo-paglipay.mp3",chord:3},
+    {title:"SALMO – PAGSAMBA",response:"An kalis na pagbendisyon, amo an pakig-usad\nsa Dugo ni Kristo",strophe:"Nano an ikakahatag ko sa Ginoo\nsa tanan na pagka- mahinatagon niya sa akon?\nAn kalis san kaligtasan aalsahon ko\nkag an ngaran san Ginoo akon tatawagon.",final:"An kalis na pagbendisyon, amo an pakig-usad\nsa Dugo ni Kristo",audio:"audio/salmo-pagsamba.mp3",chord:4},
+    {title:"SALMO – PAG-OMAW",pending:true}
+  ];
+  let activePsalm=null;
+  function renderPsalmTones(){
+    const list=$("psalmToneList");list.replaceChildren();
+    psalmTones.forEach((psalm,index)=>{
+      const b=document.createElement("button");b.className="song";b.type="button";
+      const icon=document.createElement("span");icon.className="song-icon";icon.textContent=psalm.pending?"◷":"♫";
+      const info=document.createElement("span");info.className="song-info";
+      const title=document.createElement("span");title.className="song-title";title.textContent=psalm.title;
+      info.append(title);b.append(icon,info);
+      const dots=document.createElement("span");dots.className="resource-dots";dots.setAttribute("aria-label","Available resources");
+      if(psalm.response&&psalm.strophe&&psalm.final){const d=document.createElement("span");d.className="resource-dot lyrics";d.title="Lyrics available";d.setAttribute("aria-label","Lyrics available");dots.append(d);}
+      if(psalm.chord){const d=document.createElement("span");d.className="resource-dot chords";d.title="Chord arrangement available";d.setAttribute("aria-label","Chord arrangement available");dots.append(d);}
+      if(psalm.audio){const d=document.createElement("span");d.className="resource-dot audio";d.title="MP3 tonal guide available";d.setAttribute("aria-label","MP3 tonal guide available");dots.append(d);}
+      if(dots.childElementCount)b.append(dots);
+      const chevron=document.createElement("span");chevron.className="chevron";chevron.textContent="›";b.append(chevron);
+      b.addEventListener("click",()=>openPsalm(index));list.append(b);
+    });
+  }
+  let psalmChordMode=false,psalmFontSize=1.08;
+  function setPsalmChordMode(enabled){
+    psalmChordMode=!!enabled;
+    $("psalmLyricsContent").classList.toggle("hidden",psalmChordMode);
+    $("psalmChordViewer").classList.toggle("hidden",!psalmChordMode);
+    $("psalmChordButton").textContent=psalmChordMode?"♫ Hide Chords":"♫ Show Chords";
+  }
+  function openPsalm(index){
+    const psalm=psalmTones[index];if(!psalm||psalm.pending)return;activePsalm=psalm;
+    $("psalmDetailTitle").textContent=psalm.title;
+    $("psalmResponse").textContent=psalm.response;$("psalmStrophe").textContent=psalm.strophe;$("psalmFinalResponse").textContent=psalm.final;
+    psalmFontSize=1.08;$("psalmLyricsContent").style.setProperty("--psalm-font-size",psalmFontSize+"rem");
+    const chordButton=$("psalmChordButton"),img=$("psalmChordImage");
+    chordButton.classList.toggle("hidden",!psalm.chord);
+    if(psalm.chord){img.src=`psalm-chords/page-${String(psalm.chord).padStart(2,"0")}.png`;img.alt=`${psalm.title} chord arrangement`;}
+    setPsalmChordMode(false);
+    resetUniversalPlayer("psalmAudio","psalmAudioUI",psalm.audio);
+    showView("psalmDetailView");
+  }
+
   // Delegate navigation clicks from the document so static and dynamically
   // rendered navigation controls remain clickable on every screen/device.
   document.addEventListener("click", event => {
@@ -674,6 +853,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     if (openButton && !openButton.disabled) {
       const target = openButton.dataset.open;
       if (target === "prayersView") renderPrayerLanguages();
+      if (target === "psalmTonesView") renderPsalmTones();
       if (target === "chantListView") renderCollection("chant", "chantList", "chantEmpty");
       if (target === "misaSimplifiedView") renderMisaSimplified();
       if (target === "misaRestoredView") renderMisaRestored();
@@ -722,6 +902,9 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("searchOverlay").classList.contains("hidden"))closeSearch();});
   $("showChords").addEventListener("click",()=>setChordMode(!chordMode));
   $("smallerText").addEventListener("click",()=>{currentFontSize=Math.max(.75,currentFontSize-.1);$("lyricsText").style.fontSize=currentFontSize+"rem"});
+  $("psalmChordButton").addEventListener("click",()=>setPsalmChordMode(!psalmChordMode));
+  $("psalmSmallerText").addEventListener("click",()=>{psalmFontSize=Math.max(.75,Math.round((psalmFontSize-.1)*10)/10);$("psalmLyricsContent").style.setProperty("--psalm-font-size",psalmFontSize+"rem");});
+  $("psalmLargerText").addEventListener("click",()=>{psalmFontSize=Math.min(2.1,Math.round((psalmFontSize+.1)*10)/10);$("psalmLyricsContent").style.setProperty("--psalm-font-size",psalmFontSize+"rem");});
   $("largerText").addEventListener("click",()=>{currentFontSize=Math.min(2.1,currentFontSize+.1);$("lyricsText").style.fontSize=currentFontSize+"rem"});
   $("openFavorites").addEventListener("click",()=>{renderFavorites();showView("favoritesView");});
   $("openLineup").addEventListener("click",beginNewLineup);

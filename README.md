@@ -71,3 +71,27 @@ The app does not embed the upload password. Administrators enter it when uploadi
 ## v19 Beta chord alignment revision
 
 The Show Chords view for the 13 arrangements now displays high-resolution page images rendered directly from `Barangay Mass Chords Set 1.pdf`. This preserves the source PDF's actual chord-to-syllable positioning, line spacing, and page layout rather than approximating alignment with typed spaces. The 15 reference page images are included in the service-worker precache for offline use. Glorya I and Hesus na Ginoo span multiple pages; Memoryal I and Amen I share page 9 in the source PDF.
+
+
+## Beta 19.5 UI Revision — Resource Indicators and Pastorella Lineup Selection
+- Added a red chord-availability indicator to the resource legend and song lists, including Psalm Tones.
+- Enabled Misa Pastorella Set 1 songs in matching Mass Lineup Creator slots.
+- Added a one-version-per-lineup rule for Set 1 (Simplified or Restored), with automatic matching of the selected version and validation against mixed variants.
+- Set 2 lineup selection support is prepared through the same category mapping, but no Set 2 song records are present in this source catalogue yet.
+- Updated the service-worker cache to v34.
+
+
+## Beta 19.5 Advent content update
+- Replaced GLORYA I chord display with the corrected three-page arrangement from `Chords for App Advent and Glorya I.pdf`.
+- Added chord-sheet image resources for AN HADI SAN LANGIT MAABOT, KADI O GINOO, ABREHAN KAG LINISAN, PANUGANG KALIGTASAN, ALELUYA XIII (ADBIENTO), and KADI SA AMON.
+- Corrected AN HADI SAN LANGIT MAABOT lyric to “Abrehan an mga pwertahan”.
+- Added five Advent tonal-guide recordings and included the new chord images/audio in the offline service-worker cache.
+- IBARETA SA KALIBUTAN has a tonal guide but no chord sheet in the supplied PDF.
+
+
+## Beta 19.5 — O Salutaris Hostia SATB addition
+- Added one combined SATB tonal guide recording for O SALUTARIS HOSTIA.
+- Added the complete two-page SATB PDF as the Full Score resource.
+- Retained the existing individual Soprano, Alto, Tenor, and Bass PDFs.
+- The song now has both the blue tonal-guide indicator and green PDF-notation indicator.
+- Added both assets to the offline app-shell cache (service worker cache v37).
