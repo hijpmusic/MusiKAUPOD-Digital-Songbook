@@ -118,3 +118,11 @@ The Show Chords view for the 13 arrangements now displays high-resolution page i
 - Offline cache version advanced for this build.
 
 Calendar note: this beta includes a bundled rule-based Ordo dataset for common Roman-calendar celebrations and the specified parish observances. It should be reviewed against the official Philippine Ordo and the Diocese of Masbate calendar before being treated as an authoritative liturgical Ordo; local transfers and precedence may require corrections.
+
+## Beta 19.9 development preview
+
+This build introduces the MusiKanam module framework and the Catholic Music Doctrines document library. The eight supplied PDF documents are stored under `doctrines/` and included in the service-worker app shell for offline availability after installation/cache completion.
+
+MusiKanam currently contains the game-selection/detail screens, a local score/statistics framework, initial quiz content, and a OneChant beta placeholder pending chant recordings. The current question sets are starter content and are not yet the complete 600/500-question banks in the release specification. LiriKaupod and the full three-life/20-question rules also require completion before this can be considered the final Beta 19.9 release.
+
+The mini-player dismissal and reappearance animations from Beta 19.7 are retained. The main and mini-player transport controls use inline SVG icons. The existing production v19 build is not modified.

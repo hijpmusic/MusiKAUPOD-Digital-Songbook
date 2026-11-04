@@ -1,4 +1,4 @@
-const CACHE_NAME = "musikaupod-pwa-beta197-v4";
+const CACHE_NAME = "musikaupod-pwa-beta199-v1";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -47,6 +47,14 @@ const APP_SHELL = [
   "./audio/an-hadi-san-langit-maabot.m4a",
   "./audio/o-salutaris-hostia-satb.mp3",
   "./scores/combined/o-salutaris-hostia-satb.pdf",
+  "./doctrines/general-instruction-roman-missal.pdf",
+  "./doctrines/sacrosanctum-concilium.pdf",
+  "./doctrines/tra-le-sollecitudini.pdf",
+  "./doctrines/chirograph-sacred-music.pdf",
+  "./doctrines/sacred-music-vol-131-no-2.pdf",
+  "./doctrines/hijp-mmc-constitution-bylaws-code.pdf",
+  "./doctrines/musicam-sacram.pdf",
+  "./doctrines/sing-to-the-lord-usccb.pdf",
   "./manifest.webmanifest",
   "./assets/hijp-mmc-logo.png",
   "./assets/icon-192.png",
