@@ -95,3 +95,26 @@ The Show Chords view for the 13 arrangements now displays high-resolution page i
 - Retained the existing individual Soprano, Alto, Tenor, and Bass PDFs.
 - The song now has both the blue tonal-guide indicator and green PDF-notation indicator.
 - Added both assets to the offline app-shell cache (service worker cache v37).
+
+
+## Beta 19.6 additions
+- MusiKanta Player with Favorites and locally saved/downloaded lineup playlists.
+- Browse full tonal guides by song language.
+- Traditional player navigation: All Tracks (default), Playlists, and Language; tabs support swipe navigation.
+- Track entries show song titles only, without language subtitles.
+- Persistent bottom mini-player with song title, previous, play/pause, and next; tapping the title area opens Now Playing.
+- Now Playing controls: previous, next, play/pause, repeat, shuffle, lyrics, song details, speed, queue, and pitch shift in semitone steps.
+- Pitch shifting uses an offline-cached AudioWorklet processor and is independent of the playback-speed control where supported by the browser.
+- Original/current key labels use song key metadata when provided; otherwise the app displays that the key is not specified rather than guessing.
+- Animated violet/gold loading screen with rotating Catholic liturgy and sacred music trivia.
+- Full tonal guide filter excludes audio resources explicitly classified as individual voice parts.
+
+
+## Beta 19.7 — MusiKanta Player and MusiKalendaryo
+- Removed pitch-shifting controls and the pitch-shifter audio worklet.
+- Added local custom playlists, current-track playlist adding, queue Play Next/reorder/remove/clear controls, playback session restoration, Media Session controls where supported, and sleep timer options.
+- Added MusiKalendaryo date browsing for 2026–2028, with daily Ordo summary, liturgical season/rank/color, movable celebrations, Marian Saturdays, and the requested parish color/fiesta practices.
+- Added the daily celebration banner beneath the home subtitle.
+- Offline cache version advanced for this build.
+
+Calendar note: this beta includes a bundled rule-based Ordo dataset for common Roman-calendar celebrations and the specified parish observances. It should be reviewed against the official Philippine Ordo and the Diocese of Masbate calendar before being treated as an authoritative liturgical Ordo; local transfers and precedence may require corrections.

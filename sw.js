@@ -1,4 +1,4 @@
-const CACHE_NAME = "musikaupod-pwa-v39";
+const CACHE_NAME = "musikaupod-pwa-beta197-v4";
 const APP_SHELL = [
   "./",
   "./index.html",

@@ -26,7 +26,7 @@ main{padding:18px clamp(18px,3vw,36px)}.view-title{font-size:1.4rem;margin:4px 0
 .welcome-row{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:12px}.welcome-copy{flex:1;min-width:0}.welcome-row .view-title{flex:1;min-width:0;margin:0 0 5px}.welcome-copy .subtitle{margin:0}.dot-legend{flex:0 0 auto;min-width:240px;border:1px solid #e4d7b9;border-radius:12px;background:#fffdf8;padding:10px 12px;box-shadow:0 2px 8px #3920520a}.dot-legend-title{font-size:.76rem;font-weight:750;color:var(--violet);margin-bottom:7px}.dot-legend-item{display:flex;align-items:center;gap:8px;font-size:.76rem;line-height:1.45;color:#514956}.dot-legend-item+.dot-legend-item{margin-top:4px}.dot-legend .resource-dot{width:9px!important;height:9px!important;min-width:9px!important;max-width:9px!important;min-height:9px!important;max-height:9px!important;flex-basis:9px!important}
 :root[data-theme="dark"] .dot-legend{background:#26202e;border-color:#665575}:root[data-theme="dark"] .dot-legend-title{color:#f3d98d}:root[data-theme="dark"] .dot-legend-item{color:#e4dbea}
 @media(max-width:680px){header{min-height:0;padding:14px 16px;gap:12px}.brand{gap:10px}.logo{width:62px;height:62px;flex-basis:62px}.theme-toggle{padding:7px 10px;font-size:.78rem}.welcome-row{align-items:stretch;flex-direction:column;gap:10px}.dot-legend{width:100%;min-width:0}.dot-legend-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.dot-legend-item+.dot-legend-item{margin-top:0}}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tile{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:8px;min-height:100px;padding:14px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:15px;color:var(--ink);cursor:pointer;box-shadow:0 2px 8px #39205208}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.tile{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:8px;min-height:145px;padding:14px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:15px;color:var(--ink);cursor:pointer;box-shadow:0 2px 8px #39205208}
 .tile:active,.song:active{transform:scale(.99)}
 .tile-disabled,.tile:disabled{background:#e5e5e5!important;border-color:#d0d0d0!important;color:#858585!important;cursor:not-allowed;box-shadow:none;opacity:1}
 .tile-disabled .tile-icon,.tile:disabled .tile-icon{background:#d6d6d6!important;color:#858585!important}
@@ -190,16 +190,71 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
 #psalmAudio{display:none}
 @media(max-width:480px){.universal-player{padding:12px}.player-controls{gap:6px}.player-side{width:38px;height:40px}.player-main{width:58px;height:58px}.player-speed{min-width:32px}.psalm-toolbar{gap:6px}.psalm-toolbar button{flex:1;padding:8px 7px;font-size:.86rem}}
 
+
+/* Beta 19.7 MusiKanta Player and animated liturgical loading screen */
+.music-loading{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(18px,4vh,34px);padding:24px;background:radial-gradient(ellipse at 50% 35%,#51306d 0%,#392052 48%,#21142d 100%);color:#fff;text-align:center;transition:opacity .45s ease,visibility .45s ease}
+.music-loading.done{opacity:0;visibility:hidden;pointer-events:none}.loading-brand img{width:92px;height:92px;object-fit:cover;border-radius:50%;border:2px solid var(--gold);box-shadow:0 0 30px #d6af5550}.loading-app-name{font-size:1.65rem;font-weight:850;margin-top:9px}.loading-app-sub{font-size:.68rem;letter-spacing:.18em;color:#e8d8f0}.loading-staff{width:min(620px,94vw);overflow:hidden}.loading-staff svg{width:100%;height:auto}.staff-lines path{fill:none;stroke:#9d98a4;stroke-width:2;opacity:.72}.staff-notes path{fill:none;stroke:#9d98a4;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.noteheads ellipse{fill:#9d98a4}.staff-notes path,.noteheads ellipse{animation:staffGold 3.8s ease-in-out infinite}.noteheads ellipse:nth-child(1){animation-delay:.1s}.noteheads ellipse:nth-child(2){animation-delay:.55s}.noteheads ellipse:nth-child(3){animation-delay:1s}.noteheads ellipse:nth-child(4){animation-delay:1.45s}.noteheads ellipse:nth-child(5){animation-delay:1.9s}.noteheads ellipse:nth-child(6){animation-delay:2.35s}.noteheads ellipse:nth-child(7){animation-delay:2.8s}@keyframes staffGold{0%,100%{stroke:#9d98a4;fill:#9d98a4;filter:none}45%,65%{stroke:#e7c56b;fill:#e7c56b;filter:drop-shadow(0 0 5px #e7c56b)}}.loading-trivia{width:min(560px,92vw);min-height:96px;text-align:left;border:1px solid #80658d;border-radius:14px;background:#2b1b38b8;padding:14px 17px}.loading-trivia span{font-size:.72rem;letter-spacing:.12em;font-weight:850;color:#e7c56b}.loading-trivia p{margin:7px 0 0;font-size:.96rem;line-height:1.5;color:#f6effa}.loading-progress{width:min(560px,92vw);text-align:left}.loading-progress-track{height:5px;background:#75677d;border-radius:99px;overflow:hidden}.loading-progress-track i{display:block;width:12%;height:100%;background:linear-gradient(90deg,#b88d39,#f5dc8b);border-radius:99px;animation:loadingGrow 2.2s ease-in-out infinite alternate}.loading-progress small{display:block;text-align:center;color:#d6c8df;font-size:.65rem;letter-spacing:.16em;margin-top:9px}@keyframes loadingGrow{from{width:12%}to{width:92%}}
+.musikanta-home-tile{border-color:#d6af55;background:linear-gradient(135deg,#fffdf8,#f3eaf7)}.musikanta-home-tile .tile-icon{background:#432451;color:#f2d27a}:root[data-theme="dark"] .musikanta-home-tile{background:linear-gradient(135deg,#30233a,#26202e);border-color:#80658d}
+.musikanta-toolbar{display:flex;gap:9px;align-items:center;margin:12px 0}.musikanta-search{display:flex;align-items:center;gap:8px;flex:1;min-width:0;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:0 12px}.musikanta-search span{font-size:1.3rem;color:var(--muted)}.musikanta-search input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);padding:12px 0}.musikanta-now-btn{white-space:nowrap}.musikanta-tabs{display:flex;gap:8px;border-bottom:1px solid var(--line);margin:12px 0 18px}.musikanta-tabs button{border:0;border-bottom:3px solid transparent;background:transparent;color:var(--muted);padding:10px 14px;font-weight:750}.musikanta-tabs button.active{color:var(--violet2);border-color:var(--gold)}:root[data-theme="dark"] .musikanta-tabs button.active{color:#f3d98d}.musikanta-section-title{font-size:1rem;margin:12px 0}.musikanta-playlists{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.musikanta-playlist{display:flex;align-items:center;gap:12px;padding:13px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);text-align:left;min-width:0}.musikanta-playlist-icon{width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;border-radius:11px;background:#432451;color:#f2d27a;font-size:1.35rem}.musikanta-playlist strong{display:block;overflow-wrap:anywhere}.musikanta-playlist small{display:block;color:var(--muted);margin-top:3px}.musikanta-language-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.musikanta-language-list button{border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);padding:9px 14px}.musikanta-language-list button.active{background:#432451;color:#f2d27a;border-color:#80658d}.musikanta-now-panel{max-width:680px;margin:0 auto}.musikanta-art{width:min(76vw,330px);aspect-ratio:1;margin:20px auto;border-radius:18px;overflow:hidden;background:linear-gradient(145deg,#432451,#21142d);display:grid;place-items:center;box-shadow:0 12px 32px #39205225}.musikanta-art img{width:76%;height:76%;object-fit:contain;border-radius:50%;border:2px solid var(--gold)}.musikanta-track-meta{text-align:center;margin:12px 0 20px}.musikanta-track-meta h2{font-size:1.3rem;margin:0 0 5px;overflow-wrap:anywhere}.musikanta-track-meta p{margin:0;color:var(--muted);font-size:.88rem}.musikanta-seek{display:flex;align-items:center;gap:10px;font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}.musikanta-seek input{flex:1;min-width:0;accent-color:var(--gold)}.musikanta-controls{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:20px 0}.musikanta-control{width:44px;height:44px;border:0;border-radius:50%;background:transparent;color:var(--ink);font-size:1.35rem;font-weight:800}.musikanta-control[aria-pressed="true"]{color:#b58a2d;background:#d6af5525}.musikanta-play{width:68px;height:68px;border:0;border-radius:50%;background:#432451;color:#fff;font-size:1.6rem;box-shadow:0 4px 14px #39205235}.musikanta-extra-controls{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.musikanta-speed{display:flex;align-items:center;gap:7px;color:var(--muted);font-weight:750}.musikanta-lyrics{margin-top:16px}.musikanta-now-panel .topline{justify-content:space-between}.musikanta-now-panel .topline .view-title{margin-right:auto}.musikanta-now-panel .feature-card{margin-top:16px}.musikanta-now-panel .song{padding:10px}.musikanta-now-panel .song-icon{width:34px;height:34px;flex-basis:34px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.musikanta-toolbar{align-items:stretch;flex-direction:column}.musikanta-now-btn{width:100%}.musikanta-playlists{grid-template-columns:1fr}.musikanta-art{width:min(72vw,280px)}.musikanta-controls{gap:2px}.musikanta-control{width:38px}.musikanta-play{width:62px;height:62px}.musikanta-extra-controls>*{flex:1}.loading-brand img{width:78px;height:78px}.loading-trivia p{font-size:.9rem}}
+
+
+/* Beta 19.7 revised traditional player interface */
+.musikanta-tabs{display:flex;overflow-x:auto;white-space:nowrap;gap:0;scrollbar-width:none;touch-action:pan-y}.musikanta-tabs::-webkit-scrollbar{display:none}.musikanta-tabs button{flex:0 0 auto;font-size:1.02rem;padding:13px 16px}.musikanta-tabs button.active{font-size:1.12rem}.musikanta-mini-player{position:fixed;z-index:9000;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:18px;background:#51263b;color:#fff;box-shadow:0 8px 28px #0005;min-height:66px}.musikanta-mini-player{opacity:1;transform:translateY(0);visibility:visible;transition:opacity .28s ease,transform .28s ease,visibility .28s ease}.musikanta-mini-player.hidden{display:flex!important;opacity:0;transform:translateY(18px);visibility:hidden;pointer-events:none}.musikanta-mini-player button{border:0;background:transparent;color:#fff;font-size:1.2rem;font-weight:800;min-width:38px;min-height:42px}.musikanta-mini-song{display:flex;align-items:center;gap:10px;flex:1;min-width:0;text-align:left!important}.musikanta-mini-song img{width:42px;height:42px;object-fit:cover;border-radius:9px}.musikanta-mini-song span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:750;font-size:.9rem}.musikanta-track-meta p{display:none}body.musikanta-mini-visible{padding-bottom:92px}#musikantaView{padding-bottom:90px}
+@media(max-width:480px){.musikanta-mini-player{left:6px;right:6px;gap:3px;padding:7px 8px}.musikanta-mini-player button{min-width:34px;font-size:1.05rem}.musikanta-mini-song img{width:38px;height:38px}}
+
+
+.daily-ordo-banner{display:block;width:100%;text-align:left;margin:10px 0 16px;padding:12px 14px;border:1px solid #d6af55;border-radius:13px;background:linear-gradient(110deg,#fff8e6,#f3eaf7);color:#392052;font-weight:750}.daily-ordo-banner small{display:block;font-weight:550;opacity:.8;margin-top:3px}.daily-ordo-banner .ordo-open-link{display:block;text-align:right;font-size:.86rem;font-weight:850;letter-spacing:.04em;margin-top:4px;color:#8b6720}:root[data-theme="dark"] .daily-ordo-banner{background:#30233a;color:#f3d98d;border-color:#80658d}.ordo-detail h3{margin:5px 0 10px}.ordo-detail .ordo-color{display:inline-flex;align-items:center;gap:8px;font-weight:750}.ordo-swatch{display:inline-block;width:15px;height:15px;border-radius:50%;border:1px solid #888;vertical-align:middle}.ordo-calendar-shell{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:14px;margin:14px 0}.ordo-month-toolbar{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}.ordo-month-toolbar strong{font-size:1.1rem;flex:1;text-align:center}.ordo-month-select-label{color:var(--muted);font-size:.85rem}.ordo-month-select{padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink)}.ordo-weekdays,.ordo-month-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}.ordo-weekdays span{text-align:center;font-weight:750;color:var(--muted);padding:7px 0;font-size:.82rem}.ordo-calendar-day{min-height:62px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);display:flex;align-items:center;justify-content:center;gap:6px;flex-direction:column;padding:5px;cursor:pointer}.ordo-calendar-day.empty{visibility:hidden}.ordo-calendar-day.selected{outline:2px solid var(--gold);background:#f6edda;color:#392052}.ordo-calendar-day.today{border-color:var(--gold)}.ordo-calendar-day .day-number{font-weight:750}.ordo-calendar-day .ordo-swatch{width:10px;height:10px;display:block}.ordo-detail{margin-top:14px}.ordo-detail h3{margin-top:0}@media(max-width:560px){.ordo-calendar-shell{padding:8px}.ordo-weekdays,.ordo-month-grid{gap:3px}.ordo-calendar-day{min-height:48px;border-radius:7px;font-size:.85rem}.ordo-month-select-label{display:none}}.mk-playlist-actions{display:flex;gap:5px;margin-top:8px}.mk-playlist-actions button{font-size:.75rem;padding:5px 8px}.mk-queue-row{display:flex;align-items:center;gap:5px}.mk-queue-row .song{flex:1}.mk-sleep-row{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:14px}.mk-sleep-row select{padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}@media(max-width:560px){.ordo-month-list{grid-template-columns:1fr}}
+
+
+/* Decorative floating musical symbols must never cover readable content. */
+[class*="float" i], [class*="music-symbol" i], [class*="music-note" i], [class*="floating" i]{z-index:0!important;pointer-events:none!important}
+.view, .reader-tools, #lyricsText, #psalmLyricsContent, #psalmChordViewer, .chord-pages, .feature-card, .tile, .song-list, .song, .topline{position:relative;z-index:1}
+#musikantaMiniPlayer{z-index:9000!important}
+
+/* Beta 19.7 restoration: staged loader, directional mini-player exits, and layered decor */
+.loading-progress-track i{width:0%;animation:none;transition:width .32s ease}
+.loading-screen.done{opacity:0;visibility:hidden;transition:opacity .5s ease,visibility .5s ease}
+.ordo-open-link{color:#8b6720!important}
+:root[data-theme="dark"] .ordo-open-link{color:#f3d98d!important}
+#musikantaMiniPlayer{will-change:opacity,transform;transition:opacity .34s ease,transform .34s ease,visibility .34s ease;touch-action:pan-y}
+#musikantaMiniPlayer.mk-exit-left{opacity:0!important;transform:translateX(-110%)!important;pointer-events:none}
+#musikantaMiniPlayer.mk-exit-right{opacity:0!important;transform:translateX(110%)!important;pointer-events:none}
+#musikantaMiniPlayer.mk-exit-up{opacity:0!important;transform:translateY(-120%)!important;pointer-events:none}
+#musikantaMiniPlayer.mk-enter{animation:mkMiniEnter .32s ease both}
+@keyframes mkMiniEnter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.musikanta-now-panel .musikanta-art.mk-lyrics-mode{display:block;overflow:visible;min-height:0;height:auto;aspect-ratio:auto;width:min(100%,680px);max-width:680px;margin:20px auto;padding:24px 30px;box-sizing:border-box}
+.musikanta-art.mk-lyrics-mode img{display:none}
+#musikantaLyricsPanel{box-sizing:border-box}
+#musikantaNowPanel .musikanta-art.mk-lyrics-mode #musikantaLyricsPanel{position:static}
+.musikanta-art.mk-lyrics-mode #musikantaLyricsPanel{display:block!important;margin:0;width:100%;max-height:none;height:auto;min-height:0;overflow:visible!important;overflow-y:visible!important;background:transparent;border:0;box-shadow:none;color:#fff;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65;text-align:left}
+.musikanta-art.mk-lyrics-mode #musikantaLyricsPanel.hidden{display:none!important}
+.musikanta-floating-symbols,.music-symbol-layer,.floating-music-symbols{z-index:0!important;pointer-events:none!important}
+.musikanta-now-panel,.song-entry,.lyrics,.chord-sheet,.view-title,.topline,.app header,.app main,.app section{position:relative;z-index:1}
+
+#mkFloatingSymbols{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+#mkFloatingSymbols .mk-floating-note{position:absolute;left:var(--x);top:var(--y);font-size:var(--size);color:rgba(210,171,77,.22);text-shadow:0 2px 12px rgba(210,171,77,.08);animation:mkNoteDrift var(--duration) ease-in-out infinite alternate;transform:rotate(var(--rotation));pointer-events:auto;cursor:pointer;user-select:none}
+#mkFloatingSymbols .mk-floating-note:nth-child(even){color:rgba(210,171,77,.16)}
+#mkFloatingSymbols .mk-floating-note.mk-note-away{animation:mkNoteAway .55s ease-out forwards}
+@keyframes mkNoteDrift{from{translate:0 8px;rotate:-8deg}to{translate:0 -22px;rotate:12deg}}
+@keyframes mkNoteAway{to{opacity:0;transform:translateY(-90px) rotate(120deg) scale(1.5)}}
+.app>*:not(#mkFloatingSymbols){position:relative;z-index:1}
 </style>
 </head>
 <body>
-<div class="app">
+<div id="musicLoading" class="music-loading" aria-live="polite">
+  <div class="loading-brand"><img src="assets/hijp-mmc-logo.png" alt="MusiKaupod app logo"><div class="loading-app-name">MusiKaupod</div><div class="loading-app-sub">DIGITAL SONGBOOK</div></div>
+  <div class="loading-staff" aria-hidden="true"><svg viewBox="0 0 520 112" role="presentation"><g class="staff-lines"><path d="M8 24H512M8 38H512M8 52H512M8 66H512M8 80H512"/></g><g class="staff-notes"><path d="M45 64v-28m0 0q13-9 23 0v28M112 52v-29m0 0q13-9 23 0v29M179 66V38m0 0q13-9 23 0v28M246 45V17m0 0q13-9 23 0v28M313 59V31m0 0q13-9 23 0v28M380 73V45m0 0q13-9 23 0v28M447 52V24m0 0q13-9 23 0v28"/><g class="noteheads"><ellipse cx="45" cy="64" rx="8" ry="5"/><ellipse cx="112" cy="52" rx="8" ry="5"/><ellipse cx="179" cy="66" rx="8" ry="5"/><ellipse cx="246" cy="45" rx="8" ry="5"/><ellipse cx="313" cy="59" rx="8" ry="5"/><ellipse cx="380" cy="73" rx="8" ry="5"/><ellipse cx="447" cy="52" rx="8" ry="5"/></g></g></svg></div>
+  <div class="loading-trivia"><span>DID YOU KNOW?</span><p id="loadingTriviaText">Gregorian chant is traditionally sung without instrumental accompaniment.</p></div>
+  <div class="loading-progress"><div class="loading-progress-track"><i></i></div><small>PREPARING YOUR SONGBOOK</small></div>
+</div>
+<div class="app"><div id="mkFloatingSymbols" aria-hidden="true"></div>
 <header>
   <div class="brand">
     <img class="logo" src="assets/hijp-mmc-logo.png" alt="Holy Infant Jesus Parish Music Ministry Community logo">
     <div>
       <div class="eyebrow">Holy Infant Jesus Parish<br>Music Ministry Community</div>
-      <h1>MusiKaupod<br>Digital Songbook</h1><div class="version-label">VERSION BETA 19.5</div>
+      <h1>MusiKaupod<br>Digital Songbook</h1><div class="version-label">VERSION BETA 19.7</div>
     </div>
   </div>
   <div class="theme-row"><button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">☾ Dark mode</button></div>
@@ -209,7 +264,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     <div class="welcome-row">
       <div class="welcome-copy">
         <h2 class="view-title">Dagos kamo sa aton Digital Songbook!</h2>
-        <p class="subtitle">Musika Para sa Parokya</p>
+        <p class="subtitle">Musika Para sa Parokya</p><button id="dailyOrdoBanner" class="daily-ordo-banner" type="button" aria-label="Open today’s liturgical calendar"></button>
       </div>
       <aside class="dot-legend" aria-label="Song resource indicators">
         <div class="dot-legend-title">Song Indicators</div>
@@ -222,25 +277,59 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
       </aside>
     </div>
     <button class="search-trigger" id="homeSearchOpen" type="button"><span class="search-icon">⌕</span><span>Search song titles by word…</span></button>
-    <div class="grid">
-      <button class="tile" data-open="liturgyCategories">
-        <span class="tile-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5v19M5.5 8h13"/></svg></span>
-        <span class="tile-title">Liturgy Songs</span><span class="tile-sub">Mga kanta sa liturhiya</span>
-      </button>
-      <button class="tile" data-open="seasonList"><span class="tile-icon">♫</span><span class="tile-title">Service Songs</span><span class="tile-sub">Mga kanta sa mga parte san misa</span></button>
-      <button class="tile" data-open="chantListView"><span class="tile-icon">♬</span><span class="tile-title">Gregorian Chant</span><span class="tile-sub">An pinaka sagrado na Cantos Gregorianos</span></button>
-      <button class="tile" data-open="misaPastorellaView"><span class="tile-icon">♫</span><span class="tile-title">Misa Pastorella</span><span class="tile-sub">Set 1 and Set 2</span></button>
-      <button class="tile" data-open="sietePalabrasView"><span class="tile-icon">✝</span><span class="tile-title">Siete Palabras</span><span class="tile-sub">Mga kanta san Siete Palabras</span></button>
-      <button class="tile" data-open="psalmTonesView"><span class="tile-icon">♫</span><span class="tile-title">Psalm Tones</span><span class="tile-sub">Mga tono na ginagamit sa Salmo Responsorio</span></button>
-      <button class="tile" data-open="aboutView"><span class="tile-icon">ⓘ</span><span class="tile-title">About</span><span class="tile-sub">Nano an HIJP MMC?</span></button>
+    <div class="grid" id="mainMenuGrid">
+      <button class="tile musikanta-home-tile" id="openMusiKanta"><span class="tile-icon">♫</span><span class="tile-title">MusiKanta Player</span><span class="tile-sub">Your Sacred Spotify.</span></button>
+      <button class="tile" id="openOnlineLineups"><span class="tile-icon">☁</span><span class="tile-title">General Lineups</span><span class="tile-sub">Browse parish lineups online</span></button>
+      <button class="tile" id="openMyLineups"><span class="tile-icon">▤</span><span class="tile-title">My Lineups</span><span class="tile-sub">Saved lineups on this device</span></button>
+      <button class="tile" data-open="chantListView"><span class="tile-icon">♬</span><span class="tile-title">Gregorian Chant</span><span class="tile-sub">Traditional chants of the Church</span></button>
+      <button class="tile" data-open="liturgyCategories"><span class="tile-icon">✝</span><span class="tile-title">Liturgy Songs</span><span class="tile-sub">Songs for the parts of the Mass</span></button>
+      <button class="tile" data-open="seasonList"><span class="tile-icon">♫</span><span class="tile-title">Service Songs</span><span class="tile-sub">Songs for liturgical seasons and parish celebrations</span></button>
+      <button class="tile" data-open="psalmTonesView"><span class="tile-icon">♫</span><span class="tile-title">Psalm Tones</span><span class="tile-sub">Melodies for singing the Responsorial Psalms</span></button>
+      <button class="tile" id="openFavorites"><span class="tile-icon">★</span><span class="tile-title">Favorites</span><span class="tile-sub">Your saved songs</span></button>
+      <button class="tile" data-open="sietePalabrasView"><span class="tile-icon">✝</span><span class="tile-title">Siete Palabras</span><span class="tile-sub">An Emotional Set of Spanish Songs for Viernes Santo</span></button>
+      <button class="tile" data-open="misaPastorellaView"><span class="tile-icon">♫</span><span class="tile-title">Misa Pastorella</span><span class="tile-sub">Heralding Christ's Birth.</span></button>
+      <button class="tile" id="openLineup"><span class="tile-icon">☷</span><span class="tile-title">Mass Lineup Creator</span><span class="tile-sub">Prepare a celebration</span></button>
+      <button class="tile tile-disabled" type="button" disabled><span class="tile-icon">♙</span><span class="tile-title">Music Ministry Directory</span><span class="tile-sub">Coming in a future update</span></button>
+      <button class="tile tile-disabled" type="button" disabled><span class="tile-icon">▧</span><span class="tile-title">Order of the Mass / Celebration of the Word with Communion</span><span class="tile-sub">A guide to the rites and responses of the celebration</span></button>
+      <button class="tile tile-disabled" type="button" disabled><span class="tile-icon">✧</span><span class="tile-title">Prayers</span><span class="tile-sub">Coming in a future update</span></button>
+      <button class="tile" id="openResources"><span class="tile-icon">⇩</span><span class="tile-title">Offline Resources</span><span class="tile-sub">Manage PDFs and MP3s</span></button>
+      <button class="tile" data-open="aboutView"><span class="tile-icon">ⓘ</span><span class="tile-title">About MusiKaupod Digital Songbook</span><span class="tile-sub">About the HIJP Music Ministry songbook</span></button>
     </div>
-    <div class="feature-actions" aria-label="Songbook tools">
-      <button class="feature-tile" id="openFavorites"><span class="feature-icon">★</span><span><strong>Favorites</strong><small>Your saved songs</small></span></button>
-      <button class="feature-tile" id="openLineup"><span class="feature-icon">☷</span><span><strong>Mass Lineup Creator</strong><small>Prepare a celebration</small></span></button>
-      <button class="feature-tile" id="openMyLineups"><span class="feature-icon">▤</span><span><strong>My Lineups</strong><small>Saved lineups on this device</small></span></button>
-      <button class="feature-tile" id="openOnlineLineups"><span class="feature-icon">☁</span><span><strong>General Lineups</strong><small>Browse parish lineups online</small></span></button>
-      <button class="feature-tile" id="openResources"><span class="feature-icon">⇩</span><span><strong>Offline Resources</strong><small>Manage PDFs and MP3s</small></span></button>
+  </section>
+
+
+  <section id="musikantaView" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="homeView">← Home</button><h2 class="view-title">MusiKanta Player</h2></div>
+    <div class="musikanta-toolbar"><label class="musikanta-search"><span>⌕</span><input id="musikantaSearch" type="search" placeholder="Search tracks, playlists" aria-label="Search MusiKanta"></label></div>
+    <div class="musikanta-tabs" id="musikantaTabs"><button class="active" data-player-tab="tracks" type="button">All Tracks</button><button data-player-tab="playlists" type="button">Playlists</button><button data-player-tab="languages" type="button">Language</button></div>
+    <div id="musikantaTracksPanel"><h3 class="musikanta-section-title">All Tracks</h3><div id="musikantaAllTracks" class="song-list"></div></div>
+    <div id="musikantaPlaylistsPanel" class="hidden"><h3 class="musikanta-section-title">Playlists</h3><div class="feature-row"><button id="mkCreatePlaylist" class="feature-btn" type="button">＋ Create Playlist</button></div><div id="musikantaPlaylistList" class="musikanta-playlists"></div><div id="musikantaPlaylistEmpty" class="empty hidden">No playlists yet. Create a local playlist or add songs to Favorites.</div></div>
+    <div id="musikantaLanguagesPanel" class="hidden"><h3 class="musikanta-section-title">Language</h3><div id="musikantaLanguageList" class="musikanta-language-list"></div><div id="musikantaLanguageSongs" class="song-list"></div></div>
+    <div id="musikantaTrackListPanel" class="hidden"><div class="topline"><button id="backToPlayerLists" class="back-btn" type="button">← Back</button><h3 id="musikantaTrackHeading" class="view-title"></h3></div><div id="musikantaTrackList" class="song-list"></div></div>
+    <section id="musikantaNowPanel" class="musikanta-now-panel hidden">
+      <div class="topline"><button id="backFromNowPlaying" class="back-btn" type="button">← Player</button><h3 class="view-title">NOW PLAYING</h3><button id="mkShowSongDetails" class="small-btn" type="button">▤ Song Details</button><button id="showPlayerQueue" class="small-btn" type="button">☷ Queue</button></div>
+      <div class="musikanta-art"><img src="assets/hijp-mmc-logo.png" alt="MusiKaupod app logo"></div>
+      <div class="musikanta-track-meta"><h2 id="musikantaCurrentTitle">Select a song</h2><p id="musikantaCurrentLanguage">MusiKaupod Digital Songbook</p></div>
+      <audio id="musikantaAudio" preload="metadata"></audio>
+      <div class="musikanta-seek"><span id="musikantaCurrentTime">0:00</span><input id="musikantaProgress" type="range" min="0" max="1000" value="0" aria-label="Track position"><span id="musikantaDuration">0:00</span></div>
+      <div class="musikanta-controls"><button id="musikantaShuffle" class="musikanta-control" type="button" aria-label="Shuffle" aria-pressed="false">⤨</button><button id="musikantaPrevious" class="musikanta-control" type="button" aria-label="Previous track">|◀</button><button id="musikantaPlay" class="musikanta-play" type="button" aria-label="Play">▶</button><button id="musikantaNext" class="musikanta-control" type="button" aria-label="Next track">▶|</button><button id="musikantaRepeat" class="musikanta-control" type="button" aria-label="Repeat off" aria-pressed="false">↻</button></div>
+      <div class="musikanta-extra-controls"><button id="musikantaLyricsBtn" class="small-btn" type="button">▤ Show Lyrics</button><button id="mkAddToPlaylist" class="small-btn" type="button">＋ Add to Playlist</button><div class="musikanta-speed"><button id="musikantaSlower" class="small-btn" type="button">−</button><span id="musikantaSpeed">1×</span><button id="musikantaFaster" class="small-btn" type="button">＋</button></div><div class="mk-sleep-row"><label for="mkSleepTimer">Sleep timer</label><select id="mkSleepTimer"><option value="0">Off</option><option value="15">15 min</option><option value="30">30 min</option><option value="45">45 min</option><option value="60">60 min</option><option value="end">End of playlist</option></select><span id="mkSleepStatus" class="subtitle"></span></div>
+      </div>
+      <div id="musikantaLyricsPanel" class="lyrics musikanta-lyrics hidden"></div>
+      <div id="musikantaQueuePanel" class="feature-card hidden"><div class="feature-row"><h3>Song Queue</h3><button id="clearMusiKantaQueue" class="small-btn" type="button">Clear</button></div><div id="musikantaQueueList" class="song-list"></div></div>
+    </section>
+  </section>
+
+
+  <section id="musikalendaryoView" class="hidden">
+    <div class="topline"><button class="back-btn" data-back="homeView">← Home</button><h2 class="view-title">MusiKalendaryo</h2></div>
+    <p class="subtitle">Philippine Liturgical Calendar · January 1, 2026 – December 31, 2028</p>
+    <div class="ordo-calendar-shell">
+      <div class="ordo-month-toolbar"><button id="ordoPrevMonth" class="small-btn" type="button" aria-label="Previous month">‹</button><strong id="ordoMonthHeading">November 2026</strong><button id="ordoNextMonth" class="small-btn" type="button" aria-label="Next month">›</button><label class="ordo-month-select-label" for="ordoMonthSelect">Jump to</label><select id="ordoMonthSelect" class="ordo-month-select" aria-label="Choose month"></select></div>
+      <div class="ordo-weekdays"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+      <div id="ordoMonthGrid" class="ordo-month-grid" role="grid" aria-label="Liturgical calendar"></div>
     </div>
+    <div id="ordoDayDetail" class="feature-card ordo-detail" aria-live="polite"></div>
   </section>
 
   <section id="liturgyCategories" class="hidden">
@@ -428,6 +517,8 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
       <p>An offline digital songbook for the ministry’s liturgy songs, service songs, Gregorian chants, Misa Pastorella, Siete Palabras, and basic prayers.</p>
       <p><strong>Offline songbook · No account or internet connection required</strong></p>
       <p>Developed by HIJP-MMC Admins</p>
+      <hr><h3>Beta 19.7 · Major Update</h3>
+      <ul><li>Removed pitch-shifting controls.</li><li>Added local custom playlists, queue Play Next/reorder/remove, session restoration, lock-screen controls where supported, and sleep timer.</li><li>Added MusiKalendaryo for 2026–2028 with daily Ordo details and offline date browsing.</li><li>Added parish color practices: Marian Saturdays in blue, Gaudete and Laetare in rose, Good Friday violet before 3 PM and black from 3 PM, All Souls in black, and the three parish feast dates in their designated colors.</li><li>Added the daily liturgical celebration banner.</li></ul>
     </div>
   </section>
 </main>
@@ -440,6 +531,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
 </div>
 <footer>Offline songbook · No account or internet connection required<br>Developed by HIJP-MMC Admins</footer>
 </div>
+<div id="musikantaMiniPlayer" class="musikanta-mini-player hidden" aria-label="Now playing mini player"><button id="musikantaMiniOpen" class="musikanta-mini-song" type="button"><img src="assets/hijp-mmc-logo.png" alt=""><span id="musikantaMiniTitle">Select a song</span></button><button id="musikantaMiniPrevious" type="button" aria-label="Previous track">|◀</button><button id="musikantaMiniPlay" type="button" aria-label="Play">▶</button><button id="musikantaMiniNext" type="button" aria-label="Next track">▶|</button><button id="musikantaMiniDismiss" type="button" aria-label="Dismiss mini player">×</button></div>
 <script src="songs.js"></script>
 <script>
 (() => {
@@ -464,7 +556,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   const liturgyCategories = ["Kyrie - Short Form","Kyrie - Long Form","Gloria","Gospel Acclamation","Sanctus","Memorial Acclamation","Amen","Lord's Prayer","Doxology","Agnus Dei"];
   const seasons = ["Ordinary Time","Lent","Easter","Advent","Christmas"];
   const serviceCategories = ["Entrance","Offertory","Communion","Recessional"];
-  const viewIds = ["homeView","liturgyCategories","seasonList","seasonCategories","songListView","chantListView","holyHourListView","fiestaListView","prayersView","prayerListView","readerView","aboutView","misaPastorellaView","misaSet1View","misaSet2View","misaSimplifiedView","misaRestoredView","sietePalabrasView","favoritesView","lineupView","myLineupsView","onlineLineupsView","psalmTonesView","psalmDetailView","resourcesView","sharedLineupView"];
+  const viewIds = ["homeView","musikantaView","musikalendaryoView","liturgyCategories","seasonList","seasonCategories","songListView","chantListView","holyHourListView","fiestaListView","prayersView","prayerListView","readerView","aboutView","misaPastorellaView","misaSet1View","misaSet2View","misaSimplifiedView","misaRestoredView","sietePalabrasView","favoritesView","lineupView","myLineupsView","onlineLineupsView","psalmTonesView","psalmDetailView","resourcesView","sharedLineupView"];
   const $ = id => document.getElementById(id);
   let currentList = [], currentBackView = "liturgyCategories", currentFontSize = 1.18, readerBackView = "songListView";
   const safe = v => String(v ?? "");
@@ -496,6 +588,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
       history.pushState({ musikaupod: true, view: id, depth }, "", location.href);
     }
     viewIds.forEach(v => $(v).classList.toggle("hidden", v !== id));
+    if (typeof mkUpdateMini === "function") mkUpdateMini();
     if (!options.fromPop) window.scrollTo(0, 0);
   }
   function goBack(fallbackView) {
@@ -667,8 +760,19 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     if(!audio||!play||audio.dataset.playerReady==="1")return;
     audio.dataset.playerReady="1";
     const updateSpeed=()=>{speedLabel.textContent=`${audio.playbackRate.toFixed(2).replace(/0+$/,"").replace(/\\.$/,"")}×`;};
-    play.addEventListener("click",()=>{if(audio.paused)audio.play().catch(()=>{});else audio.pause();});
-    audio.addEventListener("play",()=>{play.textContent="Ⅱ";play.setAttribute("aria-label","Pause");});
+    const voiceGuide=()=>/(^|[-_/.])(soprano|alto|tenor|bass|voice[-_ ]?[satb]|[satb])([-_/.]|$)/i.test(audio.currentSrc||audio.src||"");
+    const proxyToMusiKanta=()=>audioId!=="psalmAudio" && !voiceGuide() && typeof mkPlayExternalAudio==="function";
+    play.addEventListener("click",()=>{
+      if(proxyToMusiKanta()){
+        const requested=(audio.currentSrc||audio.src||"").split("/").pop();
+        const playing=(mkAudio.currentSrc||mkAudio.src||"").split("/").pop();
+        if(!mkAudio.paused && requested && requested===playing){mkAudio.pause();}
+        else if(audio.src){const title=selectedSongForLineup?.title||"Song";mkPlayExternalAudio(audio.src,title,selectedSongForLineup?.lyrics||"");}
+      }else{
+        if(audio.paused){if(typeof mkAudio!=="undefined")mkAudio.pause();audio.play().catch(()=>{});}else audio.pause();
+      }
+    });
+    audio.addEventListener("play",()=>{if((voiceGuide()||audioId==="psalmAudio")&&typeof mkAudio!=="undefined")mkAudio.pause();play.textContent="Ⅱ";play.setAttribute("aria-label","Pause");});
     audio.addEventListener("pause",()=>{play.textContent="▶";play.setAttribute("aria-label","Play");});
     repeat.addEventListener("click",()=>{audio.loop=!audio.loop;repeat.setAttribute("aria-pressed",String(audio.loop));repeat.setAttribute("aria-label",audio.loop?"Repeat on":"Repeat off");});
     slow.addEventListener("click",()=>{audio.playbackRate=Math.max(.5,Math.round((audio.playbackRate-.1)*10)/10);updateSpeed();});
@@ -677,6 +781,14 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     progress.addEventListener("input",()=>{if(Number.isFinite(audio.duration)&&audio.duration>0)audio.currentTime=(Number(progress.value)/1000)*audio.duration;});
     audio.addEventListener("loadedmetadata",()=>{duration.textContent=formatTime(audio.duration);});
     audio.addEventListener("ended",()=>{if(!audio.loop){play.textContent="▶";play.setAttribute("aria-label","Play");}});
+    if(typeof mkAudio!=="undefined"){
+      const syncCentral=()=>{if(!proxyToMusiKanta())return;const active=mkAudio.src&&(mkAudio.currentSrc||mkAudio.src).endsWith((audio.getAttribute("src")||"").split("/").pop());if(active){play.textContent=mkAudio.paused?"▶":"Ⅱ";play.setAttribute("aria-label",mkAudio.paused?"Play":"Pause");if(Number.isFinite(mkAudio.duration)&&mkAudio.duration>0){progress.value=String(Math.round(mkAudio.currentTime/mkAudio.duration*1000));current.textContent=formatTime(mkAudio.currentTime);duration.textContent=formatTime(mkAudio.duration);}}};
+      mkAudio.addEventListener("timeupdate",syncCentral);mkAudio.addEventListener("play",syncCentral);mkAudio.addEventListener("pause",syncCentral);
+      progress.addEventListener("input",()=>{if(proxyToMusiKanta()&&mkAudio.src)mkAudio.currentTime=Number(progress.value)/1000*(mkAudio.duration||0);});
+      repeat.addEventListener("click",()=>{if(proxyToMusiKanta()&&mkAudio.src){mkAudio.loop=!mkAudio.loop;repeat.setAttribute("aria-pressed",String(mkAudio.loop));}});
+      slow.addEventListener("click",()=>{if(proxyToMusiKanta()&&mkAudio.src){mkSpeed=Math.max(.5,Math.round((mkSpeed-.1)*10)/10);mkAudio.playbackRate=mkSpeed;updateSpeed();}});
+      fast.addEventListener("click",()=>{if(proxyToMusiKanta()&&mkAudio.src){mkSpeed=Math.min(2,Math.round((mkSpeed+.1)*10)/10);mkAudio.playbackRate=mkSpeed;updateSpeed();}});
+    }
     updateSpeed();
   }
   function resetUniversalPlayer(audioId,prefix,source){
@@ -687,6 +799,143 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     progress.value="0";current.textContent="0:00";duration.textContent="0:00";speed.textContent="1×";
   }
   function setupAudioTools(){setupUniversalPlayer("tonalAudio","audio");setupUniversalPlayer("psalmAudio","psalmAudioUI");}
+
+
+  // Beta 19.7: MusiKanta player and MusiKalendaryo.
+  const mkAudio=$("musikantaAudio");
+  let mkQueue=[],mkIndex=-1,mkShuffle=false,mkRepeat="off",mkCurrentTab="tracks",mkCurrentPlaylist="",mkLanguage="",mkSpeed=1,mkSleepTimer=null,mkStopAtPlaylistEnd=false,mkMiniDismissed=false,mkMiniDismissing=false;
+  let mkLocalPlaylists=[];try{mkLocalPlaylists=JSON.parse(localStorage.getItem("mk-local-playlists-v1")||"[]");if(!Array.isArray(mkLocalPlaylists))mkLocalPlaylists=[];}catch(_){mkLocalPlaylists=[];}
+  const mkSaveLocalPlaylists=()=>{try{localStorage.setItem("mk-local-playlists-v1",JSON.stringify(mkLocalPlaylists));}catch(_){}};
+  const mkFullGuide = song => {
+    if(!song || !song.audio) return false;
+    const type=String(song.audioType||song.recordingType||"FULL").toUpperCase();
+    if(["VOICE","INDIVIDUAL","SOPRANO","ALTO","TENOR","BASS","INDIVIDUAL_VOICE"].includes(type)) return false;
+    const src=String(song.audio).toLowerCase();
+    if(/(^|[-_/.])(soprano|alto|tenor|bass)([-_/.]|$)/.test(src)) return false;
+    return true;
+  };
+  const mkTrackTitle = song => safe(song?.title||"Untitled song");
+  const mkTracks = () => songs.filter(mkFullGuide).slice().sort((a,b)=>mkTrackTitle(a).localeCompare(mkTrackTitle(b),undefined,{sensitivity:"base",numeric:true}));
+  function mkPlaylistSources(){
+    const out=[];const fav=songs.filter(s=>favorites.has(s.id)&&mkFullGuide(s));
+    out.push({id:"favorites",name:"Favorites",icon:"♥",songs:fav,description:"Favorite full tonal guides"});
+    mkLocalPlaylists.forEach(item=>out.push({id:"local:"+item.id,name:item.name,icon:"♫",songs:(item.songIds||[]).map(id=>songs.find(s=>s.id===id)).filter(mkFullGuide),description:"Local playlist"}));
+    lineups.filter(x=>!x._draft).forEach(item=>{const ids=Object.values(item.slots||{}).flat();const tracks=[...new Set(ids)].map(id=>songs.find(s=>s.id===id)).filter(mkFullGuide);if(tracks.length)out.push({id:"lineup:"+item.id,name:item.name||"Untitled lineup",icon:item.downloadedFrom?"⇩":"♫",songs:tracks,description:item.downloadedFrom?"Downloaded from MMC Cloud":"Saved on this device"});});
+    return out;
+  }
+  function mkRenderTracks(){const box=$("musikantaAllTracks");box.replaceChildren();const q=$("musikantaSearch").value.trim().toLocaleLowerCase();const tracks=mkTracks().filter(s=>!q||mkTrackTitle(s).toLocaleLowerCase().includes(q));if(!tracks.length){const e=document.createElement("div");e.className="empty";e.textContent="No full tonal guides match your search.";box.append(e);return;}tracks.forEach(song=>box.append(mkTrackButton(song,tracks.indexOf(song),tracks)));}
+  function mkRenderPlaylists(){const box=$("musikantaPlaylistList");box.replaceChildren();const q=$("musikantaSearch").value.trim().toLocaleLowerCase();const items=mkPlaylistSources().filter(p=>!q||p.name.toLocaleLowerCase().includes(q)||p.songs.some(s=>mkTrackTitle(s).toLocaleLowerCase().includes(q)));items.forEach(p=>{const b=document.createElement("button");b.type="button";b.className="musikanta-playlist";const icon=document.createElement("span");icon.className="musikanta-playlist-icon";icon.textContent=p.icon;const info=document.createElement("span");info.style.minWidth="0";const name=document.createElement("strong");name.textContent=p.name;const small=document.createElement("small");small.textContent=`${p.songs.length} playable song(s)`;info.append(name,small);b.append(icon,info);b.addEventListener("click",()=>mkOpenPlaylist(p));box.append(b);if(p.id.startsWith("local:")){const actions=document.createElement("div");actions.className="mk-playlist-actions";const rename=document.createElement("button");rename.type="button";rename.className="small-btn";rename.textContent="Rename";rename.addEventListener("click",e=>{e.stopPropagation();const item=mkLocalPlaylists.find(x=>"local:"+x.id===p.id);const name=prompt("Playlist name",item?.name||"");if(name&&item){item.name=name.trim();mkSaveLocalPlaylists();mkRenderPlaylists();}});const del=document.createElement("button");del.type="button";del.className="small-btn";del.textContent="Delete";del.addEventListener("click",e=>{e.stopPropagation();if(confirm("Delete this local playlist?")){mkLocalPlaylists=mkLocalPlaylists.filter(x=>"local:"+x.id!==p.id);mkSaveLocalPlaylists();mkRenderPlaylists();}});actions.append(rename,del);box.append(actions);}});$("musikantaPlaylistEmpty").classList.toggle("hidden",items.length>0);}
+  function mkTrackButton(song,index,queue=mkQueue){const b=document.createElement("button");b.type="button";b.className="song";const ico=document.createElement("span");ico.className="song-icon";ico.textContent="♫";const info=document.createElement("span");info.className="song-info";const title=document.createElement("span");title.className="song-title";title.textContent=mkTrackTitle(song);info.append(title);const chevron=document.createElement("span");chevron.className="chevron";chevron.textContent="›";b.append(ico,info,chevron);b.addEventListener("click",()=>{mkQueue=queue.slice();mkIndex=index;mkLoadCurrent(true);});return b;}
+  function mkOpenPlaylist(playlist){mkCurrentPlaylist=playlist.name;mkQueue=playlist.songs.slice();mkIndex=mkQueue.length?0:-1;$("musikantaTrackHeading").textContent=playlist.name;$("musikantaTrackList").replaceChildren();if(!mkQueue.length){const empty=document.createElement("div");empty.className="empty";empty.textContent="No playable full tonal guides in this playlist.";$("musikantaTrackList").append(empty);}mkQueue.forEach((song,i)=>$("musikantaTrackList").append(mkTrackButton(song,i,mkQueue)));$("musikantaTracksPanel").classList.add("hidden");$("musikantaPlaylistsPanel").classList.add("hidden");$("musikantaLanguagesPanel").classList.add("hidden");$("musikantaTrackListPanel").classList.remove("hidden");$("musikantaNowPanel").classList.add("hidden");}
+  function mkRenderLanguages(){const box=$("musikantaLanguageList");box.replaceChildren();const langs=["Latin","Spanish","English","Minasbate","Tagalog","Bicol"];langs.forEach(lang=>{const b=document.createElement("button");b.type="button";b.textContent=lang;b.classList.toggle("active",mkLanguage===lang);b.addEventListener("click",()=>{mkLanguage=lang;mkRenderLanguages();const tracks=mkTracks().filter(s=>safe(s.language).split(/[\/,]/).map(v=>v.trim().toLocaleLowerCase()).includes(lang.toLocaleLowerCase()));mkQueue=tracks.slice();mkIndex=-1;const list=$("musikantaLanguageSongs");list.replaceChildren();if(!tracks.length){const empty=document.createElement("div");empty.className="empty";empty.textContent=`No full tonal guides are currently available in ${lang}.`;list.append(empty);}else tracks.forEach((song,i)=>list.append(mkTrackButton(song,i,tracks)));});box.append(b);});}
+  function mkShowHome(){mkRenderTracks();mkRenderPlaylists();mkRenderLanguages();$("musikantaTracksPanel").classList.toggle("hidden",mkCurrentTab!=="tracks");$("musikantaPlaylistsPanel").classList.toggle("hidden",mkCurrentTab!=="playlists");$("musikantaLanguagesPanel").classList.toggle("hidden",mkCurrentTab!=="languages");$("musikantaTrackListPanel").classList.add("hidden");$("musikantaNowPanel").classList.add("hidden");mkUpdateMini();}
+  function mkSetTab(tab){mkCurrentTab=tab;document.querySelectorAll("[data-player-tab]").forEach(b=>b.classList.toggle("active",b.dataset.playerTab===tab));mkCurrentPlaylist="";mkShowHome();}
+  function mkUpdateMini(){const song=mkQueue[mkIndex],mini=$("musikantaMiniPlayer");if(mkMiniDismissing)return;const nowOpen=!$("musikantaNowPanel").classList.contains("hidden")&&!$("musikantaView").classList.contains("hidden");if(song&&!nowOpen&&!mkMiniDismissed){const wasHidden=mini.classList.contains("hidden");mini.classList.remove("hidden","mk-exit-left","mk-exit-right","mk-exit-up");if(wasHidden){mini.classList.remove("mk-enter");void mini.offsetWidth;mini.classList.add("mk-enter");}document.body.classList.add("musikanta-mini-visible");$("musikantaMiniTitle").textContent=mkTrackTitle(song);$("musikantaMiniPlay").textContent=mkAudio.paused?"▶":"Ⅱ";}else{mini.classList.add("hidden");document.body.classList.remove("musikanta-mini-visible");}}
+  function mkShowNow(){if(!mkQueue[mkIndex])return;$("musikantaMiniPlayer").classList.add("hidden");document.body.classList.remove("musikanta-mini-visible");$("musikantaTracksPanel").classList.add("hidden");$("musikantaPlaylistsPanel").classList.add("hidden");$("musikantaLanguagesPanel").classList.add("hidden");$("musikantaTrackListPanel").classList.add("hidden");$("musikantaNowPanel").classList.remove("hidden");}
+  function mkLoadCurrent(autoplay){const song=mkQueue[mkIndex];if(!song)return;mkMiniDismissed=false;mkMiniDismissing=false;const mini=$("musikantaMiniPlayer");mini.getAnimations().forEach(a=>a.cancel());mini.classList.remove("mk-exit-left","mk-exit-right","mk-exit-up");mkAudio.pause();mkAudio.src=song.audio;mkAudio.playbackRate=1;mkSpeed=1;mkAudio.load();$("musikantaCurrentTitle").textContent=mkTrackTitle(song);$("musikantaCurrentLanguage").textContent="";$("musikantaLyricsPanel").textContent=safe(song.lyrics)||"Lyrics are not available for this song.";$("musikantaLyricsPanel").classList.add("hidden");$("musikantaNowPanel").querySelector(".musikanta-art")?.classList.remove("mk-lyrics-mode");$("musikantaLyricsBtn").textContent="▤ Show Lyrics";$("musikantaProgress").value="0";$("musikantaCurrentTime").textContent="0:00";$("musikantaDuration").textContent="0:00";$("musikantaSpeed").textContent="1×";$("musikantaPlay").textContent="▶";mkUpdateMini();mkShowNow();if(autoplay)mkAudio.play().catch(()=>{});}
+  function mkPlayExternalAudio(source,title,lyrics=""){
+    if(!source)return;
+    const song={id:`entry-${String(source).split("/").pop()}`,title:title||"Song",audio:source,lyrics:lyrics||"",audioType:"FULL"};
+    mkQueue=[song];mkIndex=0;mkCurrentPlaylist="";mkMiniDismissed=false;
+    mkAudio.pause();mkAudio.src=source;mkAudio.loop=false;mkAudio.playbackRate=1;mkSpeed=1;mkAudio.load();
+    $("musikantaCurrentTitle").textContent=mkTrackTitle(song);$("musikantaCurrentLanguage").textContent="";
+    $("musikantaLyricsPanel").textContent=lyrics||"Lyrics are not available for this song.";$("musikantaLyricsPanel").classList.add("hidden");$("musikantaNowPanel").querySelector(".musikanta-art")?.classList.remove("mk-lyrics-mode");$("musikantaLyricsBtn").textContent="▤ Show Lyrics";
+    $("musikantaProgress").value="0";$("musikantaCurrentTime").textContent="0:00";$("musikantaDuration").textContent="0:00";$("musikantaSpeed").textContent="1×";
+    mkUpdateMini();mkAudio.play().then(()=>mkUpdateMini()).catch(()=>{});
+  }
+  function mkNext(manual=true){if(!mkQueue.length)return;if(mkShuffle&&mkQueue.length>1){let n=mkIndex;while(n===mkIndex)n=Math.floor(Math.random()*mkQueue.length);mkIndex=n;}else if(mkIndex<mkQueue.length-1)mkIndex++;else if(mkRepeat==="all")mkIndex=0;else if(manual)mkIndex=0;else{mkAudio.pause();return;}mkLoadCurrent(true);}
+  function mkPrevious(){if(!mkQueue.length)return;if(mkAudio.currentTime>3){mkAudio.currentTime=0;return;}mkIndex=mkIndex>0?mkIndex-1:(mkRepeat==="all"?mkQueue.length-1:0);mkLoadCurrent(true);}
+  function mkRefreshQueue(){const box=$("musikantaQueueList");box.replaceChildren();mkQueue.forEach((song,i)=>{const wrap=document.createElement("div");wrap.className="mk-queue-row";const row=mkTrackButton(song,i,mkQueue);if(i===mkIndex)row.style.borderColor="var(--gold)";wrap.append(row);const up=document.createElement("button");up.className="small-btn";up.textContent="↑";up.disabled=i===0;up.addEventListener("click",()=>{[mkQueue[i-1],mkQueue[i]]=[mkQueue[i],mkQueue[i-1]];if(mkIndex===i)mkIndex--;else if(mkIndex===i-1)mkIndex++;mkRefreshQueue();});const down=document.createElement("button");down.className="small-btn";down.textContent="↓";down.disabled=i===mkQueue.length-1;down.addEventListener("click",()=>{[mkQueue[i+1],mkQueue[i]]=[mkQueue[i],mkQueue[i+1]];if(mkIndex===i)mkIndex++;else if(mkIndex===i+1)mkIndex--;mkRefreshQueue();});const remove=document.createElement("button");remove.className="small-btn";remove.textContent="×";remove.addEventListener("click",()=>{mkQueue.splice(i,1);if(i<mkIndex)mkIndex--;else if(i===mkIndex){mkIndex=Math.min(i,mkQueue.length-1);if(mkQueue[mkIndex])mkLoadCurrent(true);}mkRefreshQueue();mkUpdateMini();});const playNext=document.createElement("button");playNext.className="small-btn";playNext.textContent="Play Next";playNext.addEventListener("click",()=>{if(i===mkIndex)return;const [picked]=mkQueue.splice(i,1);if(i<mkIndex)mkIndex--;const target=Math.max(0,mkIndex+1);mkQueue.splice(target,0,picked);mkRefreshQueue();});wrap.append(up,down,playNext,remove);box.append(wrap);});}
+  function mkInit(){
+    $("openMusiKanta").addEventListener("click",()=>{mkSetTab("tracks");showView("musikantaView");});
+    $("mkCreatePlaylist").addEventListener("click",()=>{const name=prompt("Name your playlist:");if(!name||!name.trim())return;mkLocalPlaylists.push({id:String(Date.now()),name:name.trim(),songIds:[]});mkSaveLocalPlaylists();mkRenderPlaylists();});
+    $("dailyOrdoBanner").addEventListener("click",()=>{const parts=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Manila",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date()).split("-").map(Number);const today=new Date(parts[0],parts[1]-1,parts[2]);showView("musikalendaryoView");renderOrdoDate(today.getFullYear()>=2026&&today.getFullYear()<=2028?today:new Date(2026,0,1));});
+    $("musikantaSearch").addEventListener("input",()=>{if(mkCurrentTab==="tracks")mkRenderTracks();else if(mkCurrentTab==="playlists")mkRenderPlaylists();else mkRenderLanguages();});
+    document.querySelectorAll("[data-player-tab]").forEach(b=>b.addEventListener("click",()=>mkSetTab(b.dataset.playerTab)));
+    const playerView=$("musikantaView");let swipeX=0,swipeY=0;playerView.addEventListener("touchstart",e=>{swipeX=e.changedTouches[0].clientX;swipeY=e.changedTouches[0].clientY;},{passive:true});playerView.addEventListener("touchend",e=>{const dx=e.changedTouches[0].clientX-swipeX,dy=e.changedTouches[0].clientY-swipeY;if(Math.abs(dx)>75&&Math.abs(dx)>Math.abs(dy)*1.25&&!e.target.closest("button,input,textarea,select")){const order=["tracks","playlists","languages"];const i=order.indexOf(mkCurrentTab);mkSetTab(order[Math.max(0,Math.min(2,i+(dx<0?1:-1)))]);}},{passive:true});
+    $("backToPlayerLists").addEventListener("click",()=>mkShowHome());$("backFromNowPlaying").addEventListener("click",()=>mkShowHome());
+    $("musikantaMiniOpen").addEventListener("click",()=>{showView("musikantaView");mkShowNow();});$("musikantaMiniPrevious").addEventListener("click",mkPrevious);$("musikantaMiniNext").addEventListener("click",()=>mkNext(true));
+    const dismissMini=(direction="up")=>{if(mkMiniDismissed||mkMiniDismissing)return;mkMiniDismissed=true;mkMiniDismissing=true;const mini=$("musikantaMiniPlayer");mini.classList.remove("hidden","mk-exit-left","mk-exit-right","mk-exit-up","mk-enter");void mini.offsetWidth;mini.classList.add(direction==="left"?"mk-exit-left":direction==="right"?"mk-exit-right":"mk-exit-up");mkAudio.pause();window.setTimeout(()=>{mini.classList.add("hidden");mini.classList.remove("mk-exit-left","mk-exit-right","mk-exit-up");mkMiniDismissing=false;document.body.classList.remove("musikanta-mini-visible");},360);};
+    $("musikantaMiniDismiss").addEventListener("click",()=>dismissMini("up"));
+    let miniTouchX=0,miniTouchY=0,miniSwipeConsumed=false;const miniEl=$("musikantaMiniPlayer");miniEl.addEventListener("pointerdown",e=>{if(e.pointerType==="mouse"&&e.button!==0)return;miniTouchX=e.clientX;miniTouchY=e.clientY;miniSwipeConsumed=false;},{passive:true});miniEl.addEventListener("pointerup",e=>{const dx=e.clientX-miniTouchX,dy=e.clientY-miniTouchY;if(Math.abs(dx)>42&&Math.abs(dx)>Math.abs(dy)*1.12){miniSwipeConsumed=true;e.preventDefault();e.stopPropagation();dismissMini(dx<0?"left":"right");}},{passive:false});miniEl.addEventListener("touchstart",e=>{miniTouchX=e.changedTouches[0].clientX;miniTouchY=e.changedTouches[0].clientY;miniSwipeConsumed=false;},{passive:true});miniEl.addEventListener("touchend",e=>{const dx=e.changedTouches[0].clientX-miniTouchX,dy=e.changedTouches[0].clientY-miniTouchY;if(Math.abs(dx)>42&&Math.abs(dx)>Math.abs(dy)*1.12){miniSwipeConsumed=true;e.preventDefault();e.stopPropagation();dismissMini(dx<0?"left":"right");}},{passive:false});miniEl.addEventListener("click",e=>{if(miniSwipeConsumed){e.preventDefault();e.stopImmediatePropagation();miniSwipeConsumed=false;}},true);
+    $("mkShowSongDetails")?.addEventListener("click",()=>{const current=mkQueue[mkIndex];const match=current&&songs.find(x=>String(x.audio||"").split("/").pop()===String(current.audio||"").split("/").pop());const target=match||selectedSongForLineup;if(target){openSong(target,"musikantaView");showView("readerView");}});$("musikantaMiniPlay").addEventListener("click",()=>{if(mkAudio.paused)mkAudio.play().catch(()=>{});else mkAudio.pause();});
+    $("musikantaPlay").addEventListener("click",()=>{if(!mkAudio.src){if(mkQueue.length)mkLoadCurrent(true);return;}if(mkAudio.paused)mkAudio.play().catch(()=>{});else mkAudio.pause();});mkAudio.addEventListener("play",()=>{$("musikantaPlay").textContent="Ⅱ";mkUpdateMini();});mkAudio.addEventListener("pause",()=>{$("musikantaPlay").textContent="▶";mkUpdateMini();});
+    $("musikantaNext").addEventListener("click",()=>mkNext(true));$("musikantaPrevious").addEventListener("click",mkPrevious);
+    $("musikantaShuffle").addEventListener("click",()=>{mkShuffle=!mkShuffle;$("musikantaShuffle").setAttribute("aria-pressed",String(mkShuffle));});
+    $("musikantaRepeat").addEventListener("click",()=>{mkRepeat=mkRepeat==="off"?"all":mkRepeat==="all"?"one":"off";mkAudio.loop=mkRepeat==="one";$("musikantaRepeat").textContent=mkRepeat==="one"?"↻1":"↻";$("musikantaRepeat").setAttribute("aria-pressed",String(mkRepeat!=="off"));$("musikantaRepeat").setAttribute("aria-label","Repeat "+mkRepeat);});
+    $("musikantaSlower").addEventListener("click",()=>{mkSpeed=Math.max(.5,Math.round((mkSpeed-.1)*10)/10);mkAudio.playbackRate=mkSpeed;$("musikantaSpeed").textContent=mkSpeed.toFixed(1).replace(/\.0$/,'')+"×";});$("musikantaFaster").addEventListener("click",()=>{mkSpeed=Math.min(2,Math.round((mkSpeed+.1)*10)/10);mkAudio.playbackRate=mkSpeed;$("musikantaSpeed").textContent=mkSpeed.toFixed(1).replace(/\.0$/,'')+"×";});
+    mkAudio.addEventListener("timeupdate",()=>{if(mkAudio.duration){$("musikantaProgress").value=String(Math.round(mkAudio.currentTime/mkAudio.duration*1000));$("musikantaCurrentTime").textContent=formatTime(mkAudio.currentTime);$("musikantaDuration").textContent=formatTime(mkAudio.duration);}});mkAudio.addEventListener("loadedmetadata",()=>$("musikantaDuration").textContent=formatTime(mkAudio.duration));$("musikantaProgress").addEventListener("input",()=>{if(mkAudio.duration)mkAudio.currentTime=Number($("musikantaProgress").value)/1000*mkAudio.duration;});mkAudio.addEventListener("ended",()=>{if(mkRepeat==="one")return;if(mkStopAtPlaylistEnd&&mkIndex>=mkQueue.length-1){mkAudio.pause();$("mkSleepStatus").textContent="Playlist finished.";$("mkSleepTimer").value="0";mkStopAtPlaylistEnd=false;return;}mkNext(false);});
+    $("mkAddToPlaylist").addEventListener("click",()=>{const song=mkQueue[mkIndex];if(!song)return;const names=mkLocalPlaylists.map((p,i)=>`${i+1}. ${p.name}`).join("\n");if(!mkLocalPlaylists.length){alert("Create a local playlist first.");return;}const choice=Number(prompt("Add this song to which playlist?\n"+names));const target=mkLocalPlaylists[choice-1];if(target){if(!target.songIds.includes(song.id))target.songIds.push(song.id);mkSaveLocalPlaylists();alert("Added to "+target.name+".");}});
+    const mkArt=$("musikantaNowPanel").querySelector(".musikanta-art"),mkLyrics=$("musikantaLyricsPanel");if(mkArt&&mkLyrics)mkArt.appendChild(mkLyrics);
+    $("musikantaLyricsBtn").addEventListener("click",()=>{const panel=$("musikantaLyricsPanel"),art=$("musikantaNowPanel").querySelector(".musikanta-art");panel.classList.toggle("hidden");art.classList.toggle("mk-lyrics-mode",!panel.classList.contains("hidden"));$("musikantaLyricsBtn").textContent=panel.classList.contains("hidden")?"▤ Show Lyrics":"▤ Hide Lyrics";});$("showPlayerQueue").addEventListener("click",()=>{const panel=$("musikantaQueuePanel");panel.classList.toggle("hidden");mkRefreshQueue();});$("clearMusiKantaQueue").addEventListener("click",()=>{mkQueue=[];mkIndex=-1;mkAudio.pause();mkAudio.removeAttribute("src");$("musikantaQueueList").replaceChildren();$("musikantaCurrentTitle").textContent="Queue cleared";mkUpdateMini();});
+    $("mkSleepTimer").addEventListener("change",()=>{if(mkSleepTimer)clearTimeout(mkSleepTimer);mkSleepTimer=null;const v=$("mkSleepTimer").value;if(v==="end"){$("mkSleepStatus").textContent="Stops when the current playlist ends.";mkStopAtPlaylistEnd=true;}else if(Number(v)>0){mkStopAtPlaylistEnd=false;mkSleepTimer=setTimeout(()=>{mkAudio.pause();$("mkSleepStatus").textContent="Playback stopped.";$("mkSleepTimer").value="0";},Number(v)*60000);$("mkSleepStatus").textContent=`Stops in ${v} minutes.`;}else{mkStopAtPlaylistEnd=false;$("mkSleepStatus").textContent="";}});
+    const saveMkSession=()=>{try{localStorage.setItem("mk-playback-session-v1",JSON.stringify({songId:mkQueue[mkIndex]?.id||"",time:mkAudio.currentTime,paused:mkAudio.paused,queue:mkQueue.map(s=>s.id),index:mkIndex}));}catch(_){}};mkAudio.addEventListener("timeupdate",saveMkSession);mkAudio.addEventListener("pause",saveMkSession);window.addEventListener("pagehide",saveMkSession);
+    mkAudio.addEventListener("play",()=>{const song=mkQueue[mkIndex];if(song&&"mediaSession" in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:mkTrackTitle(song),artist:"Holy Infant Jesus Parish Music Ministry",album:"MusiKaupod Digital Songbook",artwork:[{src:"assets/icon-512.png",sizes:"512x512",type:"image/png"}]});navigator.mediaSession.setActionHandler("play",()=>mkAudio.play());navigator.mediaSession.setActionHandler("pause",()=>mkAudio.pause());navigator.mediaSession.setActionHandler("previoustrack",mkPrevious);navigator.mediaSession.setActionHandler("nexttrack",()=>mkNext(true));navigator.mediaSession.setActionHandler("seekto",d=>{if(Number.isFinite(d.seekTime))mkAudio.currentTime=d.seekTime;});}});
+    // Restore the previous track and position without forcing autoplay.
+    try{const saved=JSON.parse(localStorage.getItem("mk-playback-session-v1")||"null");if(saved?.songId){const restored=saved.queue?.map(id=>songs.find(x=>x.id===id)).filter(mkFullGuide)||[];const idx=restored.findIndex(x=>x.id===saved.songId);if(idx>=0){mkQueue=restored;mkIndex=idx;mkLoadCurrent(false);mkAudio.addEventListener("loadedmetadata",()=>{mkAudio.currentTime=Math.min(saved.time||0,mkAudio.duration||0);},{once:true});$("musikantaNowPanel").classList.add("hidden");showView("homeView");mkUpdateMini();}}}catch(_){}
+    mkUpdateMini();
+  }
+
+  // MusiKalendaryo: bundled deterministic Philippine-date Ordo view for 2026–2028.
+  function easterDate(y){const a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),month=Math.floor((h+l-7*m+114)/31),day=((h+l-7*m+114)%31)+1;return new Date(y,month-1,day);}
+  const dateKey=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+  const addDays=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x;};
+  const fixedOrdo={"01-01":["Mary, the Holy Mother of God","Solemnity","white"],"03-19":["Saint Joseph, Spouse of the Blessed Virgin Mary","Solemnity","white"],"03-25":["Annunciation of the Lord","Solemnity","white"],"06-24":["Nativity of Saint John the Baptist","Solemnity","white"],"06-29":["Saints Peter and Paul, Apostles","Solemnity","red"],"08-15":["Assumption of the Blessed Virgin Mary","Solemnity","white"],"09-08":["Nativity of the Blessed Virgin Mary","Feast","white"],"09-14":["Exaltation of the Holy Cross","Feast","red"],"11-01":["All Saints","Solemnity","white"],"11-02":["Commemoration of All the Faithful Departed (All Souls’ Day)","Commemoration","black"],"11-22":["Saint Cecilia, Patron of the HIJP Music Ministry Community","Parish Feast","gold"],"12-08":["Immaculate Conception of the Blessed Virgin Mary (Philippine Patronal Solemnity)","Solemnity","white"],"12-12":["Our Lady of Guadalupe – Parish Patronal Fiesta","Parish Fiesta","blue"],"12-25":["Nativity of the Lord (Christmas)","Solemnity","white"],"12-26":["Saint Stephen, First Martyr","Feast","red"],"12-27":["Saint John, Apostle and Evangelist","Feast","white"],"12-28":["Holy Innocents, Martyrs","Feast","red"],
+      "01-21":["Saint Agnes, Virgin and Martyr","Memorial","red"],"01-24":["Saint Francis de Sales, Bishop and Doctor","Memorial","white"],"01-25":["Conversion of Saint Paul, Apostle","Feast","white"],"01-26":["Saints Timothy and Titus, Bishops","Memorial","white"],"01-28":["Saint Thomas Aquinas, Priest and Doctor","Memorial","white"],"01-31":["Saint John Bosco, Priest","Memorial","white"],"02-02":["Presentation of the Lord","Feast","white"],"02-05":["Saint Agatha, Virgin and Martyr","Memorial","red"],"02-06":["Saint Paul Miki and Companions, Martyrs","Memorial","red"],"02-10":["Saint Scholastica, Virgin","Memorial","white"],"02-14":["Saints Cyril and Methodius","Feast","white"],"02-22":["Chair of Saint Peter, Apostle","Feast","white"],"03-07":["Saints Perpetua and Felicity, Martyrs","Memorial","red"],"03-17":["Saint Patrick, Bishop","Optional Memorial","white"],"03-19":["Saint Joseph, Spouse of the Blessed Virgin Mary","Solemnity","white"],"03-23":["Saint Turibius of Mogrovejo, Bishop","Optional Memorial","white"],"04-25":["Saint Mark, Evangelist","Feast","red"],"04-02":["Saint Pedro Calungsod, Martyr","Optional Memorial","red"],"04-29":["Saint Catherine of Siena, Virgin and Doctor","Memorial","white"],"05-01":["Saint Joseph the Worker","Optional Memorial","white"],"05-03":["Saints Philip and James, Apostles","Feast","red"],"05-14":["Saint Matthias, Apostle","Feast","red"],"05-31":["Visitation of the Blessed Virgin Mary","Feast","white"],"06-03":["Saint Charles Lwanga and Companions, Martyrs","Memorial","red"],"06-05":["Saint Boniface, Bishop and Martyr","Memorial","red"],"06-11":["Saint Barnabas, Apostle","Memorial","red"],"06-13":["Saint Anthony of Padua, Priest and Doctor","Memorial","white"],"06-21":["Saint Aloysius Gonzaga, Religious","Memorial","white"],"06-28":["Saint Irenaeus, Bishop and Martyr","Memorial","red"],"07-03":["Saint Thomas, Apostle","Feast","red"],"07-11":["Saint Benedict, Abbot","Memorial","white"],"07-22":["Saint Mary Magdalene","Feast","white"],"07-25":["Saint James, Apostle","Feast","red"],"07-26":["Saints Joachim and Anne, Parents of the Blessed Virgin Mary","Memorial","white"],"07-29":["Saints Martha, Mary and Lazarus","Memorial","white"],"08-01":["Saint Alphonsus Liguori, Bishop and Doctor","Memorial","white"],"08-04":["Saint John Mary Vianney, Priest","Memorial","white"],"08-06":["Transfiguration of the Lord","Feast","white"],"08-11":["Saint Clare, Virgin","Memorial","white"],"08-14":["Saint Maximilian Kolbe, Priest and Martyr","Memorial","red"],"08-20":["Saint Bernard, Abbot and Doctor","Memorial","white"],"08-21":["Saint Pius X, Pope","Memorial","white"],"08-22":["Queenship of the Blessed Virgin Mary","Memorial","white"],"08-24":["Saint Bartholomew, Apostle","Feast","red"],"08-27":["Saint Monica","Memorial","white"],"08-28":["Saint Augustine, Bishop and Doctor","Memorial","white"],"08-29":["Passion of Saint John the Baptist","Memorial","red"],"09-03":["Saint Gregory the Great, Pope and Doctor","Memorial","white"],"09-15":["Our Lady of Sorrows","Memorial","white"],"09-21":["Saint Matthew, Apostle and Evangelist","Feast","red"],"09-23":["Saint Pius of Pietrelcina (Padre Pio), Priest","Optional Memorial","white"],"09-28":["Saint Lorenzo Ruiz and Companions, Martyrs","Feast","red"],"09-29":["Saints Michael, Gabriel and Raphael, Archangels","Feast","white"],"09-30":["Saint Jerome, Priest and Doctor","Memorial","white"],"10-01":["Saint Thérèse of the Child Jesus, Virgin and Doctor","Memorial","white"],"10-02":["Holy Guardian Angels","Memorial","white"],"10-04":["Saint Francis of Assisi","Memorial","white"],"10-07":["Our Lady of the Rosary","Memorial","white"],"10-15":["Saint Teresa of Jesus, Virgin and Doctor","Memorial","white"],"10-18":["Saint Luke, Evangelist","Feast","red"],"10-28":["Saints Simon and Jude, Apostles","Feast","red"],"11-04":["Saint Charles Borromeo, Bishop","Memorial","white"],"11-09":["Dedication of the Lateran Basilica","Feast","white"],"11-11":["Saint Martin of Tours, Bishop","Memorial","white"],"11-17":["Saint Elizabeth of Hungary, Religious","Memorial","white"],"11-21":["Presentation of the Blessed Virgin Mary","Memorial","white"],"11-30":["Saint Andrew, Apostle","Feast","red"],"12-03":["Saint Francis Xavier, Priest","Memorial","white"],"12-04":["Saint John Damascene, Priest and Doctor","Optional Memorial","white"],"12-06":["Saint Nicholas, Bishop","Optional Memorial","white"],"12-07":["Saint Ambrose, Bishop and Doctor","Memorial","white"],"12-13":["Saint Lucy, Virgin and Martyr","Memorial","red"],"12-14":["Saint John of the Cross, Priest and Doctor","Memorial","white"]};
+  function ordoInfo(d){const y=d.getFullYear(),m=d.getMonth()+1,day=d.getDate(),md=`${String(m).padStart(2,"0")}-${String(day).padStart(2,"0")}`,e=easterDate(y),days=Math.round((d-e)/86400000),dow=d.getDay();let title="",rank="",color="green",season="Ordinary Time",note="";
+    const fixed=fixedOrdo[md];if(fixed){[title,rank,color]=fixed;}
+    const christmas=new Date(y,11,25);const firstSundayAfterChristmas=christmas.getDay()===0?new Date(y,11,30):addDays(christmas,(7-christmas.getDay())%7||7);if(m===firstSundayAfterChristmas.getMonth()+1&&day===firstSundayAfterChristmas.getDate()&&y===firstSundayAfterChristmas.getFullYear()){title="The Holy Family of Jesus, Mary and Joseph";rank="Feast";color="white";season="Christmas";}
+    const adventStart=firstSundayOfAdvent(y);const christKing=addDays(adventStart,-7);if(dateKey(d)===dateKey(christKing)){title="Our Lord Jesus Christ, King of the Universe";rank="Solemnity";color="white";}
+    const jan6=new Date(y,0,6);const epiphany=addDays(jan6,-jan6.getDay());if(jan6.getDay()>3)epiphany.setDate(epiphany.getDate()+7);const baptism=addDays(epiphany,7);if(dateKey(d)===dateKey(epiphany)){title="The Epiphany of the Lord";rank="Solemnity";color="white";season="Christmas";}if(dateKey(d)===dateKey(baptism)){title="The Baptism of the Lord";rank="Feast";color="white";season="Christmas";}
+    if(md==="05-18"){title="Titular Fiesta in Honor of the Holy Infant Jesus";rank="Parish Titular Fiesta";color="gold";}
+    if(days===-2){title="Friday of the Passion of the Lord (Good Friday)";rank="Day of Fast and Abstinence";color="violet/black";note="Violet before 3:00 PM; Black from 3:00 PM onward, according to parish practice.";season="Easter Triduum";}
+    else if(days===-1){title="Holy Saturday";rank="Holy Saturday";color="violet";season="Easter Triduum";}
+    else if(days===0){title="Easter Sunday of the Resurrection of the Lord";rank="Solemnity";color="white";season="Easter";}
+    else if(days===-3){title="Holy Thursday – Evening Mass of the Lord’s Supper";rank="Solemnity";color="white";season="Easter Triduum";}
+    else if(days===49){title="Pentecost Sunday";rank="Solemnity";color="red";season="Easter";}
+    else if(days===56){title="The Most Holy Trinity";rank="Solemnity";color="white";season="Ordinary Time";}
+    else if(days===42){title="Ascension of the Lord (Philippine Sunday observance)";rank="Solemnity";color="white";season="Easter";}
+    else if(days===63){title="The Most Holy Body and Blood of Christ (Corpus Christi)";rank="Solemnity";color="white";season="Ordinary Time";}
+    else if(days===68){title="The Most Sacred Heart of Jesus";rank="Solemnity";color="white";season="Ordinary Time";}
+    else if(days===69){title="The Immaculate Heart of the Blessed Virgin Mary";rank="Memorial";color="white";season="Ordinary Time";}
+    else if(days===7){title="Second Sunday of Easter (Divine Mercy Sunday)";rank="Sunday";color="white";season="Easter";}
+    else if(days===-7){title="Palm Sunday of the Passion of the Lord";rank="Sunday";color="red";season="Lent";}
+    else if(days===-46){title="Ash Wednesday";rank="Day of Fast and Abstinence";color="violet";season="Lent";}
+    else if((m===12&&day>=17&&day<=24)|| (m===12&&day>=25)|| (m===1&&day<=13)){season="Christmas";}
+    else if((m===12&&day>=1&&day<=16)){season="Advent";}
+    else if(days>=-46&&days<0){season="Lent";}
+    else if(days>0&&days<50){season="Easter";}
+    else if(dow===0){season=(m===12&&day<25)?"Advent":season;}
+    // Sundays take precedence over ordinary Feasts and Memorials in the seasonal cycle.
+    if(dow===0 && ["Feast","Memorial","Optional Memorial"].includes(rank) && !title.includes("Baptism of the Lord") && !title.includes("Holy Family")){title="";rank="";color="";}
+    if(!title){
+      if(dow===0){let label="Sunday";if(season==="Advent"){const first=firstSundayOfAdvent(y);const n=1+Math.floor((d-first)/604800000);label=`${n}${ordinalSuffix(n)} Sunday of Advent`;}
+        else if(season==="Lent"){const ash=addDays(e,-46),first=addDays(ash,4);const n=Math.max(1,Math.floor((d-first)/604800000)+1);label=`${n}${ordinalSuffix(n)} Sunday of Lent`;}
+        else if(season==="Easter"){const n=Math.max(1,Math.floor(days/7)+1);label=`${n}${ordinalSuffix(n)} Sunday of Easter`;}
+        else {const jan6=new Date(y,0,6);const epiphany=addDays(jan6,-jan6.getDay());if(jan6.getDay()>3)epiphany.setDate(epiphany.getDate()+7);const baptism=addDays(epiphany,7);const ordinaryStart=addDays(baptism,7);const firstPostEaster=addDays(e,70);const n=d<e?2+Math.floor((d-ordinaryStart)/604800000):11+Math.floor((d-firstPostEaster)/604800000);label=`${Math.max(2,n)}${ordinalSuffix(Math.max(2,n))} Sunday in Ordinary Time`;}
+        title=label;rank="Sunday";color=season==="Lent"?"violet":season==="Advent"?"violet":"green";
+      } else if(dow===6){title="Saturday of the Blessed Virgin Mary";rank="Marian Saturday";color="blue";}
+      else {title=season+" · Weekday";rank="Weekday";color=season==="Lent"||season==="Advent"?"violet":season==="Easter"||season==="Christmas"?"white":"green";}
+    }
+    // Parish Saturday Marian color applies only when no Solemnity, Feast, or Memorial occurs.
+    if(dow===6 && !(["Solemnity","Feast","Commemoration","Holy Saturday","Day of Fast and Abstinence"].includes(rank) || String(rank).includes("Memorial")) && !md.startsWith("11-22") && md!=="12-12" && md!=="05-18"){title="Saturday of the Blessed Virgin Mary";rank="Marian Saturday";color="blue";}
+    if(m===5&&day===18){title="Titular Fiesta in Honor of the Holy Infant Jesus";rank="Parish Titular Fiesta";color="gold";}
+    if(m===11&&day===22){title="Saint Cecilia, Patron of the HIJP Music Ministry Community";rank="Parish Feast";color="gold";if(dateKey(d)===dateKey(christKing))note="This parish celebration coincides with the Solemnity of Our Lord Jesus Christ, King of the Universe.";}
+    const colors={white:"White",red:"Red",green:"Green",violet:"Violet",blue:"Blue",rose:"Rose / Pink",gold:"Gold",black:"Black","violet/black":"Violet → Black"};
+    if(dow===0 && ((season==="Advent"&&title.startsWith("3rd"))||(season==="Lent"&&title.startsWith("4th"))))color="rose";
+    return {date:d,title,rank,color,colorLabel:colors[color]||color,season,note};
+  }
+  function ordinalSuffix(n){return n%10===1&&n%100!==11?"st":n%10===2&&n%100!==12?"nd":n%10===3&&n%100!==13?"rd":"th";}
+  function firstSundayOfAdvent(y){const dec3=new Date(y,11,3);return addDays(dec3,-dec3.getDay());}
+  let ordoSelectedDate=new Date(2026,0,1),ordoVisibleMonth=new Date(2026,0,1);
+  const ordoPalette={white:"#fff",red:"#c62828",green:"#2e7d32",violet:"#6a1b9a",blue:"#1565c0",rose:"#e8a0ad",gold:"#c49a24",black:"#111"};
+  function ordoSwatch(color){const span=document.createElement("span");span.className="ordo-swatch";span.style.background=color==="violet/black"?"linear-gradient(90deg,#6a1b9a 50%,#111 50%)":(ordoPalette[color]||"#777");return span;}
+  function renderOrdoDate(date){const d=new Date(date.getFullYear(),date.getMonth(),date.getDate());if(d.getFullYear()<2026||d.getFullYear()>2028)return;ordoSelectedDate=d;ordoVisibleMonth=new Date(d.getFullYear(),d.getMonth(),1);renderOrdoDetail(d);renderOrdoMonth();}
+  function renderOrdoDetail(d){const info=ordoInfo(d),box=$("ordoDayDetail");box.replaceChildren();const h=document.createElement("h3");h.textContent=info.title;const meta=document.createElement("p");meta.textContent=d.toLocaleDateString("en-PH",{weekday:"long",year:"numeric",month:"long",day:"numeric"});const color=document.createElement("p");color.className="ordo-color";color.append(ordoSwatch(info.color),document.createTextNode("Liturgical color: "+info.colorLabel));const rank=document.createElement("p");rank.textContent="Rank: "+info.rank;const season=document.createElement("p");season.textContent="Liturgical season: "+info.season;box.append(h,meta,rank,season,color);if(info.note){const note=document.createElement("p");note.textContent=info.note;box.append(note);}}
+  function renderOrdoMonth(){const y=ordoVisibleMonth.getFullYear(),m=ordoVisibleMonth.getMonth(),grid=$("ordoMonthGrid");grid.replaceChildren();$("ordoMonthHeading").textContent=ordoVisibleMonth.toLocaleDateString("en-PH",{month:"long",year:"numeric"});const first=new Date(y,m,1),offset=first.getDay(),days=new Date(y,m+1,0).getDate();for(let i=0;i<offset;i++){const blank=document.createElement("div");blank.className="ordo-calendar-day empty";blank.setAttribute("aria-hidden","true");grid.append(blank);}for(let n=1;n<=days;n++){const date=new Date(y,m,n),info=ordoInfo(date),b=document.createElement("button");b.type="button";b.className="ordo-calendar-day";if(dateKey(date)===dateKey(ordoSelectedDate))b.classList.add("selected");const nowParts=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Manila",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());if(dateKey(date)===nowParts)b.classList.add("today");b.setAttribute("aria-label",`${n}: ${info.title}; ${info.colorLabel}`);const num=document.createElement("span");num.className="day-number";num.textContent=String(n);b.append(num,ordoSwatch(info.color));b.addEventListener("click",()=>{ordoSelectedDate=date;renderOrdoDetail(date);renderOrdoMonth();});grid.append(b);}const select=$("ordoMonthSelect");if(!select.options.length){for(let yr=2026;yr<=2028;yr++)for(let mo=0;mo<12;mo++){const dt=new Date(yr,mo,1),o=document.createElement("option");o.value=`${yr}-${String(mo+1).padStart(2,"0")}`;o.textContent=dt.toLocaleDateString("en-PH",{month:"long",year:"numeric"});select.append(o);}}select.value=`${y}-${String(m+1).padStart(2,"0")}`;$("ordoPrevMonth").disabled=(y===2026&&m===0);$("ordoNextMonth").disabled=(y===2028&&m===11);}
+  function initOrdo(){const parts=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Manila",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date()).split("-").map(Number);const today=new Date(parts[0],parts[1]-1,parts[2]);const target=today.getFullYear()>=2026&&today.getFullYear()<=2028?today:new Date(2026,0,1);if(!$("ordoDayDetail").dataset.ready){ordoSelectedDate=target;ordoVisibleMonth=new Date(target.getFullYear(),target.getMonth(),1);$("ordoPrevMonth").addEventListener("click",()=>{ordoVisibleMonth=new Date(ordoVisibleMonth.getFullYear(),ordoVisibleMonth.getMonth()-1,1);renderOrdoMonth();});$("ordoNextMonth").addEventListener("click",()=>{ordoVisibleMonth=new Date(ordoVisibleMonth.getFullYear(),ordoVisibleMonth.getMonth()+1,1);renderOrdoMonth();});$("ordoMonthSelect").addEventListener("change",e=>{const [y,m]=e.target.value.split("-").map(Number);ordoVisibleMonth=new Date(y,m-1,1);renderOrdoMonth();});$("ordoDayDetail").dataset.ready="1";}renderOrdoDetail(ordoSelectedDate);renderOrdoMonth();const daily=ordoInfo(target);$("dailyOrdoBanner").innerHTML=`${target.toLocaleDateString("en-PH",{month:"long",day:"numeric"})} · ${daily.title}<small>${daily.rank} · ${daily.colorLabel}</small><span class="ordo-open-link">OPEN CALENDAR &gt;</span>`;}
+  function scheduleOrdoRefresh(){const parts=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Manila",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date()).split("-").map(Number);const manilaNow=new Date(new Date().toLocaleString("en-US",{timeZone:"Asia/Manila"}));const next=new Date(manilaNow);next.setHours(24,0,5,0);setTimeout(()=>{initOrdo();scheduleOrdoRefresh();},Math.max(1000,next-manilaNow));}
+  document.addEventListener("visibilitychange",()=>{if(!document.hidden)initOrdo();});
 
   function renderTiles() {
     const lg=$("liturgyGrid");lg.replaceChildren();
@@ -927,8 +1176,105 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   $("favoriteToggle").addEventListener("click",()=>{if(!selectedSongForLineup)return;const id=selectedSongForLineup.id;if(favorites.has(id))favorites.delete(id);else favorites.add(id);const saved=persistFavorites();const active=favorites.has(id);$("favoriteToggle").classList.toggle("active",active);$("favoriteToggle").textContent=active?"★ Favorited":"☆ Favorite";if(saved)renderFavorites();});
   $("addToLineup").addEventListener("click",addCurrentSongToLineup);
   setupAudioTools();
+  (()=>{const layer=$("mkFloatingSymbols");if(!layer)return;const glyphs=["♫","♪","♬","♩","𝄞","♭","♯"];for(let i=0;i<16;i++){const el=document.createElement("span");el.className="mk-floating-note";el.textContent=glyphs[i%glyphs.length];el.style.setProperty("--x",`${(i*37+8)%96}%`);el.style.setProperty("--y",`${(i*53+7)%92}%`);el.style.setProperty("--size",`${22+(i%5)*9}px`);el.style.setProperty("--duration",`${5+(i%6)}s`);el.style.setProperty("--rotation",`${(i%2?1:-1)*(8+i%22)}deg`);el.addEventListener("click",()=>{el.classList.add("mk-note-away");setTimeout(()=>{el.remove();},560);});layer.append(el);}})();
+  mkInit();
+  initOrdo();
+  scheduleOrdoRefresh();
   renderTiles();
   handleSharedLink();
+})();
+</script>
+<script>
+(() => {
+ const tips=[
+  "Gregorian chant is traditionally sung without instrumental accompaniment.",
+  "SATB stands for Soprano, Alto, Tenor, and Bass.",
+  "The word Kyrie means ‘Lord’ and is used in a prayer asking for mercy.",
+  "Sanctus means ‘Holy’ and begins with the acclamation ‘Holy, Holy, Holy’.",
+  "A cappella singing is performed without instrumental accompaniment.",
+  "The Alleluia is traditionally omitted during Lent in the Roman Rite.",
+  "Polyphony combines multiple independent melodic lines.",
+  "Advent is a season of preparation for the coming of Christ.",
+  "Gloria in excelsis Deo means ‘Glory to God in the highest’.",
+  "Unison singing means everyone sings the same melody together.",
+  "A cantor helps lead the singing of the congregation.",
+  "The Agnus Dei means ‘Lamb of God’.",
+  "The liturgical color generally associated with Advent in the Roman Rite is violet.",
+  "The word liturgy comes from the Greek leitourgia, meaning public service or work.",
+  "The word ‘Eucharist’ comes from a Greek word meaning thanksgiving.",
+  "The term ‘hymn’ comes from the Greek hymnos, a song of praise.",
+  "Gregorian chant takes its name from Pope Gregory I by longstanding tradition.",
+  "The Roman Missal contains the prayers and instructions for the celebration of Mass.",
+  "The Lectionary arranges the Scripture readings proclaimed at Mass.",
+  "The responsorial psalm is the congregation’s response to the first reading.",
+  "The word ‘Alleluia’ is commonly understood as ‘Praise the Lord’.",
+  "The Gloria is a hymn of praise used on Sundays outside Advent and Lent, and on solemnities and feasts.",
+  "The Sanctus is part of the Eucharistic Prayer and is normally sung or said by all.",
+  "The Agnus Dei accompanies the Fraction Rite before Communion.",
+  "The sign of peace is an expression of communion before receiving the Eucharist.",
+  "The Easter season lasts fifty days and concludes at Pentecost.",
+  "The Triduum begins with the Evening Mass of the Lord’s Supper on Holy Thursday.",
+  "The Paschal candle is a sign of the risen Christ during the Easter season.",
+  "The liturgical year begins with the First Sunday of Advent.",
+  "The color white is used for many feasts of the Lord and saints who are not martyrs.",
+  "Red is used on Palm Sunday, Good Friday, Pentecost, and celebrations of martyrs.",
+  "Green is commonly used during Ordinary Time.",
+  "Rose may be used on Gaudete Sunday and Laetare Sunday.",
+  "The word ‘psalm’ comes from a Greek term associated with singing to a stringed instrument.",
+  "A doxology is a short expression of praise to God.",
+  "The word ‘Amen’ expresses affirmation or agreement: ‘so be it’.",
+  "The term ‘antiphon’ refers to a short text associated with a chant or liturgical song.",
+  "A refrain is a recurring line or musical phrase in a song.",
+  "A verse-and-refrain structure helps the assembly join in congregational singing.",
+  "A hymn tune is the melody to which a hymn text is sung.",
+  "A descant is an additional melody sung above the main tune.",
+  "In choral music, ‘a cappella’ means singing without instrumental accompaniment.",
+  "A choir’s blend depends on balanced tone, vowels, diction, and listening.",
+  "The bass part often provides the harmonic foundation in SATB choral writing.",
+  "The tenor part generally occupies the higher range traditionally sung by adult male voices.",
+  "The alto part provides an inner voice between soprano and tenor.",
+  "The soprano part commonly carries the highest vocal line in SATB music.",
+  "A fermata indicates that a note or rest is held longer than its usual value.",
+  "A crescendo means gradually getting louder.",
+  "A diminuendo means gradually getting softer.",
+  "A metronome marking indicates the tempo in beats per minute.",
+  "The word ‘tempo’ refers to the speed of the music.",
+  "A cadence is a musical progression that brings a phrase or section to a close.",
+  "A canon is a form in which a melody is imitated by one or more voices.",
+  "A motet is a form of sacred choral composition.",
+  "Plainchant is a form of monophonic liturgical chant.",
+  "The pipe organ is often associated with the musical tradition of Western Christian worship.",
+  "The Psalms are biblical prayers and songs used throughout the Church’s liturgy.",
+  "The Magnificat is the canticle of the Blessed Virgin Mary from the Gospel of Luke.",
+  "The Benedictus is the canticle of Zechariah found in Luke’s Gospel.",
+  "The Nunc dimittis is the canticle of Simeon, traditionally prayed at Night Prayer.",
+  "The word ‘Marian’ refers to matters associated with the Blessed Virgin Mary.",
+  "The Angelus is traditionally prayed in the morning, at noon, and in the evening.",
+  "The Regina Caeli is prayed in place of the Angelus during the Easter season.",
+  "The hymn ‘Ave Maria’ is a musical setting of the Hail Mary prayer.",
+  "The term ‘processional’ describes music accompanying a liturgical procession.",
+  "A recessional accompanies the ministers as they depart at the end of a celebration.",
+  "The entrance chant helps establish the character of the liturgical celebration.",
+  "Liturgical music serves the prayer of the Church and the action of the liturgy."
+ ];
+ const loader=document.getElementById('musicLoading');if(!loader)return;
+ const tip=document.getElementById('loadingTriviaText');
+ let last=-1;try{last=Number(sessionStorage.getItem('mkLastTip')||-1);}catch(_){}
+ let index=Math.floor(Math.random()*tips.length);
+ if(tips.length>1&&index===last)index=(index+1)%tips.length;
+ if(tip)tip.textContent=tips[index];
+ try{sessionStorage.setItem('mkLastTip',String(index));}catch(_){}
+ const duration=5000+Math.floor(Math.random()*2001);
+ const progress=loader.querySelector('.loading-progress-track i');
+ const label=loader.querySelector('.loading-progress small');
+ const stages=[0,25,50,75,100];
+ let done=false,started=Date.now(),tapTimes=[];
+ const finish=()=>{if(done)return;done=true;if(progress)progress.style.width='100%';if(label)label.textContent='WELCOME';loader.classList.add('done');setTimeout(()=>loader.remove(),550);};
+ const update=()=>{if(done)return;const pct=Math.min(100,((Date.now()-started)/duration)*100);let stage=pct<25?0:pct<50?1:pct<75?2:pct<100?3:4;if(progress)progress.style.width=stages[stage]+'%';if(label)label.textContent=stage===4?'WELCOME':`PREPARING YOUR SONGBOOK · ${stages[stage]}%`;if(pct>=100)finish();else requestAnimationFrame(update);};
+ const skipTap=e=>{const r=loader.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;if(x<r.width*.78||y>Math.max(90,r.height*.24))return;const now=Date.now();tapTimes=tapTimes.filter(t=>now-t<1100);tapTimes.push(now);if(tapTimes.length>=5)finish();};
+ loader.addEventListener('pointerdown',skipTap);
+ const begin=()=>{started=Date.now();requestAnimationFrame(update);};
+ if(document.readyState==='complete')begin();else window.addEventListener('load',begin,{once:true});
 })();
 </script>
 <script>
@@ -952,3 +1298,4 @@ if ("serviceWorker" in navigator) {
 </script>
 </body>
 </html>
+
