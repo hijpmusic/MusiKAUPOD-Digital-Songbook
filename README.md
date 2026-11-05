@@ -126,3 +126,37 @@ This build introduces the MusiKanam module framework and the Catholic Music Doct
 MusiKanam currently contains the game-selection/detail screens, a local score/statistics framework, initial quiz content, and a OneChant beta placeholder pending chant recordings. The current question sets are starter content and are not yet the complete 600/500-question banks in the release specification. LiriKaupod and the full three-life/20-question rules also require completion before this can be considered the final Beta 19.9 release.
 
 The mini-player dismissal and reappearance animations from Beta 19.7 are retained. The main and mini-player transport controls use inline SVG icons. The existing production v19 build is not modified.
+
+
+## Beta 2.0 — Update Detection Update
+
+- Added automatic service-worker update checks on app launch, when the app returns to the foreground, and when connectivity returns.
+- Added an Update Available notification that reads the available version from `version.json` and offers an Update Now action.
+- New service workers fully precache the app shell before becoming available for activation.
+- Existing installations wait for user confirmation before activating an update; first installation activates automatically.
+- Update activation is deferred while audio/video playback is active, then the app reloads after the new worker takes control.
+- Updated the visible version label and service-worker cache namespace to Beta 2.0.
+- Temporarily disabled the MusiKanam home tile and changed its subtitle to “Bug Fixes and improvements are ongoing”.
+
+
+## Beta 2.0 — Song Audio Update
+
+- Added 23 Minasbate song tonal-guide audio files in M4A format.
+- Linked each audio file to its existing song record in `songs.js`.
+- Replaced four existing recordings: Ibareta sa Kalibutan, An Hadi san Langit Maabot, Aleluya XIII (Adbiento), and Abrehan kag Linisan.
+- Added the new audio assets to the service-worker app-shell cache for offline playback.
+- Updated the service-worker cache namespace so deployed users receive the refreshed audio assets.
+- Moved the main-menu song search launcher into a floating button above the mini-player; category search remains in its existing location.
+
+
+## Beta 2.0 — Search UI correction
+
+- Restored the main-menu search bar to its inline position directly below the liturgical calendar and song resource indicators.
+- Tapping the search bar opens the existing centered floating search dialog.
+- The dialog darkens and blurs the entire app behind it; its search panel is placed above the mini-player and other app controls so background controls cannot be used while search is open.
+- Search can be dismissed with Close, Escape, or tapping the dimmed backdrop.
+- Bumped the service-worker cache namespace to ensure deployed clients receive the corrected interface.
+
+\n## Beta 2.0 — Search modal refinement\n- Search opens in a centered, cookie-consent-style popup while dimming the main menu.\n- Added a Search by lyrics toggle; title-only search remains the default.\n- Added title suggestions for queries with up to two character edits.\n- Added floating-up entrance and fade-up exit transitions.\n- Preserved matching result lists and the existing song-opening behavior.\n
+- Fixed search popup viewport positioning by moving the modal to the document body; opening search no longer scrolls the app to the modal location.
+- Improved dark-mode contrast for “Did you mean” suggestions.

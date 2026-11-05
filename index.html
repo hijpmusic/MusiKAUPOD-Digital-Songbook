@@ -75,7 +75,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
 
 .search-trigger{display:flex;align-items:center;gap:10px;width:100%;padding:11px 14px;margin:10px 0 14px;border:1px solid var(--line);border-radius:13px;background:#fff;color:var(--muted);text-align:left;cursor:pointer}
 .search-trigger .search-icon{font-size:1.15rem;color:var(--violet)}
-.search-overlay{pointer-events:auto;position:fixed;inset:0;z-index:1000;background:#17121dcc;display:flex;align-items:flex-start;justify-content:center;padding: min(12vh,90px) 14px 20px;overflow-y:auto}
+.search-overlay{pointer-events:auto;position:fixed;inset:0;z-index:10001;background:#17121dcc;display:flex;align-items:flex-start;justify-content:center;padding: min(12vh,90px) 14px 20px;overflow-y:auto}
 .search-overlay.hidden{display:none!important;pointer-events:none!important}.search-panel{pointer-events:auto;width:min(680px,100%);max-height:78vh;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 60px #0005;padding:16px}
 .search-panel-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}.search-panel-head h2{font-size:1.12rem;margin:0;flex:1}.search-close{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 12px;cursor:pointer}
 .search-panel .search-wrap{margin:0}.search-panel .search-wrap input{font-size:1rem}.search-results{overflow-y:auto;display:grid;gap:8px;margin-top:12px;min-height:0}.search-hint{padding:20px 8px;text-align:center;color:var(--muted);font-size:.9rem}.search-results .song{flex-shrink:0}
@@ -240,6 +240,99 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
 @keyframes mkNoteAway{to{opacity:0;transform:translateY(-90px) rotate(120deg) scale(1.5)}}
 .app>*:not(#mkFloatingSymbols){position:relative;z-index:1}
 </style>
+<style>
+.mk-update-notice{position:fixed;z-index:9999;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));max-width:560px;margin:0 auto;padding:16px;border:1px solid var(--line,#ddd);border-radius:16px;background:var(--card,#fff);color:var(--ink,#222);box-shadow:0 12px 38px #0003}
+.mk-update-head{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.92rem}
+.mk-update-badge{color:#078b43;background:#078b4315;border-radius:999px;padding:5px 9px;font-size:.72rem;font-weight:700;white-space:nowrap}
+.mk-update-notice h3{margin:12px 0 5px;font-size:1.18rem}.mk-update-notice p{margin:0 0 12px;color:var(--muted,#666);font-size:.92rem}
+.mk-update-now{width:100%;border:0;border-radius:999px;padding:12px 16px;background:var(--violet,#392052);color:white;font-weight:700;cursor:pointer}
+.mk-update-now:disabled{opacity:.65;cursor:wait}.mk-update-hint{display:block;margin-top:10px;color:var(--muted,#777);font-size:.76rem;line-height:1.4}
+:root[data-theme="dark"] .mk-update-notice{background:#211a29;border-color:#51445d;color:#f4eff8}
+</style><style>
+</style><style>
+/* Search modal: dim and block the entire app while the search panel is open. */
+.search-overlay{background:rgba(12,8,16,.78);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.search-overlay .search-panel{pointer-events:auto}
+.search-overlay .search-panel :is(input,button,a,[role="button"]){pointer-events:auto}
+</style>
+<style>
+/* Beta 2.0 search dialog: cookie-consent style, centered above the main menu. */
+.search-overlay{
+  align-items:center!important;justify-content:center!important;
+  padding:20px 16px!important;overflow-y:auto;
+  background:rgba(10,7,14,.72)!important;
+  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+  opacity:0;transition:opacity .22s ease;
+}
+.search-overlay.search-visible{opacity:1}
+.search-overlay .search-panel{
+  width:min(540px,100%);max-height:min(76vh,680px);
+  border-radius:16px;padding:18px;
+  transform:translateY(28px);opacity:0;
+  transition:transform .28s cubic-bezier(.2,.75,.25,1),opacity .22s ease;
+  box-shadow:0 22px 70px rgba(0,0,0,.42);
+}
+.search-overlay.search-visible .search-panel{transform:translateY(0);opacity:1}
+.search-overlay.search-closing{opacity:0}
+.search-overlay.search-closing .search-panel{transform:translateY(-24px);opacity:0}
+.search-panel-head{align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.search-panel-head h2{font-size:1.05rem;letter-spacing:.01em}
+.search-close{font-size:.84rem;font-weight:700;white-space:nowrap}
+.search-panel .search-wrap input{width:100%;box-sizing:border-box;padding:13px 14px;border-radius:11px}
+.search-lyrics-toggle{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  margin-top:13px;padding:11px 12px;border:1px solid var(--line);
+  border-radius:12px;background:var(--card);cursor:pointer;
+}
+.search-lyrics-toggle>span:first-child{display:flex;flex-direction:column;gap:3px}
+.search-lyrics-toggle strong{font-size:.9rem;color:var(--ink)}
+.search-lyrics-toggle small{font-size:.76rem;color:var(--muted)}
+.search-lyrics-toggle input{position:absolute;opacity:0;width:1px;height:1px}
+.search-switch-ui{position:relative;flex:0 0 42px;width:42px;height:24px;border-radius:999px;background:#96909b;transition:background .18s ease}
+.search-switch-ui:after{content:"";position:absolute;left:3px;top:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px #0003;transition:transform .18s ease}
+.search-lyrics-toggle input:checked+.search-switch-ui{background:var(--violet,#6c4388)}
+.search-lyrics-toggle input:checked+.search-switch-ui:after{transform:translateX(18px)}
+.search-lyrics-toggle input:focus-visible+.search-switch-ui{outline:3px solid var(--gold,#d6b65d);outline-offset:3px}
+.search-results{margin-top:13px;max-height:42vh;overscroll-behavior:contain}
+.search-results .search-hint{padding:14px 8px}
+.search-suggestion{padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:.9rem;color:var(--ink)}
+.search-suggestion button{border:0;background:none;padding:0;color:var(--violet,#6c4388);font-weight:800;text-decoration:underline;cursor:pointer}
+:root[data-theme="dark"] .search-lyrics-toggle{background:#26202e}
+@media(prefers-reduced-motion:reduce){
+ .search-overlay,.search-overlay .search-panel,.search-switch-ui,.search-switch-ui:after{transition:none!important}
+}
+</style>
+\n
+<style>
+/* Search modal positioning/contrast fix: keep it in the viewport, not inside the scrolled app layout. */
+#searchOverlay.search-overlay{
+  position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;
+  height:100dvh!important;box-sizing:border-box!important;
+  display:flex;align-items:center!important;justify-content:center!important;
+  padding:20px 16px!important;overflow-y:auto!important;
+  z-index:2147483000!important;
+}
+#searchOverlay .search-panel{
+  margin:auto!important;flex:0 1 540px!important;
+  max-height:calc(100dvh - 40px)!important;
+  overflow:hidden!important;
+}
+#searchOverlay .search-results{overflow-y:auto!important;min-height:0!important}
+#searchOverlay .search-suggestion{color:var(--ink)!important}
+#searchOverlay .search-suggestion button{
+  color:#8b5bb5!important;font-weight:800!important;text-decoration:underline!important;
+}
+:root[data-theme="dark"] #searchOverlay .search-suggestion{
+  color:#f3edf9!important;background:#30283a!important;border-color:#62536f!important;
+}
+:root[data-theme="dark"] #searchOverlay .search-suggestion button{
+  color:#f2d58b!important;text-decoration:underline!important;
+}
+:root[data-theme="dark"] #searchOverlay .search-suggestion button:hover{
+  color:#fff0bd!important;
+}
+</style>
+
 </head>
 <body>
 <div id="musicLoading" class="music-loading" aria-live="polite">
@@ -522,11 +615,16 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
     </div>
   </section>
 </main>
-<div id="searchOverlay" class="search-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
-  <div class="search-panel">
-    <div class="search-panel-head"><h2 id="searchModalTitle">Search the songbook</h2><button id="searchClose" class="search-close" type="button">Close ✕</button></div>
-    <div class="search-wrap"><input id="modalSearchInput" type="search" placeholder="Type words from a song title…" autocomplete="off" aria-label="Search song titles by word"></div>
-    <div id="modalSearchResults" class="search-results" aria-live="polite"><div class="search-hint">Enter one or more words from a song title.</div></div>
+<div id="searchOverlay" class="search-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle" aria-hidden="true">
+  <div class="search-panel" role="document">
+    <div class="search-panel-head"><h2 id="searchModalTitle">Search songs</h2><button id="searchClose" class="search-close" type="button">✕ Close Search</button></div>
+    <div class="search-wrap"><input id="modalSearchInput" type="search" placeholder="Search songs…" autocomplete="off" aria-label="Search songs"></div>
+    <label class="search-lyrics-toggle" for="searchLyricsToggle">
+      <span><strong>Search by lyrics</strong><small>Include song lyrics in search results</small></span>
+      <input id="searchLyricsToggle" type="checkbox" role="switch" aria-label="Search by lyrics">
+      <span class="search-switch-ui" aria-hidden="true"></span>
+    </label>
+    <div id="modalSearchResults" class="search-results" aria-live="polite"><div class="search-hint">Start typing a song title.</div></div>
   </div>
 </div>
 <footer>Offline songbook · No account or internet connection required<br>Developed by HIJP-MMC Admins</footer>
@@ -1120,36 +1218,119 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   $("readerBackButton").addEventListener("click",()=>goBack(readerBackView));
   let searchScope = "all";
   function words(value){return (safe(value).toLocaleLowerCase().match(/[\p{L}\p{N}]+/gu)||[]);}
-  function matchesWords(song, query){
-    // Search song titles only. A typed phrase may match any part of a title;
-    // lyrics, categories, and seasons are never searched.
-    const phrase=safe(query).toLocaleLowerCase().trim().replace(/\s+/g," ");
-    if(!phrase) return false;
-    const title=safe(song.title).toLocaleLowerCase().replace(/\s+/g," ");
-    return title.includes(phrase);
+  function normalizeSearchText(value){
+    return safe(value).toLocaleLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9\s'-]/g," ").replace(/\s+/g," ").trim();
   }
+  function matchesWords(song, query, includeLyrics=false){
+    const phrase=normalizeSearchText(query);
+    if(!phrase)return false;
+    const title=normalizeSearchText(song.title);
+    if(title.includes(phrase))return true;
+    if(includeLyrics && normalizeSearchText(song.lyrics||"").includes(phrase))return true;
+    return false;
+  }
+  function editDistance(a,b){
+    if(Math.abs(a.length-b.length)>2)return 3;
+    let prev=Array.from({length:b.length+1},(_,i)=>i);
+    for(let i=1;i<=a.length;i++){
+      const curr=[i];let rowMin=i;
+      for(let j=1;j<=b.length;j++){
+        const cost=a[i-1]===b[j-1]?0:1;
+        curr[j]=Math.min(curr[j-1]+1,prev[j]+1,prev[j-1]+cost);
+        rowMin=Math.min(rowMin,curr[j]);
+      }
+      if(rowMin>2)return 3;
+      prev=curr;
+    }
+    return prev[b.length];
+  }
+  function fuzzyTitleSuggestions(source, query){
+    const queryWords=normalizeSearchText(query).split(" ").filter(Boolean);
+    if(!queryWords.length)return [];
+    return source.map(song=>{
+      const titleWords=normalizeSearchText(song.title).split(" ").filter(Boolean);
+      let edits=0,matched=0;
+      for(const qw of queryWords){
+        if(titleWords.includes(qw)){matched++;continue;}
+        let best=3;
+        for(const tw of titleWords)best=Math.min(best,editDistance(qw,tw));
+        if(best<=2){edits+=best;matched++;}else return null;
+      }
+      return matched===queryWords.length&&edits>0&&edits<=2?{song,edits}:null;
+    }).filter(Boolean).sort((a,b)=>a.edits-b.edits||a.song.title.localeCompare(b.song.title)).slice(0,3).map(x=>x.song);
+  }
+  let searchPageScrollY=0;
   function openSearch(scope){
-    searchScope=scope;$("searchModalTitle").textContent=scope==="category"?`Search ${$("listHeading").textContent}`:"Search the songbook";
-    $("modalSearchInput").value="";$("modalSearchResults").innerHTML='<div class="search-hint">Enter one or more words from a song title.</div>';
-    $("searchOverlay").classList.remove("hidden");setTimeout(()=>$("modalSearchInput").focus(),30);
+    searchScope=scope;
+    $("searchModalTitle").textContent="Search songs";
+    $("modalSearchInput").value="";
+    $("searchLyricsToggle").checked=false;
+    $("modalSearchResults").innerHTML='<div class="search-hint">Start typing a song title.</div>';
+    const overlay=$("searchOverlay");
+    /* The overlay must be a direct child of body so fixed positioning is relative to the viewport,
+       not to a transformed/scrolled app container. */
+    if(overlay.parentElement!==document.body)document.body.appendChild(overlay);
+    searchPageScrollY=window.scrollY||window.pageYOffset||0;
+    document.body.style.overflow="hidden";
+    overlay.classList.remove("hidden","search-closing");
+    overlay.setAttribute("aria-hidden","false");
+    requestAnimationFrame(()=>requestAnimationFrame(()=>overlay.classList.add("search-visible")));
+    setTimeout(()=>{try{$("modalSearchInput").focus({preventScroll:true});}catch(e){$("modalSearchInput").focus();}},80);
   }
-  function closeSearch(){$("searchOverlay").classList.add("hidden");}
+  function closeSearch(){
+    const overlay=$("searchOverlay");
+    if(overlay.classList.contains("hidden")||overlay.classList.contains("search-closing"))return;
+    overlay.classList.remove("search-visible");
+    overlay.classList.add("search-closing");
+    overlay.setAttribute("aria-hidden","true");
+    setTimeout(()=>{
+      overlay.classList.add("hidden");overlay.classList.remove("search-closing");
+      document.body.style.overflow="";
+      window.scrollTo(0,searchPageScrollY);
+    },260);
+  }
   function renderModalSearch(){
-    const q=$("modalSearchInput").value.trim(),box=$("modalSearchResults");box.replaceChildren();
-    if(!words(q).length){const hint=document.createElement("div");hint.className="search-hint";hint.textContent="Enter one or more words from a song title.";box.append(hint);return;}
+    const q=$("modalSearchInput").value.trim(),box=$("modalSearchResults");
+    box.replaceChildren();
+    if(!words(q).length){const hint=document.createElement("div");hint.className="search-hint";hint.textContent="Start typing a song title.";box.append(hint);return;}
     const source=searchScope==="category"?currentList:songs;
-    const matches=source.filter(song=>matchesWords(song,q)).slice().sort((a,b)=>{
+    const includeLyrics=$("searchLyricsToggle").checked;
+    const matches=source.filter(song=>matchesWords(song,q,includeLyrics)).slice().sort((a,b)=>{
       if(a.collection==="liturgy"&&b.collection==="liturgy")return titleOrder(a,b);
       return 0;
     });
-    if(!matches.length){const empty=document.createElement("div");empty.className="search-hint";empty.textContent="No matching song titles. Try another word.";box.append(empty);return;}
-    matches.slice(0,50).forEach(song=>box.appendChild(songButton(song,searchScope==="category"?"songListView":"homeView")));
-    if(matches.length>50){const more=document.createElement("div");more.className="search-hint";more.textContent=`Showing first 50 of ${matches.length} matches. Add another word to narrow your search.`;box.append(more);}
+    if(matches.length){
+      matches.slice(0,50).forEach(song=>box.appendChild(songButton(song,searchScope==="category"?"songListView":"homeView")));
+      if(matches.length>50){const more=document.createElement("div");more.className="search-hint";more.textContent=`Showing first 50 of ${matches.length} matches. Add another word to narrow your search.`;box.append(more);}
+      return;
+    }
+    const suggestions=fuzzyTitleSuggestions(source,q);
+    if(suggestions.length){
+      const suggestion=document.createElement("div");suggestion.className="search-suggestion";
+      const lead=document.createElement("span");lead.textContent="Did you mean: ";suggestion.append(lead);
+      suggestions.forEach((song,index)=>{
+        if(index)suggestion.append(document.createTextNode(", "));
+        const button=document.createElement("button");button.type="button";button.textContent=song.title;
+        button.addEventListener("click",()=>{
+          $("modalSearchInput").value=song.title;
+          const resultBox=$("modalSearchResults");resultBox.replaceChildren();
+          resultBox.appendChild(songButton(song,searchScope==="category"?"songListView":"homeView"));
+        });
+        suggestion.append(button);
+      });
+      suggestion.append(document.createTextNode("?"));
+      box.append(suggestion);
+    }else{
+      const empty=document.createElement("div");empty.className="search-hint";
+      empty.textContent=includeLyrics?"No matching titles or lyrics. Try another word.":"No matching song titles. Try another word.";
+      box.append(empty);
+    }
   }
   $("homeSearchOpen").addEventListener("click",()=>openSearch("all"));
   $("categorySearchOpen").addEventListener("click",()=>openSearch("category"));
   $("searchClose").addEventListener("click",closeSearch);
   $("modalSearchInput").addEventListener("input",renderModalSearch);
+  $("searchLyricsToggle").addEventListener("change",renderModalSearch);
   $("searchOverlay").addEventListener("click",e=>{if(e.target===$("searchOverlay"))closeSearch();});
   document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("searchOverlay").classList.contains("hidden"))closeSearch();});
   $("showChords").addEventListener("click",()=>setChordMode(!chordMode));
@@ -1238,9 +1419,9 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
   addView('cmDocReaderView',`<div class="topline"><button class="back-btn" data-back="cmDoctrinesView">← Documents</button><h2 class="view-title" id="cmDocTitle">Document</h2></div><iframe id="cmDocFrame" class="mk-doc-frame" title="Catholic Music Doctrines document" loading="lazy"></iframe>`);
   // Main-menu cards are inserted immediately before Offline Resources.
   const resources=$('openResources')?.closest('.tile');
-  if(resources){const mk=document.createElement('button');mk.className='tile';mk.type='button';mk.innerHTML='<span class="tile-icon" aria-hidden="true">♬</span><span class="tile-title">MusiKanam</span><span class="tile-sub">Sacred music and faith games</span>';mk.addEventListener('click',()=>{renderGameGrid();showView('musiKanamView');});const cm=document.createElement('button');cm.className='tile';cm.type='button';cm.innerHTML='<span class="tile-icon" aria-hidden="true">▤</span><span class="tile-title">Catholic Music Doctrines</span><span class="tile-sub">Read documents on sacred music and liturgy</span>';cm.addEventListener('click',()=>{renderDocs();showView('cmDoctrinesView');});resources.before(mk,cm);}
+  if(resources){const mk=document.createElement('button');mk.className='tile tile-disabled';mk.type='button';mk.disabled=true;mk.setAttribute('aria-disabled','true');mk.innerHTML='<span class="tile-icon" aria-hidden="true">♬</span><span class="tile-title">MusiKanam</span><span class="tile-sub">Bug Fixes and improvements are ongoing</span>';const cm=document.createElement('button');cm.className='tile';cm.type='button';cm.innerHTML='<span class="tile-icon" aria-hidden="true">▤</span><span class="tile-title">Catholic Music Doctrines</span><span class="tile-sub">Read documents on sacred music and liturgy</span>';cm.addEventListener('click',()=>{renderDocs();showView('cmDoctrinesView');});resources.before(mk,cm);}
   // Version text only; the existing production v19 archive remains untouched.
-  document.querySelectorAll('.version-label').forEach(e=>e.textContent='VERSION BETA 19.9');
+  document.querySelectorAll('.version-label').forEach(e=>e.textContent='VERSION BETA 2.0');
   const docs=[
     ['The General Instruction of the Roman Missal','Liturgical instruction','doctrines/general-instruction-roman-missal.pdf'],
     ['Sacrosanctum Concilium','Second Vatican Council constitution','doctrines/sacrosanctum-concilium.pdf'],
@@ -1408,9 +1589,83 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;pad
 })();
 </script>
 <script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(err => console.warn("Offline setup unavailable:", err)));
-}
+/* MusiKaupod Beta 2.0 — Smart Update Detection */
+(() => {
+  if (!("serviceWorker" in navigator)) return;
+  let registration = null, waitingWorker = null, reloadOnControllerChange = false, deferred = false, notice = null;
+
+  const getVersion = async () => {
+    try {
+      const response = await fetch("./version.json", {cache:"no-store"});
+      if (!response.ok) throw new Error("Version manifest unavailable");
+      const data = await response.json();
+      return data.version || "New version";
+    } catch (_) { return "New version"; }
+  };
+
+  const showNotice = async () => {
+    if (notice) return;
+    const version = await getVersion();
+    notice = document.createElement("section");
+    notice.className = "mk-update-notice";
+    notice.setAttribute("role","status");
+    notice.setAttribute("aria-live","polite");
+    notice.innerHTML = `<div class="mk-update-head"><strong>MusiKaupod Update</strong><span class="mk-update-badge">Update available</span></div><h3>Update ${version} available!</h3><p>A new version of MusiKaupod Digital Songbook is ready.</p><button type="button" class="mk-update-now">Update Now</button><small class="mk-update-hint">You can continue using the current version and update later.</small>`;
+    notice.querySelector(".mk-update-now").addEventListener("click", requestUpdate);
+    document.body.append(notice);
+  };
+
+  const audioPlaying = () => [...document.querySelectorAll("audio,video")].some(m => !m.paused && !m.ended && m.readyState > 2);
+  const requestUpdate = () => {
+    if (!waitingWorker) return;
+    if (audioPlaying()) {
+      deferred = true;
+      const hint = notice?.querySelector(".mk-update-hint");
+      if (hint) hint.textContent = "Update is ready. It will apply after current playback finishes.";
+      document.querySelectorAll("audio,video").forEach(m => {
+        if (!m.paused && !m.ended) {
+          m.addEventListener("ended", tryDeferred, {once:true});
+          m.addEventListener("pause", tryDeferred, {once:true});
+        }
+      });
+      return;
+    }
+    deferred = false;
+    reloadOnControllerChange = true;
+    waitingWorker.postMessage({type:"SKIP_WAITING"});
+    const button = notice?.querySelector(".mk-update-now");
+    if (button) { button.disabled = true; button.textContent = "Applying update…"; }
+  };
+  const tryDeferred = () => { if (deferred && !audioPlaying()) requestUpdate(); };
+  const showWaiting = async () => { waitingWorker = registration?.waiting || null; if (waitingWorker) await showNotice(); };
+  const watchWorker = worker => {
+    if (!worker) return;
+    worker.addEventListener("statechange", () => {
+      if (worker.state === "installed" && navigator.serviceWorker.controller) showWaiting();
+    });
+  };
+  const checkForUpdate = async () => {
+    if (!registration || !navigator.onLine) return;
+    try { await registration.update(); } catch (error) { console.warn("MusiKaupod update check unavailable:",error); }
+    if (registration.waiting) showWaiting();
+  };
+
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (reloadOnControllerChange) window.location.reload();
+  });
+  window.addEventListener("online", checkForUpdate);
+  window.addEventListener("pageshow", checkForUpdate);
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") checkForUpdate(); });
+  window.addEventListener("load", async () => {
+    try {
+      registration = await navigator.serviceWorker.register("./sw.js");
+      if (registration.waiting) showWaiting();
+      if (registration.installing) watchWorker(registration.installing);
+      registration.addEventListener("updatefound", () => watchWorker(registration.installing));
+      await checkForUpdate();
+    } catch (error) { console.warn("Offline setup unavailable:",error); }
+  });
+})();
 </script>
 <script>
 // Disable the page context menu and image dragging while preserving native editing controls and embedded document viewers.

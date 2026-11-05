@@ -28,7 +28,8 @@ window.CHOIR_SONGS = [
     "chordPages": [
       2
     ],
-    "chordSheet": "KYRIE I\n6/8 Matulin\nINTRO: D, A, D-A7\n\n          D     A    D          G   A       D  D7\nO Gino-------o,   kaluy-i kami\n           G  A            F#m Bm            Em      A        D  D7\nO Gino------------o,                   kaluy----i kami\n   G       A      F#m      Bm    Em       A         D  D7\nKris---to O Kris-----to, kaluy-----i   kami\n  G        A     F#m       Bm    Em       A         D  A7\nKris---to O Kris-----to, kaluy-----i   kami  \n         D     A    D          G   A       D  D7\nO Gino-------o,   kaluy-i kami\n           G  A            F#m Bm            Em      A        D  D7\nO Gino------------o,                   kaluy----i kami"
+    "chordSheet": "KYRIE I\n6/8 Matulin\nINTRO: D, A, D-A7\n\n          D     A    D          G   A       D  D7\nO Gino-------o,   kaluy-i kami\n           G  A            F#m Bm            Em      A        D  D7\nO Gino------------o,                   kaluy----i kami\n   G       A      F#m      Bm    Em       A         D  D7\nKris---to O Kris-----to, kaluy-----i   kami\n  G        A     F#m       Bm    Em       A         D  A7\nKris---to O Kris-----to, kaluy-----i   kami  \n         D     A    D          G   A       D  D7\nO Gino-------o,   kaluy-i kami\n           G  A            F#m Bm            Em      A        D  D7\nO Gino------------o,                   kaluy----i kami",
+    "audio": "audio/kyrie-i-a.m4a"
   },
   {
     "id": "v1-kyrie-ii-a",
@@ -38,7 +39,8 @@ window.CHOIR_SONGS = [
     "season": "",
     "lyrics": "Ginoo maluoy Ka sa amon\nGinoo maluoy Ka sa amon\nKristo, maluoy Ka\nKristo, maluoy Ka sa amon\nGinoo maluoy Ka sa amon\nGinoo maluoy Ka sa amon",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/kyrie-ii-a.m4a"
   },
   {
     "id": "v1-kyrie-iii-a",
@@ -58,7 +60,8 @@ window.CHOIR_SONGS = [
     "season": "",
     "lyrics": "Ginoo, maluoy Ka,\nGinoo maluoy Ka,\n\nKristo, maluoy Ka\nKristo maluoy Ka\n\nGinoo, maluoy Ka,\nGinoo, maluoy Ka\nMaluoy Ka",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/kyrie-iv-a.m4a"
   },
   {
     "id": "v1-kyrie-v-a",
@@ -159,7 +162,8 @@ window.CHOIR_SONGS = [
     "season": "",
     "lyrics": "Glorya sa Dios sa kahitaasan\nKag katoninongan,\nsa Iya mga tawo sa duta\n\nGinoong, Dios, Hadi san Langit\nDios Ama na makakagagahom sa tanan\nGinasamba Ka namon\nkag ginapasalamatan\nGinaomaw Ka namon,\ntungod san Imo glorya\n\nGinoong Hesukristo,\nBugtong na Anak san Ama\nGinoong Dios, Kordero san Dios\n\nIkaw na nagahali san sala san kinab-an\nMaluoy Ka, sa amon\nIkaw na naga ingkod sa tuo san Ama\nBatuna an amon mga pangamuyo\n\nKay Ikaw lang an Banal,\nIkaw lang Ginoo,\nIkaw lang an Pinakahitaas, Hesukristo\nusad kag san Espiritu Santo\nSa glorya san Dios\nAma, Amen, Amen, Amen",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/glorya-ii.m4a"
   },
   {
     "id": "v1-glorya-iii",
@@ -303,7 +307,8 @@ window.CHOIR_SONGS = [
     "season": "",
     "lyrics": "Refrano:\nAleluya, Aleluya, Aleluya, Aleluya, Aleluya\n\nI:\nAn Ginoo naghatag sin kaligtasan\nOomawon Siya labaw sa tanan         (Refrano)\n\nII:\nPermi naton omawon \nan hadi kag Dios\nAn Ama kag Anak kag Espiritu           (Refrano)",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/aleluya-ix.m4a"
   },
   {
     "id": "v1-aleluya-x-kristong-hadi",
@@ -412,7 +417,8 @@ window.CHOIR_SONGS = [
     "season": "",
     "lyrics": "Banal, Banal, Banal na Ginoo\nDios san mga hukbo\nAn langit kag duta\nPuno san Imo glorya,\n\nOsana, osana  sa kahitaasan\nMapalad an nagapakadi\nsa ngaran san Ginoo\n\nOsana, osana  sa kahitaasan\nOsana, osana  sa kahitaasan",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/banal-iv.m4a"
   },
   {
     "id": "v1-banal-v",
@@ -496,7 +502,8 @@ window.CHOIR_SONGS = [
     "season": "",
     "lyrics": "Si Kristo namatay,\nsi Kristo nabuhay-liwat\nSi Kristo, si Kristo,\nMabalik gihapon",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/memoryal-iv.m4a"
   },
   {
     "id": "v1-memoryal-v",
@@ -570,7 +577,8 @@ window.CHOIR_SONGS = [
     "season": "",
     "lyrics": "A—men, A—men,\nA—men, A—men, \nA—men, A—men,\nA—men, A—men",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/amen-iv.m4a"
   },
   {
     "id": "v1-amen-v",
@@ -634,7 +642,8 @@ window.CHOIR_SONGS = [
     "season": "",
     "lyrics": "Ama namon sa langit\nPabanalon an ngaran Mo\nMapasaamon an kahadean Mo\nSundon an pagbuot Mo\n\nDidi sa duta, sugad san sa langit\nHatagan Mo kami niyan\nSan amon pagkaon sa uruadlaw\nKag patawadon Mo kami\nsan amon mga sala\n\nSugad san pagpapatawad namon\nSa nagkasala sa amon\nAyaw man kami itugot na masugtan\nKundi agawon Mo kami sa karaotan",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/ama-namon-iv.m4a"
   },
   {
     "id": "v1-ama-namon-v",
@@ -688,7 +697,8 @@ window.CHOIR_SONGS = [
     "season": "",
     "lyrics": "Kay saimo an kahadean,\ngahom kag glorya\nNiyan kag hasta na lang.\nNiyan kag hasta na lang.",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/doxolohiya-iv.m4a"
   },
   {
     "id": "v1-doxolohiya-v",
@@ -772,7 +782,8 @@ window.CHOIR_SONGS = [
     "season": "",
     "lyrics": "Kordero san Dios na naga hali\nSan mga kasal-an san kinab-an, \nKaluy-i kami\n\nKordero san Dios na naga hali\nSan mga kasal-an san kinab-an, \nKaluy-i kami\n\nKordero san Dios na naga hali\nSan mga kasal-an san kinab-an,\nKaluy-i kami\nHatagi kami sin katoninongan",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/kordero-vii.m4a"
   },
   {
     "id": "v1-kordero-viii",
@@ -806,7 +817,8 @@ window.CHOIR_SONGS = [
     "chordPages": [
       1
     ],
-    "chordSheet": "DIOS KAGLALANG KAG PASTOR\n6/8 Matulin\nINTRO: C, D, Bm, Em, Am, D, G, Am, D, D7\n\n         G                    C               D    G   G7\nMagkanta, maglipay sa Ginoo\n      C         D            Bm  Em  C   D         G\nKamo tanan na adi             sa kinab-an\n          C                  G             Am    D \nMagkanta, maglipay sa Ginoo\n  \n     C      D         Bm            Em        C                  D          G   G7 \nKadi     sa atubangan Niya, malipay na magkanta\n     C      D         Bm            Em        C                  D          G\nKadi     sa atubangan Niya, malipay na magkanta\n\n              G           C       D                  G    G7\nMagsulod sa Iya mga pwertahan\n               C        D              Bm  Em    C    D      G\nMagsulod dara an kanta,           san kaomawan\n     C                 G       Am                D            G    G7\nSalamat sa Iya, omawon an Iya ngaran\n\n     C      D         Bm            Em        C                  D          G   G7 \nKadi     sa atubangan Niya, malipay na magkanta\n     C      D         Bm            Em        C                  D          G\nKadi     sa atubangan Niya, malipay na magkanta"
+    "chordSheet": "DIOS KAGLALANG KAG PASTOR\n6/8 Matulin\nINTRO: C, D, Bm, Em, Am, D, G, Am, D, D7\n\n         G                    C               D    G   G7\nMagkanta, maglipay sa Ginoo\n      C         D            Bm  Em  C   D         G\nKamo tanan na adi             sa kinab-an\n          C                  G             Am    D \nMagkanta, maglipay sa Ginoo\n  \n     C      D         Bm            Em        C                  D          G   G7 \nKadi     sa atubangan Niya, malipay na magkanta\n     C      D         Bm            Em        C                  D          G\nKadi     sa atubangan Niya, malipay na magkanta\n\n              G           C       D                  G    G7\nMagsulod sa Iya mga pwertahan\n               C        D              Bm  Em    C    D      G\nMagsulod dara an kanta,           san kaomawan\n     C                 G       Am                D            G    G7\nSalamat sa Iya, omawon an Iya ngaran\n\n     C      D         Bm            Em        C                  D          G   G7 \nKadi     sa atubangan Niya, malipay na magkanta\n     C      D         Bm            Em        C                  D          G\nKadi     sa atubangan Niya, malipay na magkanta",
+    "audio": "audio/dios-kaglalang-kag-pastor.m4a"
   },
   {
     "id": "v1-dagos-kamo",
@@ -816,7 +828,8 @@ window.CHOIR_SONGS = [
     "season": "Ordinary Time",
     "lyrics": "Refrano:\nDagos kamo sa balay san Dios    \nMagkanta, mag-omaw sa Ginoo\nKay Siya an hade san kinab-an\nAn bugtong na Anak san Ama,\nAn bugtong na Anak san Ama\n\nBerso I:\nHuyupon na an trompeta,\nmagkanta sin bag-o na kanta\nMag sadya an entiro kinab-an,\nmaglipay, mag-omaw an tanan       (refrano)\n\nBerso II:\nTugtugon na an gitara,\nmalipay na mag-samba\nMga anak san Dios magtiripon kita\nsa pag-omaw sa Iya       (refrano)",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/dagos-kamo.m4a"
   },
   {
     "id": "v1-magsadya-kag-magtiripon",
@@ -826,7 +839,8 @@ window.CHOIR_SONGS = [
     "season": "Ordinary Time",
     "lyrics": "Refrano:\nMagsadya kag mag-tiripon\nSa Santa Misa an Dios sugaton ta \nKag agud maging bagay sa Iya,\nan aton puso linisan ta\n\nBerso: I   \nKun kita may kamunduan\nkag sa kapwa may kauritan\nKita dapat na makipag-ulian\nagud paghalad ta maging angayan        (refrano)\n\n \nBerso II:\nKun kita nasa kadul-man\nSa aton mga kasal-an\nAn dapat ta na madumduman\nAn pag-ayo sin kapatawadan        (refrano)\n\nBerso III:\nKun kita pagal kag nabubug-atan\nAn Dios an dapat apikihan\nKay sa Iya makikit-an\nAn aton tunay na kapahuwayan         (refrano)",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/magsadya-kag-magtiripon.m4a"
   },
   {
     "id": "v1-tanan-kita",
@@ -836,7 +850,8 @@ window.CHOIR_SONGS = [
     "season": "Ordinary Time",
     "lyrics": "Refrano:\nTanan kita magtiripon\nBanal na lungsod san Dios\nTanan kita magsaramba,\nmag-omaw sa ngaran ni Hesus\n\nBerso I:\nMagkanta sa kalipay kataw-han san Dios\nTanan na binunyagan sa ngaran ni Hesus         (refrano)\n\nBerso II:\nAn aton Ginoo matanos kag buhay\nMagsarig sa Iya, magserbi na may kalipay         (refrano)\n\nBerso III:\nSugaton an Ginoo na may pagkamoot\nHuyupon an trompeta, mag-omaw sa Dios         (refrano)",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/tanan-kita.m4a"
   },
   {
     "id": "v1-dagos-kag-magtiripon",
@@ -880,7 +895,8 @@ window.CHOIR_SONGS = [
     "chordPages": [
       7
     ],
-    "chordSheet": "MGA KASANGKAPAN LAMANG\n4/4 Malumanay\nINTRO: D, F#m, G, Em, A\n\nI:\n   D                         F#m                    G                       A\nAno man na kaayohan Na nahimo san katawhan\n  Em       B7                      Em     \nIna dahilan lang san Dios\n            G                   A                      D   \nSan Dios na naghimo san tanan\n\nRefrano:\n          G                A                F#m    Bm\nMagbulig ka man sa kapwa      mo,\nEm                               F#7\nmaglimos man sa iba\n B7                                 Em            \nIna tanan waran kahulugan \n E7                        A    G          Em-A\nKun dili sa pagkamo-----ot\n\nII:\n              D                    F#m                G            A\nGin-buot na kita gamiton san aton Ginoo\n       Em          B7         Em     \nSa pagbalingibog Niya\n         G              A                        D   \nSan katalingkasan san tanan"
+    "chordSheet": "MGA KASANGKAPAN LAMANG\n4/4 Malumanay\nINTRO: D, F#m, G, Em, A\n\nI:\n   D                         F#m                    G                       A\nAno man na kaayohan Na nahimo san katawhan\n  Em       B7                      Em     \nIna dahilan lang san Dios\n            G                   A                      D   \nSan Dios na naghimo san tanan\n\nRefrano:\n          G                A                F#m    Bm\nMagbulig ka man sa kapwa      mo,\nEm                               F#7\nmaglimos man sa iba\n B7                                 Em            \nIna tanan waran kahulugan \n E7                        A    G          Em-A\nKun dili sa pagkamo-----ot\n\nII:\n              D                    F#m                G            A\nGin-buot na kita gamiton san aton Ginoo\n       Em          B7         Em     \nSa pagbalingibog Niya\n         G              A                        D   \nSan katalingkasan san tanan",
+    "audio": "audio/mga-kasangkapan-lamang.m4a"
   },
   {
     "id": "v1-pagkamoot",
@@ -890,7 +906,8 @@ window.CHOIR_SONGS = [
     "season": "Ordinary Time",
     "lyrics": "Refrano:\nPagkamoot an gina-ayo ko\nNa maaraman Mo, an kinahanglan ko\nDili yaman o kasadirihan,\ndili ano pa man kundi pagkamoot\n         \nKoro:\nGinaayo ko, pagmalasakit Mo,\nAn kinahanglan ko, an Imo pagmangno\nDumdumon Mo, kun Ikaw maghatag\nAn mababaton Mo, akon pagkamoot",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/pagkamoot.m4a"
   },
   {
     "id": "v1-batuna-ginoo",
@@ -900,7 +917,8 @@ window.CHOIR_SONGS = [
     "season": "Ordinary Time",
     "lyrics": "Berso:\nBatuna Ginoo,\ninin halad bunga san sakripisyo\nGinalaom ko na sa paghalad namon\nBuhay ko Ginoo mababag-o\n         \nRefrano:\nIni an tinapay na hali sa trigo\nBendisyuni, agud maging Lawas Mo\nIni an bino na hali sa ubas\nBendisyuni agud maging Dugo Mo\n\nGinoo, linisi an amon puso\nAgud maging angayan kami\nna maghalad sa Imo",
     "language": "Minasbate",
-    "hasLyrics": true
+    "hasLyrics": true,
+    "audio": "audio/batuna-ginoo.m4a"
   },
   {
     "id": "v1-ini-an-amon-halad",
@@ -1538,7 +1556,8 @@ window.CHOIR_SONGS = [
     "chordImages": [
       "advent-chords/page-10.png"
     ],
-    "chordSheet": "Original chord arrangement supplied in Advent/Glorya I PDF."
+    "chordSheet": "Original chord arrangement supplied in Advent/Glorya I PDF.",
+    "audio": "audio/kadi-sa-amon.m4a"
   },
   {
     "id": "v1-kadi-emmanuel",

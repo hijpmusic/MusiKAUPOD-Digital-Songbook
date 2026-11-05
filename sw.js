@@ -1,4 +1,4 @@
-const CACHE_NAME = "musikaupod-pwa-beta199-v1";
+const CACHE_NAME = "musikaupod-pwa-beta20-v5";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -56,6 +56,26 @@ const APP_SHELL = [
   "./doctrines/musicam-sacram.pdf",
   "./doctrines/sing-to-the-lord-usccb.pdf",
   "./manifest.webmanifest",
+  "./version.json",
+  "./audio/kordero-vii.m4a",
+  "./audio/kyrie-i-a.m4a",
+  "./audio/kyrie-ii-a.m4a",
+  "./audio/kyrie-iv-a.m4a",
+  "./audio/magsadya-kag-magtiripon.m4a",
+  "./audio/mga-kasangkapan-lamang.m4a",
+  "./audio/pagkamoot.m4a",
+  "./audio/tanan-kita.m4a",
+  "./audio/aleluya-ix.m4a",
+  "./audio/ama-namon-iv.m4a",
+  "./audio/doxolohiya-iv.m4a",
+  "./audio/banal-iv.m4a",
+  "./audio/memoryal-iv.m4a",
+  "./audio/amen-iv.m4a",
+  "./audio/batuna-ginoo.m4a",
+  "./audio/dagos-kamo.m4a",
+  "./audio/dios-kaglalang-kag-pastor.m4a",
+  "./audio/glorya-ii.m4a",
+  "./audio/kadi-sa-amon.m4a",
   "./assets/hijp-mmc-logo.png",
   "./assets/icon-192.png",
   "./assets/icon-512.png",
@@ -97,6 +117,16 @@ const APP_SHELL = [
   "./scores/tenor/pas-anon-an-mga-krus-mo-tenor.pdf",
   "./scores/tenor/krus-san-kaligtasan-tenor.pdf"
 ];
-self.addEventListener("install", event => { event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)).then(() => self.skipWaiting())); });
+self.addEventListener("install", event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)).then(() => {
+      // First install activates automatically; an update waits for user confirmation.
+      if (!self.registration.active) return self.skipWaiting();
+    })
+  );
+});
+self.addEventListener("message", event => {
+  if (event.data && event.data.type === "SKIP_WAITING") self.skipWaiting();
+});
 self.addEventListener("activate", event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))).then(() => self.clients.claim())); });
 self.addEventListener("fetch", event => { if (event.request.method !== "GET") return; event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request).then(response => { if (response && response.ok && new URL(event.request.url).origin === self.location.origin) { const copy = response.clone(); caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy)); } return response; }).catch(() => caches.match("./index.html")))); });
