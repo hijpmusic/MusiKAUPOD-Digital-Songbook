@@ -1,8 +1,9 @@
-const CACHE_NAME = "musikaupod-pwa-beta20-v5";
+const CACHE_NAME = "musikaupod-pwa-v1-4-prayers-games-active";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./songs.js",
+  "./prayers.js",
   "./chords-pdf-reference/page-01.png",
   "./chords-pdf-reference/page-02.png",
   "./chords-pdf-reference/page-03.png",

@@ -160,3 +160,12 @@ The mini-player dismissal and reappearance animations from Beta 19.7 are retaine
 \n## Beta 2.0 — Search modal refinement\n- Search opens in a centered, cookie-consent-style popup while dimming the main menu.\n- Added a Search by lyrics toggle; title-only search remains the default.\n- Added title suggestions for queries with up to two character edits.\n- Added floating-up entrance and fade-up exit transitions.\n- Preserved matching result lists and the existing song-opening behavior.\n
 - Fixed search popup viewport positioning by moving the modal to the document body; opening search no longer scrolls the app to the modal location.
 - Improved dark-mode contrast for “Did you mean” suggestions.
+
+
+## Update package notes (2026-11-06)
+- Added an offline-cached prayer data module and a five-prayer list for each of the seven language shelves.
+- Added the supplied Minasbate Ama Namon, Maglipay Ka Maria, and Pag-omaw sa Santisima Trinidad texts verbatim; two Minasbate prayers remain placeholders pending the ministry's wording.
+- Added traditional English and Latin forms for the five basic prayers.
+- Enabled the MusiKanam menu entry, expanded the starter trivia banks, added a 15-question LiturgiColor bank, and made OneChant playable as an introductory text-based chant quiz.
+- Updated the MMC Directory detail Back handler to return directly to its recorded parent view.
+- Note: Tagalog, Cebuano, Bikol, and Spanish prayer texts are currently labeled for local text verification; they are not represented as approved Missal translations. The large 600/600/500 question-bank targets are not yet met by this build.
